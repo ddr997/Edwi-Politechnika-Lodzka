@@ -1,12 +1,14 @@
+# Cw.2 EDWI (8.04.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
 import requests, re, csv
+import nltk
 
-# Cw.1 EDWI (8.04.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
-class Crawler():
 
+class Crawler:
     def __init__(self, initialURL):
         self.initialURL = initialURL
         try:
-            headers = {'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36',}
+            headers = {
+                'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36', }
             self.requestResponse = requests.get(self.initialURL, timeout=3, headers=headers)
             self.requestResponse.encoding = 'utf-8'
             if self.requestResponse.status_code != 200:
@@ -14,6 +16,7 @@ class Crawler():
         except:
             raise ValueError("Provided invalid URL address.")
         self.textWithHtmlTags = self.requestResponse.text
+        self.invertedIndexDict = {key:0 for i in nltk.tokenize.word_tokenize(self.removeTags())}
 
     def removeTags(self):
         regex = r'<(script|style).*>(.|\n)*?</(script|style)>|<[^>]*>'
@@ -34,7 +37,8 @@ class Crawler():
         print("Emails crawled from this page: ", emailsFound)
         return emailsFound
 
-    def writeToCsv(self, text, filename):
+    @staticmethod
+    def writeToCsv(text, filename):
         with open(f'{filename}.csv', 'w+', encoding="utf-8", newline='') as csvfile:
             writer = csv.writer(csvfile)
             if type(text) is str:
@@ -64,8 +68,15 @@ class Crawler():
         print("\nEmails across the sites found:", emailsToFile)
         print("--Program ended, 2 csv files were created locally containing emails and crawled sites content.")
 
+    # def createInvertedIndex(self):
+    #     urlsToVisit = self.getUrls()
+    #     for i in urlsToVisit:
+    #
+    #     return
+
 
 if __name__ == "__main__":
     URL = input("Enter the URL (press Enter for default): ") or "http://robotyka.p.lodz.pl/pl/pracownicy"
     crawler = Crawler(URL)
-    crawler.crawlAndSaveToFiles()
+    # crawler.crawlAndSaveToFiles()
+    print(crawler.invertedIndexDict)
