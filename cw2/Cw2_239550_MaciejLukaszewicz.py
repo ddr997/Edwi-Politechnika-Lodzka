@@ -16,7 +16,7 @@ class Crawler:
         except:
             raise ValueError("Provided invalid URL address.")
         self.textWithHtmlTags = self.requestResponse.text
-        self.invertedIndexDict = {key:0 for i in nltk.tokenize.word_tokenize(self.removeTags())}
+        self.invertedIndexDict = {i:0 for i in nltk.tokenize.word_tokenize(self.removeTags())}
 
     def removeTags(self):
         regex = r'<(script|style).*>(.|\n)*?</(script|style)>|<[^>]*>'
