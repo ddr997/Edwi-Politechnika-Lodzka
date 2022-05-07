@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e38d266-1810-450e-a245-25dd94a8da44" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/EDWI.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/unittesty.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/cw2/coZrobic" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cw1/Cw1_239550_MaciejLukaszewicz.py" beforeDir="false" afterPath="$PROJECT_DIR$/cw1/Cw1_239550_MaciejLukaszewicz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cw1/emailsFound.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cw1/sitesContent.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cw2/Cw2_239550_MaciejLukaszewicz.py" beforeDir="false" afterPath="$PROJECT_DIR$/cw2/Cw2_239550_MaciejLukaszewicz.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +26,28 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.Cw2_239550_MaciejLukaszewicz">
+    <configuration name="Cw1_239550_MaciejLukaszewicz" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Edwi-Politechnika-Lodzka" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cw1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cw1/Cw1_239550_MaciejLukaszewicz.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Cw2_239550_MaciejLukaszewicz" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Edwi-Politechnika-Lodzka" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -53,6 +72,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Cw2_239550_MaciejLukaszewicz" />
+        <item itemvalue="Python.Cw1_239550_MaciejLukaszewicz" />
       </list>
     </recent_temporary>
   </component>
@@ -77,5 +97,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 # Cw.2 EDWI (8.04.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
 import requests, re, csv
 import nltk
+from nltk.corpus import stopwords
 
 
 class Crawler:
@@ -16,7 +17,8 @@ class Crawler:
         except:
             raise ValueError("Provided invalid URL address.")
         self.textWithHtmlTags = self.requestResponse.text
-        self.invertedIndexDict = {i:0 for i in nltk.tokenize.word_tokenize(self.removeTags())}
+        self.extensionsToIgnore = [".js", ".css", ".png", ".jpg", ".pdf", ".jpeg", ".ico"]
+        self.invertedIndexDict = dict()
 
     def removeTags(self):
         regex = r'<(script|style).*>(.|\n)*?</(script|style)>|<[^>]*>'
@@ -27,7 +29,7 @@ class Crawler:
     def getUrls(self):
         regexForURL = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
         urlsFound = set(re.findall(regexForURL, self.textWithHtmlTags))
-        urlsFound = {i for i in urlsFound if not i[-3:] == ".js" and not i[-4:] in [".css", ".png", ".jpg"]}  # ignore
+        urlsFound = {i for i in urlsFound if not any(j in i for j in self.extensionsToIgnore)}  # ignore
         print("URLS on the main page: ", urlsFound)
         return urlsFound
 
@@ -68,15 +70,16 @@ class Crawler:
         print("\nEmails across the sites found:", emailsToFile)
         print("--Program ended, 2 csv files were created locally containing emails and crawled sites content.")
 
-    # def createInvertedIndex(self):
-    #     urlsToVisit = self.getUrls()
-    #     for i in urlsToVisit:
-    #
-    #     return
+    def getInvertedIndex(self):
+        urlsToVisit = self.getUrls()
+        tokens = nltk.tokenize.word_tokenize(self.removeTags())
+        wordsWithoutStopWords = set(stopwords.words(tokens))
+        
+        self.invertedIndexDict.update()
+        return invertedIndexDict
 
 
 if __name__ == "__main__":
     URL = input("Enter the URL (press Enter for default): ") or "http://robotyka.p.lodz.pl/pl/pracownicy"
     crawler = Crawler(URL)
-    # crawler.crawlAndSaveToFiles()
-    print(crawler.invertedIndexDict)
+    print(crawler.getInvertedIndex())
