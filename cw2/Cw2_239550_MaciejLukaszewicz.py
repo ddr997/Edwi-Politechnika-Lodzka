@@ -85,9 +85,17 @@ class Crawler:
     def createInvertedIndex(self):
         urlsToVisit = self.getUrls()
         invertedIndex = self.initialInvertedIndexDict
-        for i in urlsToVisit:
-            localCrawl = Crawler(i)
-            invertedIndex.update
+        for url in urlsToVisit:
+            localCrawl = Crawler(url)
+            crawledInvIndx = localCrawl.initialInvertedIndexDict
+            for key in crawledInvIndx:
+                if key in invertedIndex:
+                    invertedIndex[key] = invertedIndex[key].extend(crawledInvIndx[key])
+                else:
+                    invertedIndex[key] = crawledInvIndx[key]
+
+
+
 
 
 
