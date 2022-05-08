@@ -20,7 +20,9 @@ class Crawler():
         regex = r'<(script|style).*>(.|\n)*?</(script|style)>|<[^>]*>'
         tagsRemoved = re.sub(regex, "", self.textWithHtmlTags)
         whitespacesRemoved = re.sub(r"\s{2,}", "\n", tagsRemoved)
-        return whitespacesRemoved
+        noSpaceSplitter = re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', whitespacesRemoved)
+        filteredText = noSpaceSplitter
+        return filteredText
 
     def getUrls(self):
         regexForURL = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'

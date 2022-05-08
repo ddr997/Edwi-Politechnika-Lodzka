@@ -1,4 +1,6 @@
 # Cw.2 EDWI (8.04.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
+import string
+
 import requests, re, csv
 import nltk
 from nltk.corpus import stopwords
@@ -19,7 +21,7 @@ class Crawler:
             raise ValueError("Provided invalid URL address.")
         self.textWithHtmlTags = self.requestResponse.text
         self.extensionsToIgnore = [".js", ".css", ".png", ".jpg", ".pdf", ".jpeg", ".ico"]
-        self.invertedIndexDict = dict()
+        self.initialInvertedIndexDict = self.getInvertedIndex(self.removeTagsFromHtml(), self.initialURL)
 
     def removeTagsFromHtml(self):
         regex = r'<(script|style).*>(.|\n)*?</(script|style)>|<[^>]*>'
@@ -73,18 +75,23 @@ class Crawler:
         print("\nEmails across the sites found:", emailsToFile)
         print("--Program ended, 2 csv files were created locally containing emails and crawled sites content.")
 
-    def getInvertedIndex(self):
-        urlsToVisit = self.getUrls()
-        # tokens = nltk.tokenize.word_tokenize(self.removeTagsFromHtml())
-        tokens = self.removeTagsFromHtml().splitlines()
-        tokens = list(map(lambda x: x.split(), tokens))
-        print(tokens)
+    def getInvertedIndex(self, text, URL):
+        tokens = nltk.tokenize.word_tokenize(text)
+        tokens = [i for i in tokens if i not in string.punctuation]
+        invertedIndexDict = {i:URL for i in tokens}
+        print(invertedIndexDict)
         return 0
+
+    def createInvertedIndex(self):
+        urlsToVisit = self.getUrls()
+        invertedIndex = self.initialInvertedIndexDict
+        for i in urlsToVisit:
+            localCrawl = Crawler(i)
+            invertedIndex.update
+
 
 
 if __name__ == "__main__":
     URL = input("Enter the URL (press Enter for default): ") or "http://robotyka.p.lodz.pl/pl/pracownicy"
     crawler = Crawler(URL)
-    crawler.crawlAndSaveToFiles()
-    # crawler.getInvertedIndex()
-    # print(crawler.getInvertedIndex())
+    crawler.initialInvertedIndexDict
