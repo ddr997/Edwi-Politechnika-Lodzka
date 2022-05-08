@@ -5,6 +5,7 @@ from nltk.corpus import stopwords
 
 
 class Crawler:
+
     def __init__(self, initialURL):
         self.initialURL = initialURL
         try:
@@ -20,11 +21,13 @@ class Crawler:
         self.extensionsToIgnore = [".js", ".css", ".png", ".jpg", ".pdf", ".jpeg", ".ico"]
         self.invertedIndexDict = dict()
 
-    def removeTags(self):
+    def removeTagsFromHtml(self):
         regex = r'<(script|style).*>(.|\n)*?</(script|style)>|<[^>]*>'
         tagsRemoved = re.sub(regex, "", self.textWithHtmlTags)
         whitespacesRemoved = re.sub(r"\s{2,}", "\n", tagsRemoved)
-        return whitespacesRemoved
+        noSpaceSplitter = re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', whitespacesRemoved)
+        filteredText = noSpaceSplitter
+        return filteredText
 
     def getUrls(self):
         regexForURL = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
@@ -53,7 +56,7 @@ class Crawler:
     def crawlAndSaveToFiles(self):
         urlsToVisit = self.getUrls()
         emailsToFile = self.getEmails()
-        textToFile = self.removeTags()
+        textToFile = self.removeTagsFromHtml()
 
         for i in urlsToVisit:
             print("\nEntering URL: ", i)
@@ -63,7 +66,7 @@ class Crawler:
                 continue
             emailsToFile.update(localInstance.getEmails())
             # print(localInstance.removeTags()) # to check site content
-            textToFile += "\n" + localInstance.removeTags()
+            textToFile += "\n" + localInstance.removeTagsFromHtml()
 
         self.writeToCsv(textToFile, "sitesContent")
         self.writeToCsv(emailsToFile, "emailsFound")
@@ -72,14 +75,16 @@ class Crawler:
 
     def getInvertedIndex(self):
         urlsToVisit = self.getUrls()
-        tokens = nltk.tokenize.word_tokenize(self.removeTags())
-        wordsWithoutStopWords = set(stopwords.words(tokens))
-        
-        self.invertedIndexDict.update()
-        return invertedIndexDict
+        # tokens = nltk.tokenize.word_tokenize(self.removeTagsFromHtml())
+        tokens = self.removeTagsFromHtml().splitlines()
+        tokens = list(map(lambda x: x.split(), tokens))
+        print(tokens)
+        return 0
 
 
 if __name__ == "__main__":
     URL = input("Enter the URL (press Enter for default): ") or "http://robotyka.p.lodz.pl/pl/pracownicy"
     crawler = Crawler(URL)
-    print(crawler.getInvertedIndex())
+    crawler.crawlAndSaveToFiles()
+    # crawler.getInvertedIndex()
+    # print(crawler.getInvertedIndex())
