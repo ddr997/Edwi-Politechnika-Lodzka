@@ -94,542 +94,281 @@ Zakład Teorii Sterowania
 Polityka prywatności
 "Copyright &copy; 2022, Centrum Multimedialne Politechniki Łódzkiej"
 ""
-﻿
-2021 Japan-Poland International Workshop on Technologies supporting rehabilitation and medical services
-2021 Japan-Poland International Workshop on Technologies supporting rehabilitation and medical services
-Scientific Meeting of Polish Chapter of the IEEE Robotics &amp; Automation Society
-"The workshop was conducted on October 5th, 2021, from 9:30 Central European Time (4:30 JST)."
-Book of abstracts if available here
-Schedule:
-Time
-Presentation
-Authors
-9:30
-Introduction by Grzegorz Granosik
-9:35
-Introduction by Igor Zubrycki
-9:40 – 10:00
-i Wakka and its various applications
-Yoshifumi Morita
-10:00 - 10:15
-"Luna – a new promising tool for reeducation of gross motor function of the upper limb instroke patients. Rationale, design, and feasibility study results."
-"Ewa Zasadzka, Tomasz Trzmiel, Renata Marchewka, Sławomir Tobis, Dominika Kozak, Katarzyna Hojan"
-10:15 – 10:20
-short break
-October 5th 2021
-10:20 – 10:35
-i Wakka can enhance cortical excitability of motor related areas in stroke patients
-"Toshiaki Wasaka, Kazuya Toshima, Kohei Ando, Masakazu Nomura, Keishi Omori, Moe Nishiya, Tsukasa Tamaru, Yoshifumi Morita"
-10:35 – 10:50
-Passive hand exercises in post-stroke rehabilitation
-"Ilona Czyż, Magdalena Halsagard, Maja Śmietańska, Julia Wojdyn, Justyna Redlicka, Elżbieta Miller"
-10:50 – 11:05
-Evaluation and Training Device for Adjustability of Pinching Force “i Wakka-pinch”: Application to Upper Limb Training in Hemiplegic Stroke Patients
-"Moe Nishiya, Keishi Omori, Yoshifumi Morita, Kazuya Toshima, Tsukasa Tamaru"
-11:05 – 11:20
-Automatic device for hand rehabilitation
-Wioletta Chmurska
-11:20 – 11:35
-Relationship between MP Joint Angle and Muscle Activity in Training with a Finger Extensor Facilitation Training Device “i PARKO”
-"Shota Ishigaki, Ai Nakamura, Yoshifumi Morita, Hirofumi Tanabe"
-11:35 - 11:50
-Active Range of Motion Digital Testing Device of Finger Joints Using an RGB-D Camera
-"Huu-Hieu Quang, Yoshifumi Morita, Noritaka Sato, Makoto Takekawa"
-11:50—12: 05
-Considerations and architecture of hand measurement system for post-stroke patients
-Igor Zubrycki
-12:05 – 12:20
-Discussion and final words
-"We would like to congratulate Moe Nishiya from Morita's Lab in Nagoya Institute of Technology in Japan for winning the Student Contest. Her presentation: ""Evaluation and Training Device for Adjustability of Pinching Force “i Wakka-pinch”: Application to Upper Limb Training in Hemiplegic Stroke Patients"" was rated as best by the Scientific Council."
-Call for papers
-"It’s a pleasure to invite you to submit your early research to the 2021 Japan-Poland International Workshop on Technologies supporting rehabilitation and medical services. The aim of the workshop is to bring together medical doctors and robotic engineers to strengthen collaboration between medicine and robotics. The main focus will be post-stroke medical services and technologies. Exchanging different forms of knowledge can give great results such as new thoughts, ideas, and joint projects. The workshop is also an opportunity for young researchers to present the results of their work and participate in a discussion that may be useful in later scientific and publishing work."
-"The 5th edition of Japan-Poland meeting will be held online. The final program of the workshop will be the result of a review process to extract the most exciting research in areas of robotics in rehabilitation medicine. Submissions will be evaluated in terms of their novelty, technical quality, significance and potential impact. The program will include oral presentations of accepted papers."
-"Participants should submit an abstract of the presentation, written in English (1-2 pages), according to included template."
-"As a part of the workshop, The Student Contest was organized. Presentations were evaluated in terms of their originality, importance of the topic and presentation quality."
-The award winner will be announced during the workshop.-->
-Subject Areas
-"We invite submissions in areas of robotics and medicine, including healthcare, rehabilitation and medical robotics, control and dynamics, sensing, human-robot interaction."
-Important dates:
-"September 15th, 2021: Abstract Submission Deadline"
-"September 25th, 2021: Abstract Acceptance Notification"
-"October 5th, 2021: Virtual Japan-Poland Workshop 2021"
-Submitting
-Please submit your abstracts using e-mail:
-conf2021@roboterapia.eu
-Abstract format
-Please use the following template for your abstract
-Paper template
-We encourage everyone interested in medical and rehabilitation robotics to participate in the workshop.
-"In the case of listeners who do not deliver presentations, the willingness to participate should be sent to the e-mail address of the event: conf2021@roboterapia.eu providing your name and e-mail address."
-Organizers
-"dr inż. Igor Zubrycki, Lodz University of Technology"
-"prof. Yoshifumi Morita, Nagoya Institute of Technology"
-"dr inż. Katarzyna Koter, Lodz University of Technology"
-"mgr Justyna Redlicka, Medical University of Lodz"
-Scientific Council
-"prof. dr hab. Elżbieta Miller, Medical University of Lodz"
-"dr hab. inż. Grzegorz Granosik, Lodz University of Technology"
-"prof. Yoshifumi Morita, Nagoya Institute of Technology"
-"dr hab. n. med. Katarzyna Hojan, FEBPRM"
-"dr inż. Igor Zubrycki, Lodz University of Technology"
-"dr inż. Katarzyna Koter, Lodz University of Technology"
 ""
-""
-"SKOS Simple Knowledge Organization System Namespace Document - HTML Variant, 18 August 2009 Recommendation Edition"
-SKOS Simple Knowledge Organization System Namespace Document - HTML Variant
-18 August 2009 Recommendation Edition
-This version:
-http://www.w3.org/2009/08/skos-reference/skos.html
-Latest version:
-http://www.w3.org/2004/02/skos/core.html
-Authors:
-"Alistair Miles, STFC"
-Rutherford Appleton Laboratory / University of Oxford
-"Sean Bechhofer,"
-University of Manchester
-Abstract
-Abstract??
--->
-Status of this Document
-This document describes the schema available from the SKOS namespace.
-Introduction
-The Simple Knowledge Organization System (SKOS) is a common data model for
-sharing and linking knowledge organization systems via the Semantic Web.This
-document provides a brief description of the SKOS Vocabulary.
-"For detailed information about the SKOS Recommendation, please consult the"
-SKOS Reference [SKOS-REFERENCE] or
-the SKOS Primer [SKOS-PRIMER].
-SKOS Schema Overview
-The following table gives a non-normative overview of the SKOS
-vocabulary; it replicates a table found in the (normative) SKOS
-Reference [SKOS-REFERENCE].
-"This document can be referenced directly, by its own URI http://www.w3.org/2004/02/skos/core.html, or"
-"indirectly, by content negotiation from the SKOS namespace URI http://www.w3.org/2004/02/skos/core#"
-as described in Appendix C of SKOS Reference [SKOS-REFERENCE].
-See also the SKOS Namespace Document - RDF/XML Variant [SKOS-RDF].
-Classes
-skos:Collection
-URI:
-http://www.w3.org/2004/02/skos/core#Collection
-Definition:
-Section 9. Concept Collections
-Label:
-Collection
-Disjoint classes:
-skos:Concept
-skos:Concept Scheme
-skos:Concept
-URI:
-http://www.w3.org/2004/02/skos/core#Concept
-Definition:
-Section 3. The skos:Concept Class
-Label:
-Concept
-Disjoint classes:
-skos:Collection
-skos:Concept Scheme
-skos:Concept Scheme
-URI:
-http://www.w3.org/2004/02/skos/core#Concept Scheme
-Definition:
-Section 4. Concept Schemes
-Label:
-Concept Scheme
-Disjoint classes:
-skos:Collection
-skos:Concept
-skos:Ordered Collection
-URI:
-http://www.w3.org/2004/02/skos/core#Ordered Collection
-Definition:
-Section 9. Concept Collections
-Label:
-Ordered Collection
-Super-classes:
-skos:Collection
-Properties
-skos:alt Label
-URI:
-http://www.w3.org/2004/02/skos/core#alt Label
-Definition:
-Section 5. Lexical Labels
-Label:
-alternative label
-Super-properties:
-http://www.w3.org/2000/01/rdf-schema#label
-skos:broad Match
-URI:
-http://www.w3.org/2004/02/skos/core#broad Match
-Definition:
-Section 10. Mapping Properties
-Label:
-has broader match
-Super-properties:
-skos:broader
-skos:mapping Relation
-Inverse of:
-skos:narrow Match
-skos:broader
-URI:
-http://www.w3.org/2004/02/skos/core#broader
-Definition:
-Section 8. Semantic Relations
-Label:
-has broader
-Super-properties:
-skos:broader Transitive
-Inverse of:
-skos:narrower
-skos:broader Transitive
-URI:
-http://www.w3.org/2004/02/skos/core#broader Transitive
-Definition:
-Section 8. Semantic Relations
-Label:
-has broader transitive
-Super-properties:
-skos:semantic Relation
-Inverse of:
-skos:narrower Transitive
-Other characteristics:
-Transitive
-skos:change Note
-URI:
-http://www.w3.org/2004/02/skos/core#change Note
-Definition:
-Section 7. Documentation Properties
-Label:
-change note
-Super-properties:
-skos:note
-skos:close Match
-URI:
-http://www.w3.org/2004/02/skos/core#close Match
-Definition:
-Section 10. Mapping Properties
-Label:
-has close match
-Super-properties:
-skos:mapping Relation
-Other characteristics:
-Symmetric
-skos:definition
-URI:
-http://www.w3.org/2004/02/skos/core#definition
-Definition:
-Section 7. Documentation Properties
-Label:
-definition
-Super-properties:
-skos:note
-skos:editorial Note
-URI:
-http://www.w3.org/2004/02/skos/core#editorial Note
-Definition:
-Section 7. Documentation Properties
-Label:
-editorial note
-Super-properties:
-skos:note
-skos:exact Match
-URI:
-http://www.w3.org/2004/02/skos/core#exact Match
-Definition:
-Section 10. Mapping Properties
-Label:
-has exact match
-Super-properties:
-skos:close Match
-Other characteristics:
-Transitive
-Symmetric
-skos:example
-URI:
-http://www.w3.org/2004/02/skos/core#example
-Definition:
-Section 7. Documentation Properties
-Label:
-example
-Super-properties:
-skos:note
-skos:has Top Concept
-URI:
-http://www.w3.org/2004/02/skos/core#has Top Concept
-Definition:
-Section 4. Concept Schemes
-Label:
-label
-Domain:
-skos:Concept Scheme
-Range:
-skos:Concept
-Inverse of:
-skos:top Concept Of
-skos:hidden Label
-URI:
-http://www.w3.org/2004/02/skos/core#hidden Label
-Definition:
-Section 5. Lexical Labels
-Label:
-hidden label
-Super-properties:
-http://www.w3.org/2000/01/rdf-schema#label
-skos:history Note
-URI:
-http://www.w3.org/2004/02/skos/core#history Note
-Definition:
-Section 7. Documentation Properties
-Label:
-history note
-Super-properties:
-skos:note
-skos:in Scheme
-URI:
-http://www.w3.org/2004/02/skos/core#in Scheme
-Definition:
-Section 4. Concept Schemes
-Label:
-is in scheme
-Range:
-skos:Concept Scheme
-skos:mapping Relation
-URI:
-http://www.w3.org/2004/02/skos/core#mapping Relation
-Definition:
-Section 10. Mapping Properties
-Label:
-is in mapping relation with
-Super-properties:
-skos:semantic Relation
-skos:member
-URI:
-http://www.w3.org/2004/02/skos/core#member
-Definition:
-Section 9. Concept Collections
-Label:
-has member
-Domain:
-skos:Collection
-Range:
-union of skos:Concept and skos:Collection
-skos:member List
-URI:
-http://www.w3.org/2004/02/skos/core#member List
-Definition:
-Section 9. Concept Collections
-Label:
-has member list
-Domain:
-skos:Ordered Collection
-Range:
-http://www.w3.org/1999/02/22-rdf-syntax-ns#List
-Other characteristics:
-Functional
-skos:narrow Match
-URI:
-http://www.w3.org/2004/02/skos/core#narrow Match
-Definition:
-Section 10. Mapping Properties
-Label:
-has narrower match
-Super-properties:
-skos:mapping Relation
-skos:narrower
-Inverse of:
-skos:broad Match
-skos:narrower
-URI:
-http://www.w3.org/2004/02/skos/core#narrower
-Definition:
-Section 8. Semantic Relations
-Label:
-has narrower
-Super-properties:
-skos:narrower Transitive
-Inverse of:
-skos:broader
-skos:narrower Transitive
-URI:
-http://www.w3.org/2004/02/skos/core#narrower Transitive
-Definition:
-Section 8. Semantic Relations
-Label:
-has narrower transitive
-Super-properties:
-skos:semantic Relation
-Inverse of:
-skos:broader Transitive
-Other characteristics:
-Transitive
-skos:notation
-URI:
-http://www.w3.org/2004/02/skos/core#notation
-Definition:
-Section 6. Notations
-Label:
-notation
-skos:note
-URI:
-http://www.w3.org/2004/02/skos/core#note
-Definition:
-Section 7. Documentation Properties
-Label:
-note
-skos:pref Label
-URI:
-http://www.w3.org/2004/02/skos/core#pref Label
-Definition:
-Section 5. Lexical Labels
-Label:
-preferred label
-Super-properties:
-http://www.w3.org/2000/01/rdf-schema#label
-skos:related
-URI:
-http://www.w3.org/2004/02/skos/core#related
-Definition:
-Section 8. Semantic Relations
-Label:
-has related
-Super-properties:
-skos:semantic Relation
-Other characteristics:
-Symmetric
-skos:related Match
-URI:
-http://www.w3.org/2004/02/skos/core#related Match
-Definition:
-Section 10. Mapping Properties
-Label:
-has related match
-Super-properties:
-skos:mapping Relation
-skos:related
-Other characteristics:
-Symmetric
-skos:scope Note
-URI:
-http://www.w3.org/2004/02/skos/core#scope Note
-Definition:
-Section 7. Documentation Properties
-Label:
-scope note
-Super-properties:
-skos:note
-skos:semantic Relation
-URI:
-http://www.w3.org/2004/02/skos/core#semantic Relation
-Definition:
-Section 8. Semantic Relations
-Label:
-is in semantic relation with
-Domain:
-skos:Concept
-Range:
-skos:Concept
-skos:top Concept Of
-URI:
-http://www.w3.org/2004/02/skos/core#top Concept Of
-Definition:
-Section 4. Concept Schemes
-Label:
-is top concept in scheme
-Super-properties:
-skos:in Scheme
-Inverse of:
-skos:has Top Concept
-References
-[SKOS-REFERENCE]
-SKOS
-"Reference, Alistair Miles, Sean Bechhofer, Editors. Latest version available"
-at http://www.w3.org/TR/skos-reference.
-[SKOS-RDF]
-SKOS Namespace - RDF/XML Variant. Latest version available at http://www.w3.org/TR/skos-reference/skos.rdf
-[SKOS-PRIMER]
-SKOS
-"Primer, Antoine Isaac, Ed Summers, Editors. Latest version available at"
-http://www.w3.org/TR/skos-primer.
-[RDF-RECIPES]
-Best Practice
-"Recipes for Publishing RDF Vocabularies , Diego Berrueta,"
-"Jon Phipps, Editors, W3C Working Group Note, 28 August 2008. Latest version"
-available at http://www.w3.org/TR/swbp-vocab-pub.
-[OWL-REFERENCE]
-OWL Web Ontology
-"Language Semantics and Abstract Syntax , Mike Dean, Guus"
-"Schreiber, Editors, W3C Working Draft, 10 February 2004. W3C"
-Recommendation available at http://www.w3.org/TR/owl-ref.
-[OWL-SEMANTICS]
-OWL Web Ontology
-"Language Semantics and Abstract Syntax , Peter F."
-"Patel-Schneider, Patrick Hayes, Ian Horrocks, Editors, W3C Working"
-"Draft, 10 February 2004. W3C Recommendation available at"
-http://www.w3.org/TR/owl-semantics.
--->
-Acknowledgements
-This document is the result of extensive discussions within the
-W3C's Semantic Web
-Deployment Working Group. The document drew on the experiences of
-earlier groups and projects including SWAD-Europe and W3C's Semantic Web Best
-Practices and Deployment Working Group. Members of the W3C's public-esw-thes
-also made valuable contributions.
-$Revision: 1.2 $ of $Date: 2011/08/06 11:16:36 $
-""
-""
-Zakład Techniki Sterowania - Instytut Automatyki
+Zakład Teorii Sterowania - Instytut Automatyki
 - Politechnika Łódzka
-&nbsp;
-Instytut Automatyki
-Zakłady: &nbsp;&nbsp;&nbsp;
-Napędu Elektrycznego i Automatyki Przemysłowej |
-Sterowania Robotów |
-Techniki Sterowania |
-Teorii Sterowania
+A+ / A-
+Zakład Teorii Sterowania
+&nbsp;-->
+strona główna
+&nbsp;/&nbsp;
+Uczelnia
+&nbsp;/&nbsp;
+Aktualności
+&nbsp;/&nbsp;
+Nasze sukcesy
 -->
-O Zakładzie
-O nas ...
-Pracownicy
-Godziny konsultacji
-Działalność
-Publikacje
-Projekty badawcze
-Prace dla przemysłu
-Laboratoria
-Systemów Mikroprocesorowych
-Materiały
-Dydaktyka
--->
-Ogłoszenia
-Bieżące
-// -->
-Zakład Techniki Sterowania
 Kierownik Zakładu
-dr inż. Piotr Chudzik
-email: pchudzik&nbsp; _na_ &nbsp;p.lodz.pl
-tel. (+48) 42-631-25-45
-Zakład Techniki Sterowania jest jednym z czterech zakładów Instytutu Automatyki Politechniki Łódzkiej. W swojej pracy dydaktycznej i badawczej zespół pracowników zakładu od
-wielu lat zajmuje się analogowymi i cyfrowymi elementami i układami
-sterowania.
-Główne kierunki badań Zakładu Techniki Sterowania związane są z następującą tematyką:
-"projektowanie systemów mikroprocesorowych i układów elektronicznych dla zastosowań przemysłowych,"
-"wspomagane komputerowo modelowanie procesów przemysłowych,"
-rozwijanie algorytmów sterowania dla układów
-"działających w oparciu o sterowniki programowalne PLC,"
-"projektowanie układów automatyki z wykorzystaniem pakietów programowych: Matlab - Simulink, PSIM, Pspice - Or CAD, Scilab, Auto CAD,"
-"projektowanie i programowanie systemów wbudowanych opartych na rdzeniach jednostek STM, TMS, ARM, PIC i innych."
-"W ostatnich latach tematyka naukowo-badawcza Zakładu Techniki Sterowania koncentruje się wokół zagadnień, związanych z zastosowaniem teorii sterowania w napędach elektrycznych ze sterowaniem mikroprocesorowym"
-przy wykorzystaniu mikroprocesorów sygnałowych oraz w układach automatyki
-przemysłowej z wykorzystaniem sterowników programowalnych.
-Zakład Techniki Sterowania może pochwalić się kilkoma ciekawymi rozwiązaniami autorskimi
-wykonanymi przy współpracy z przemysłem. Należą do nich:
-"mikroprocesorowe przekaźniki zabezpieczeniowo-sterownicze dla rozdzielni średnich napięć,"
-"mikroprocesorowy miernik energii cieplnej,"
-"algorytm i oprogramowanie sterujące hamowaniem docelowym pociągu Metropolis dla Metra Warszawskiego,"
-metoda diagnostyki sygnałów wejściowych systemu wizualizacji i sterowania nadrzędnego
-"układ wektorowego sterowania z procesorem sygnałowym dla trakcyjnych (tramwajowych i trolejbusowych) falownikowych napędów z silnikami indukcyjnymi,"
-"układ regulacyjny w systemie ciepłowniczym w Łodzi, pozwalający na ciągłą współpracę elektrociepłowni EC-2 i EC-3 na wspólną"
-magistralę ciepłowniczą.
-Strona zaktualizowana: 14.10.2021
+"dr hab. inż. Jacek Kabziński, prof. PŁ"
+jacek.kabzinski&nbsp;@&nbsp;p.lodz.pl
+tel. (+48) 42 631 2553
+Prace naukowe Zakładu Teorii Sterowania koncentrują się na badaniach podstawowych w dziedzinie nowoczesnych metod sterowania i ich zastosowaniu do sterowania układami elektromechanicznymi.
+Obecnie w Zakładzie realizowane są następujące tematy badawcze:
+"projektowanie odpornych układów liniowych metodami syntezy modalnej,"
+"zastosowanie regulatorów typu CRONE w odpornych układach regulacji prędkości silników prądu stałego i silników indukcyjnych,"
+"synteza odpornych układów nieliniowych metodami sterowania optymalnego,"
+"synteza odpornych układów nieliniowych metodami sterowania adaptacyjnego,"
+"zastosowanie metod sztucznej inteligencji w sterowaniu,"
+"układy hybrydowe sztucznej inteligencji - sterowanie neuro-rozmyte i neuro-adaptacyjne,"
+"zastosowanie algorytmów genetycznych do optymalizacji układów regulacji,"
+"teoria obserwatorów,"
+"nieliniowe, adaptacyjne układy napędowe z bezszczotkowymi silnikami z magnesami trwałymi."
+Data wpisu:
+2020.09.27
+strona główna
+newsletter
+Newsletter
+mapa strony
+kontakt
+"Zakład Teorii Sterowania, Instytut Automatyki Politechniki Łódzkiej"
+ul. B. Stefanowskiego 18
+90-537 Łódź
+NIP: 727 002 18 95
+-->
+"Tel. +48 42 631 25 60, +48 42 631 25 47"
+Fax +48 42 631 25 51
+&nbsp;
+"Strona pracownika - dr inż. Marcin Jastrzębski Tematy prac dyplomowych Rozkład zajęć w semestrze zimowym 2017/2018Pracownicy ZTS Strona pracownika - dr hab. inż. Jacek Kabziński, profesor Politechniki Łódzkiej Strona pracownika - dr inż. Grzegorz Wasiak Strona pracownika - dr inż. Marcin Jastrzębski Strona pracownika - dr inż. Grzegorz Wasiak Strona pracownika - dr hab. inż. Jacek Kabziński, profesor Politechniki Łódzkiej Strona pracownika - dr hab. inż. Jacek Kabziński, profesor Politechniki Łódzkiej Konferencja Rektorów Polskich Uczelni Technicznych"
+Konferencja Rektorów Akademickich Szkół Polskich
+Ministerstwo Nauki i Szkolnictwa Wyższego
+Polska Akademia Nauk
+Fundacja na rzecz Nauki Polskiej
+Narodowe Centrum Badań i Rozwoju
+Narodowe Centrum Nauki
+Europejskie Konsorcjum Innowacyjnych &nbsp;&nbsp;Uniwersytetów (ECIU) -->
+Politechnika Łódzka
+Instytut Automatyki
+Polski oddział IEEE Control Systems Society
+-->
+Polityka prywatności
+On-line: 118
+Dla zamieszczających
+koniec licznik -->
+""
+""
+My Hand
+""
+""
+-->
+&nbsp;
+HOME
+/
+O PROJEKCIE
+/
+PUBLIKACJE
+/
+ORGANIZACJA
+/
+KONTAKT
+/
+EN
+O ROBOTERAPIIQUESTIONS / SPONSORS-->
+"Projekt roboterapia powstał we współpracy trzech instytucji: Łódzkiego ASP, Politechniki Łódzkiej i fundacji Navicula."
+"Jego celem jest skonstruowanie urządzeń i programów do wsparcia terapeutów dzieci głęboko upośledzonych, szczególnie z autyzmem."
+W projekcie skupiamy się na pomocy terapeucie czy rodzicu nie tylko przy samej terapii ale także w odciążeniu go i uczynieniu jego pracy przyjemniejszą. Opieka nad dziećmi głęboko upośledzonymi wiąże się bowiem z dużym ryzykiem wypalenia.
+"Na stronie można zapoznać się z opisem projektu jak i jego poszczególnych części, umieściliśmy także listę wszystkich publikacji związanych z projektem."
+Najnowsze informacje
+Tweets by @roboterapia
+Copyright 2018
+""
+Database connection error (1): The My SQL adapter 'mysql' is not available.
+""
+Instytut Automatyki Politechniki Łódzkiej
+Menu
+-->
+strona główna
+|
+kontakt
+-->
+-->
+-->
+O nas
+Władze instytutu
+Struktura
+Zakład Napędu Elektrycznego i Automatyki Przemysłowej
+Zakład Sterowania Robotów
+Zakład Techniki Sterowania
+Zakład Teorii Sterowania
+Kontakt
+Badania
+Zaplecze badawcze
+Działalność naukowa
+Dla kandydatów
+Ai SR zaprasza
+Dla studentów
+Przedmioty obieralne
+Automatyka i Sterowanie Robotów
+Elektrotechnika
+Informatyka
+Inżynieria kosmiczna
+Programy zajęć
+Tematy prac magisterskich
+Tematy prac inżynierskich
+Informacje dla dyplomantów
+Expo 21XX
+Podział roku akademickiego
+Konferencje
+KKA 2020
+Sene 2022
+Kursy i szkolenia
+Altium Designer
+Sterowniki PLC
+Seminarium: Zastosowanie sterowników PLC w przemyśle
+SMART
+Stomia-Alert
+Informacje o projekcie
+Serwis Stomia-Edit
+Stomia-Alert-Final
+Informacje o projekcie
+Ogłoszenia
+Menu
+Submenu
+A+ / A-
+Instytut Automatyki
+&nbsp;-->
+strona główna
+&nbsp;/&nbsp;
+Uczelnia
+&nbsp;/&nbsp;
+Aktualności
+&nbsp;/&nbsp;
+Nasze sukcesy
+-->
+"Instytut Automatyki jest jednym z największych instytutów Wydziału Elektrotechniki, Elektroniki, Informatyki i Automatyki Politechniki Łódzkiej. Na etacie jest zatrudnionych: pięciu profesorów tytularnych, dwóch doktorów habilitowanych, dziewiętnastu doktorów, trzynastu magistrów inżynierów na etatach naukowo-dydaktycznych i dziewięciu na etatach technicznych. Pracownicy Instytutu są opiekunami naukowymi jedenastu słuchaczy studiów doktoranckich."
+Strukturę Instytutu tworzą cztery zakłady:
+"Zakład Napędu Elektrycznego i Automatyki Przemysłowej,"
+"Zakład Sterowania Robotów,"
+"Zakład Techniki Sterowania,"
+Zakład Teorii Sterowania
+W oparciu o naszą bazę i doświadczenie oferujemy:
+"usługi dydaktyczne – prowadzenie szkoleń pracowników, studia podyplomowe, kursy specjalistyczne,"
+"usługi projektowe,"
+"współpracę przy wdrożeniach nowych rozwiązań technicznych,"
+prace badawcze z wykorzystaniem naszej aparatury.
+"90-537 Łódź, ul. B. Stefanowskiego 18"
+"tel. (+48) 42 631 2560, (+48) 42 631 2547"
+fax. (+48) 42 631 2551
+e-mail:
+w2i21@adm.p.lodz.pl
+www: automatyka.p.lodz.pl
+Data wpisu:
+2022.04.05
+"Imię i nazwisko,&nbsp; -->"
+Instytut Automatyki Politechniki Łódzkiej
+ul. B. Stefanowskiego 18
+90-537 Łódź
+NIP: 727 002 18 95
+-->
+"Tel. (+48) 42 631 2560, (+48) 42 631 2547"
+Fax (+48) 42 631 2551
+&nbsp;
+Projekt Stomia-Alert-FINAL - Postępowania / Ogłoszenia o zamówieniu Tematy prac magisterskich Seminarium poświęcone zastosowaniu sterowników PLC w przemyśle Działalność naukowa Zaplecze badawcze Kontakt Tematy prac inżynierskich Władze instytutu Programy zajęćKonferencja SENE Konferencja Rektorów Polskich Uczelni Technicznych
+Konferencja Rektorów Akademickich Szkół Polskich
+Ministerstwo Nauki i Szkolnictwa Wyższego
+Polska Akademia Nauk
+Fundacja na rzecz Nauki Polskiej
+Narodowe Centrum Badań i Rozwoju
+Narodowe Centrum Nauki
+Europejskie Konsorcjum Innowacyjnych &nbsp;&nbsp;Uniwersytetów (ECIU) -->
+Politechnika Łódzka
+Instytut Automatyki
+Polski oddział IEEE Control Systems Society
+-->
+Polityka prywatności
+On-line: 118
+Dla zamieszczających
+koniec licznik -->
+""
+""
+SIOC Types Ontology Module Namespace
+Extends the SIOC Core Ontology (Semantically-Interlinked Online Communities) by defining subclasses and subproperties of SIOC terms.
+Address Book
+Describes a collection of personal or organisational addresses.
+Annotation Set
+"Describes a set of annotations, for example, those created by a particular user or related to a particular topic."
+Audio Channel
+"Describes a channel for distributing audio or sound files, for example, a podcast."
+Bookmark Folder
+Describes a shared collection of bookmarks.
+Briefcase
+Describes a briefcase or file service.
+Event Calendar
+Describes a calendar of events.
+Image Gallery
+"Describes an image gallery, for example, a photo album."
+Project Directory
+Describes a project directory.
+Resume Bank
+Describes a collection of resumes.
+Review Area
+Describes an area where reviews are posted.
+Subscription List
+Describes a shared set of feed subscriptions.
+Survey Collection
+"Describes an area where survey data can be collected, e.g. from polls."
+Video Channel
+"Describes a channel for distributing videos (moving image) files, for example, a video podcast."
+Wiki
+Describes a wiki space.
+Favourite Things
+Describes a list or a collection of one's favourite things.
+Offer List
+Describes a list of the items someone has available to offer.
+Playlist
+Describes a list of media items that have been played or can be played.
+Reading List
+Describes a list of books or other materials that have been read or are suggested for reading.
+Wish List
+Describes a list of the items someone wishes to get.
+Argumentative Discussion
+Describes a discussion area where logical arguments can take place.
+Chat Channel
+"Describes a channel for chat or instant messages, for example, via IRC or IM."
+Mailing List
+Describes an electronic mailing list.
+Message Board
+"Describes a message board, also known as an online bulletin board or discussion forum."
+Microblog
+"Describes a microblog, i.e. a blog consisting of short text messages."
+Weblog
+"Describes a weblog (blog), i.e. an online journal."
+Poll
+Describes a posted item that contains a poll or survey content.
+Blog Post
+Describes a post that is specifically made on a weblog.
+Board Post
+Describes a post that is specifically made on a message board.
+Comment
+Comment is a subtype of sioc:Post and allows one to explicitly indicate that this SIOC post is a comment.
+Note that comments have a narrower scope than sioc:Post and may not apply to all types of community site.
+Instant Message
+"Describes an instant message, e.g. sent via Jabber."
+Mail Message
+"Describes an electronic mail message, e.g. a post sent to a mailing list."
+Microblog Post
+Describes a post that is specifically made on a microblog.
+Wiki Article
+Describes a wiki article.
+Answer
+A Post that provides an answer in reply to a Question.
+Best Answer
+"A Post that is the best answer to a Question, as chosen by the User Account who asked the Question or as voted by a Community of User Accounts."
+Question
+A Post that asks a Question.
+Category
+Category is used on the object of sioc:topic to indicate that this resource is a category on a site.
+Tag
+Tag is used on the object of sioc:topic to indicate that this resource is a tag on a site.
 ""
 @prefix rdf:
 .
@@ -744,205 +483,47 @@ rdfs:sub Class Of rdfs:Class .
 rdfs:see Also
 .
 ""
-Database connection error (1): The My SQL adapter 'mysql' is not available.
 ""
-My w mediach społecznościowych
-Nasze usługi
-transmisje internetowe
-wideokonferencje HD telemosty
-produkcja filmowo-telewizyjna
-webmastering serwisy www -->
-spoty promocyjne
-multimedialne know-how
-Kontakt
-Centrum Multimedialne Politechniki Łódzkiej
-"•&nbsp;ul.&nbsp;Żeromskiego&nbsp;116, budynek A33, wejście A, I Ip."
-•&nbsp;cm@adm.p.lodz.pl
-•&nbsp;tel.&nbsp;42 638 37 20
-""
-""
-No Such Key The specified key does not exist.ns CSDABQ8S2HA0R9PP Yhml Lpbi9Mlw ZI Jpy Q Xx YB Zth OAMN0Cqeyzq N/4dr R7wg Tbq9YIF Xk P2b/z Vt Au8wzh Gei DY96Q=
-""
-S Ka Ne R
-Menu
-O nas
-Projekty
-Dołącz do nas
-Zarząd
-Regulamin
-Kontakt
-Studenckie Koło Naukowe Robotyki
-S Ka Ne R
-Dowiedz się więcej
-O nas
-"Studenckie Koło Naukowe Robotyki Studenckie Koło Naukowe Robotyki S Ka Ne R działa przy Zakładzie Sterowania Robotów Instytutu Automatyki na Wydziale Elektrotechniki, Elektroniki, Informatyki i Automatyki (WEEIA) PŁ od 2001 roku."
-"Pomysłodawcą oraz opiekunem koła jest dr hab. inż. Grzegorz Granosik, prof. PŁ. W ramach prac Koła studenci mogą realizować własne pomysły, a także rozwijać już istniejące projekty. Członkami S Ka Ne Ra są studenci praktycznie"
-"wszystkich lat, wystarczy zapał do pracy i pomysły. S Ka Ne R działa przy Zakładzie Sterowania Robotów Instytutu Automatyki na Wydziale Elektrotechniki, Elektroniki, Informatyki i Automatyki (WEEIA) PŁ od 2001 roku."
-"Pomysłodawcą oraz opiekunem koła jest dr hab. inż. Grzegorz Granosik, prof. PŁ. W ramach prac Koła studenci mogą realizować własne pomysły, a także rozwijać już istniejące projekty. Członkami S Ka Ne Ra są studenci praktycznie"
-"wszystkich lat, wystarczy zapał do pracy i pomysły."
-Robotyka
-"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto"
-"quo inventore harum ex magni, dicta impedit. -->"
-Programowanie
-"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto"
-"quo inventore harum ex magni, dicta impedit. -->"
-Elektronika
-"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto"
-"quo inventore harum ex magni, dicta impedit. -->"
-Projekty
-Projekty rozwijane w naszym kole
-Raptors
-raptors.p.lodz.pl
-Drony
-Sumo Challenge
-sumochallenge.eu
-TTN-TUL
-Robotyka turniejowa
-Robots for Humans
-Dołącz do nas!
-Kilka prostych kroków aby zostać S Ka Ne Rowiczem.
-Zapoznaj się z regulaminem
-Regulamin dostępny tutaj
-Zapoznaj się z działalnością koła
-Zastanów się jak chciałbyś tworzyć społeczność koła. Co chciałbyś w nim robić. Do jakich projektów należeć i w jakich warsztatach uczestniczyć.
-aktualne warsztaty
-Spotkaj się z nami
-"Oprowadzimy Cię po kole, porozmawiamy o twoich planach, oraz pomożemy Ci w dołączeniu do projektów"
-Twórz
-społeczność
-koła!
-Zarząd
-"dr hab. inż. Grzegorz Granosik, prof. PŁ"
-Opiekun koła
-Filip Szewczyk
-Prezes koła
-Magdalena Ścibiorek
-wiceprezes ds. Informacyjnych
-Natalia Grzelak
-wiceprezes ds. zasobów ludzkich
-Agata Kalenik
-wiceprezes ds. Public Relations
-Damian Szewczyk
-wiceprezes ds. projektów naukowych
-Projekt współfinansowany przez Fundusze Europejskie Program Wiedza Edukacja Rozwój [POWER].
-"Projekt „Roboty lądowe i latające Koła S Ka Ne R najlepsze w konkursach indywidualnych i we wspólnym działaniu” jest finansowany z programu Najlepsi z Najlepszych! Numer umowy: M Ni SW/2016/DIR/199/NN, w okresie 1.03.2016 – 31.01.2017."
-"Projekt „Autonomia na lądzie i w powietrzu z robotami Koła S Ka Ne R” jest finansowany z programu Najlepsi z Najlepszych! 2.0. Numer umowy: M Ni SW/2017/78/DIR/NN2, w okresie 24.04.2017 – 31.12.2017."
-"Projekt „Zadania kosmiczne i bardziej przy-Ziemne realizowane przez roboty koła S Ka Ne R” jest finansowany z programu Najlepsi z Najlepszych! 3.0. Numer umowy: M Ni SW/2019/11/DIR/NN3, w okresie 10.04.2018 do 08.04.2019."
-Projekt „System współpracy robotów heterogenicznych o wysokim stopniu autonomii” jest finansowany z programu Najlepsi z Najlepszych! 4.0. Numer umowy: M Ni SW/2020/150/DIR/NN4.
-"Projekt ""Wykorzystanie systemu autonomicznych robotów heterogenicznych w reagowaniu kryzysowym"" jest finansowany z programu Najlepsi z Najlepszych! 4.0. Numer umowy: M Ei N/2021/223/DIR/NN4."
-Bilety lotnicze na zawody robotyczne dla grupy Raptors zostały zakupione przez firmę Why Not TRAVEL Sp. z o.o. zgodnie z obowiązującą na Politechnice Łódzkiej umową nr CWM.SA.384.15.2020
-Skontaktuj się znami
-"Instytut Automatyki PŁ, ul. Bohdana Stefanowskiego 18, 90-537 Łódź"
-Wyślij
-wiadomość
-Copyright &copy; Paweł Rogowski 2019
+﻿
+Zakład Napędu Elektrycznego i Automatyki Przemysłowej - Instytut Automatyki
+- Politechnika Łódzka
+&nbsp;
+﻿
 Instytut Automatyki
-Polityka prywatności
-Raptors
-"Drużyna Raptors to studenci czterech wydziałów Politechniki Łódzkiej, których połączyła idea zaprojektowania i budowy łazika marsjańskiego na międzynarodowe zawody specjalistycznych robotów mobilnych."
-1 miejsce European Rover Challenge 2016
-2 miejsce European Rover Challenge 2018
-4 miejsce University Rover Challenge 2018
-5 miejsce University Rover Challenge 2017
-5 miejsce University Rover Challenge 2016
-2 miejsce World Robot Summit 2018
-2 miejsce ERL Emergency Robots 2017
-2 miejsce ERL Emergency 2019
-6 miejsce Mohamed Bin Zayed International Robotics Challenge 2017
-Łódzkie Eureka 2016 Wyróżnienie za wybitne osiągnięcia techniczne
-Lorem ipsum dolor sit amet consectetur. -->
-Strona projektu
-Drony
-Opis i osiągnięcia wkrótce
+Zakłady: &nbsp;&nbsp;&nbsp;
+Napędu Elektrycznego i Automatyki Przemysłowej |
+Sterowania Robotów |
+Techniki Sterowania |
+Teorii Sterowania
 -->
-Sumo Challenge
-"Ogólnopolskie Zawody Robotów Sumo Challenge odbywają się od roku 2008. Przez kilka lat istnienia imprezy mieliśmy okazję podziwiać w Łodzi zmagania kilkuset robotów z całej Polski, a także z zagranicy. Nasza impreza ma"
-"niepowtarzalny charakter, ze względu na przyjazną atmosferę, a także ze względu na ogromną liczbę publiczności, z której każdy, nawet zupełny laik w dziedzinie robotyki poza obserwowaniem zmagań najlepszych robotów,"
-ma okazję samemu je programować i budować.
-Strona projektu
-TTN-TUL
-"TTN-TUL jest inicjatywą studentów Politechniki Łódzkiej (TUL - Technical University of Lodz) mającą na celu popularyzację Internet of Things (Io T), technologii Lo Ra oraz infrastruktury The Things Network (TTN). W ramach naszej"
-"działalności powstaje wiele projektów składowych skupiających się na poszczególnych częściach rozwiązań Io T, począwszy od projektowania modułów elektronicznych, poprzez rozwijanie i wdrażanie aplikacji webowych do przetwarzania"
-i prezentacji danych aż po rozwój łódzkiej infrastruktury Io T.
-Strona projektu
-Robotyka turniejowa
-"Warsztaty wprowadzające do świata robotyki amatorskiej. Podczas warsztatów postaramy się omówić wszystkie nurtujące was tematy. Efektem naszych warsztatów mają być działające roboty, które wystartują na zawodach Sumo Challenge"
-2019.
-Aby uczestniczyć w warsztatach nie trzeba należeć do koła albo chodzić na konkretny kierunek.
-Zapraszamy wszystkich chętnych!|
-Planowany harmonogram:
-Spotkanie organizacyjne
-Wstęp do elektroniki
-- komponenty wykorzystywane w robotach
-- pozyskiwanie wiedzy na temat elektronicznych
-Oprogramowanie
-- Arduino IDE
-- Visual Studio Code i Platform I/O
-- Autodesk Eagle
-- Autodesk Fusion 360
-- Autodesk Inventor
-Zajęcia odbywają się w czwartki od godziny 14:15.
-Robots for Humans
-"R4H – Robots for Humans – niedawno powstała sekcja koła naukowego Politechniki Łódzkiej S Ka Ne R, która ma już na koncie niemałe sukcesy. Sekcja pozwala rozwijać studentom umiejętności, brać udział w różnych warsztatach,"
-"ale przede wszystkim pracować nad projektami, które kiedyś mogą pomagać ludziom. Jednym z takich projektów są badania nad urządzeniem do rehabilitacji dłoni i testowania jej sprawności u pacjentów po udarze mózgu. Inicjatywa"
-"powstała dzięki współpracy z grupą naukowców z Nagoya Institute Of Technology w Japonii. Ale to nie wszystko! Prowadzone są również badania w dziedzinie zbierania pomiarów mechanomiograficznych, które pozwolą dobrze"
-rozwinąć umiejętności z dziedziny przetwarzania sygnałów.
-Regulamin
-Postanowienia og&oacute;lne
-Koło Naukowe jest podstawową formą organizacyjną Studenckiego Ruchu Naukowego.
-Koło Naukowe jest formą aktywności naukowej i zawodowej student&oacute;w.
-"Podstawowe cele pracy Koła Naukowego to podnoszenie wiedzy student&oacute;w, pogłębianie ich zainteresowań, nauka rozwiązywania problem&oacute;w, kształtowanie postaw tw&oacute;rczych, przygotowanie do samodzielnej"
-pracy i umiejętność zorganizowania wsp&oacute;łpracy w zespole.
-Koło Naukowe nie posiada osobowości prawnej.
-Podstawy prawne działania Studenckiego Koła Naukowego Robotyki S Ka Ne R są następujące:
-ustawa o Szkolnictwie Wyższym (w aktualnej jednolitej wersji)
-"rozporządzenie Ministra Nauki i Szkolnictwa Wyższego w sprawie tworzenia, trybu rejestrowania, prowadzenia rejestru oraz zasad i trybu likwidacji k&oacute;ł naukowych, artystycznych i sportowych w Szkołach"
-Wyższych
-statut Politechniki Ł&oacute;dzkiej i Regulamin Studi&oacute;w na PŁ
-niniejszy regulamin
-Zmiany do niniejszego regulaminu mogą być wnoszone po przegłosowaniu ich na Zebraniu Koła zwykłą większością głos&oacute;w i zatwierdzeniu ich (lub braku wyrażenia sprzeciwu) przez odpowiedni organ Uczelni upoważniony
-do rejestracji Koła Naukowego.
-Nazwa i siedziba Koła Naukowego
-"Nazwa Koła Naukowego: ""Studenckie Koło Naukowe Robotyki S Ka Ne R"""
-"Siedzibą Koła Naukowego jest Zakład Sterowania Robot&oacute;w Instytutu Automatyki PŁ - ul. Stefanowskiego 18/22, 90-924 Ł&oacute;dź."
-Zasady członkostwa w Kole Naukowym
-Członkami Studenckiego Koła Naukowego Robotyki S Ka Ner mogą być studenci Politechniki Ł&oacute;dzkiej.
-Członkostwo Koła rozpoczyna się dla studenta gdy jest on jednym z członk&oacute;w-założycieli Koła Naukowego lub gdy Zarząd Koła podjął uchwałę o przyjęciu go do Koła Naukowego.
-"Członkostwo Koła kończy się dla studenta gdy jest on skreślony z listy student&oacute;w, wystąpi osobiście lub gdy Zarząd Koła podjął odpowiednią uchwałę."
-Członkostwo w Kole Naukowym dla os&oacute;b niebędących
-studentami Politechniki Ł&oacute;dzkiej
-"Byli członkowie Studenckiego Koła Naukowego Robotyki S Ka Ne R, kt&oacute;rzy są już absolwentami PŁ, jednakże dalej są zaangażowani w działalność Studenckiego Koła Naukowego Robotyki S Ka Ne R uznani są za Radę Starc&oacute;w"
-(Honorowi Członkowie Studenckiego Koła Naukowego Robotyki S Ka Ne R).
-"Osoby niebędące studentami Politechniki Ł&oacute;dzkiej, zaangażowane w działalność Studenckiego Koła Naukowego Robotyki S Ka Ne R, mogą otrzymać status Sympatyka."
-"Status Sympatyka pozwala udzielać się na forum, posiadać aktywne konto użytkownika na oficjalnej stronie WWW Studenckiego Koła Naukowego Robotyki S Ka Ne R."
-Osoby będące Honorowymi Członkami bądź Sympatykami Koła Naukowego mogą korzystać z zasob&oacute;w Koła Naukowego pod nadzorem Zarządu.
-Rada Starc&oacute;w oraz Sympatycy Studenckiego Koła Naukowego Robotyki S Ka Ne R nie mogą brać udziału w głosowaniach podczas spotkań Koła Naukowego.
-Władze Koła Naukowego
-Najwyższą władzą Studenckiego Koła Naukowego Robotyki S Ka Ne R jest Walne Zebranie jego członk&oacute;w.
-Uchwały podczas Walnego Zebrania zapadają zwykłą większością głos&oacute;w.
-Pracą Koła Naukowego kieruje Zarząd Koła w porozumieniu z opiekunem Koła.
-Zarząd Koła Naukowego Robotyki może liczyć od 3 do 6 os&oacute;b.
-Podstawowe zakresy obowiązk&oacute;w Zarządu są następujące:
-"Prezes Koła Naukowego jest odpowiedzialny za kierowanie pracą Koła Naukowego, reprezentację Koła Naukowego na terenie Uczelni i zewnątrz, sprawy personalne, og&oacute;lny nadz&oacute;r nad gospodarką,"
-wszelkie rozliczenia finansowe.
-"Wiceprezes lub Wiceprezesi: organizacja prac badawczych, opieka nad powierzoną aparaturą, gospodarka narzędziami i materiałami oraz programami i nośnikami informacji oraz opieka nad tablicą ogłoszeń"
-"Koła, tworzenie i aktualizacja stron WWW Koła, dysponowanie kontem poczty elektronicznej."
-"Sekretarz Koła Naukowego Robotyki: prowadzenie aktualnej dokumentacji Koła, listy członk&oacute;w Koła i temat&oacute;w prowadzonych prac, redagowanie i przechowywanie sprawozdań oraz plan&oacute;w prac,"
-przyjmowanie i wysyłanie korespondencji (w tym dostęp do konta poczty elektronicznej).
-Wybory władz Koła Naukowego
-Kadencja Zarządu Studenckiego Koła Naukowego Robotyki S Ka Ne R trwa 1 rok. Na koniec kadencji Zarząd Koła składa sprawozdanie.
-Wyb&oacute;r Zarządu Koła następuje na Walnym Zebraniu Koła Naukowego zwykłą większością głos&oacute;w.
-W razie uzasadnionej potrzeby skład Zarządu może być uzupełniany podczas kadencji w spos&oacute;b określony w p. 5.2
-W przypadku stwierdzenia poważnych nieprawidłowości w pracy Zarządu Koła Naukowego opiekunowie Koła mogą zwołać Walne Zebranie Koła w celu powołania nowego Zarządu Koła.
-Rozwiązanie Koła Naukowego
-Studenckie Koło Naukowe Robotyki S Ka Ne R może zostać rozwiązane na podstawie uchwały Walnego Zebrania członk&oacute;w Koła
-Koło Naukowe może ulec likwidacji na podstawie decyzji Władz uczelni w wyniku stwierdzenia działalności sprzecznej z prawem lub niezgodnej z celami Koła Naukowego (jak w p. 1.3)
-Brak działania Koła Naukowego przez okres co najmniej roku upoważnia opiekun&oacute;w do złożenia wniosku o rozwiązanie Koła.
-W przypadku stwierdzenia poważnych nieprawidłowości w pracy Koła Naukowego opiekunowie Koła mogą zwołać Walne Zebranie Koła w celu rozwiązania Koła.
-Postanowienia końcowe
-W sprawach nieobjętych niniejszym regulaminem obowiązują og&oacute;lne przepisy prawa i szczeg&oacute;lne przepisy prawa dla Uczelni Wyższych wymienione w p. 1.5.
-Regulamin niniejszy wchodzi w życie z dniem zarejestrowania Koła.
-Zamknij
+﻿
+O Zakładzie
+O nas ...
+Mapa dojazdu
+Pracownicy
+Godziny przyjęć
+Działalność
+Publikacje
+Projekty badawcze
+Nagrody i wyróżnienia
+Materiały
+Do pobrania
+Ogłoszenia
+Bieżące
+﻿Zakład Napędu Elektrycznego i Automatyki Przemysłowej
+Kierownik Zakładu
+prof. dr hab. inż. Andrzej Bartoszewicz
+andrzej.bartoszewicz&nbsp;@&nbsp;p.lodz.pl
+Zakład Napędu Elektrycznego i Automatyki Przemysłowej jest jednym z czterech zakładów Instytutu Automatyki Politechniki Łódzkiej. W swojej pracy dydaktycznej i badawczej zespół pracowników Zakładu od wielu lat zajmuje się tematyką związaną ze sterowaniem napędów i procesów przemysłowych.
+Obecnie w Zakładzie realizowane są następujące tematy badawcze:
+"sterowanie o zmiennej strukturze z ruchem ślizgowym,"
+"zastosowanie logiki rozmytej i sieci neuronowych do sterowania układami napędowymi,"
+"napędy wielosilnikowe prądu przemiennego,"
+"sterowanie ruchem w sieciach teleinformatycznych,"
+"sterowanie falowników poprzez sieci komputerowe,"
+zastosowanie sterowników mikroprogramowalnych (PLC) do sterowania procesami przemysłowymi i napędami.
+"Zakład realizował kilkanaście projektów badawczych NCN, FNP, KBN i M Ni SW. Wyniki niektórych badań zostały wdrożone w przemyśle. Obecnie trwają prace nad kolejnymi projektami."
+Strona zaktualizowana: 11.09.2019
 ""
 ""
 DCMI: DCMI Metadata Terms
@@ -3011,6 +2592,956 @@ The Dublin Core Metadata Initiative (DCMI) is a project of ASIS&amp;T&mdash;a U.
 "Deployed with Hugo v. 0.98.0 on Sat, 07 May 2022 09:58:04 UTC"
 ""
 ""
+"SKOS Simple Knowledge Organization System Namespace Document - HTML Variant, 18 August 2009 Recommendation Edition"
+SKOS Simple Knowledge Organization System Namespace Document - HTML Variant
+18 August 2009 Recommendation Edition
+This version:
+http://www.w3.org/2009/08/skos-reference/skos.html
+Latest version:
+http://www.w3.org/2004/02/skos/core.html
+Authors:
+"Alistair Miles, STFC"
+Rutherford Appleton Laboratory / University of Oxford
+"Sean Bechhofer,"
+University of Manchester
+Abstract
+Abstract??
+-->
+Status of this Document
+This document describes the schema available from the SKOS namespace.
+Introduction
+The Simple Knowledge Organization System (SKOS) is a common data model for
+sharing and linking knowledge organization systems via the Semantic Web.This
+document provides a brief description of the SKOS Vocabulary.
+"For detailed information about the SKOS Recommendation, please consult the"
+SKOS Reference [SKOS-REFERENCE] or
+the SKOS Primer [SKOS-PRIMER].
+SKOS Schema Overview
+The following table gives a non-normative overview of the SKOS
+vocabulary; it replicates a table found in the (normative) SKOS
+Reference [SKOS-REFERENCE].
+"This document can be referenced directly, by its own URI http://www.w3.org/2004/02/skos/core.html, or"
+"indirectly, by content negotiation from the SKOS namespace URI http://www.w3.org/2004/02/skos/core#"
+as described in Appendix C of SKOS Reference [SKOS-REFERENCE].
+See also the SKOS Namespace Document - RDF/XML Variant [SKOS-RDF].
+Classes
+skos:Collection
+URI:
+http://www.w3.org/2004/02/skos/core#Collection
+Definition:
+Section 9. Concept Collections
+Label:
+Collection
+Disjoint classes:
+skos:Concept
+skos:Concept Scheme
+skos:Concept
+URI:
+http://www.w3.org/2004/02/skos/core#Concept
+Definition:
+Section 3. The skos:Concept Class
+Label:
+Concept
+Disjoint classes:
+skos:Collection
+skos:Concept Scheme
+skos:Concept Scheme
+URI:
+http://www.w3.org/2004/02/skos/core#Concept Scheme
+Definition:
+Section 4. Concept Schemes
+Label:
+Concept Scheme
+Disjoint classes:
+skos:Collection
+skos:Concept
+skos:Ordered Collection
+URI:
+http://www.w3.org/2004/02/skos/core#Ordered Collection
+Definition:
+Section 9. Concept Collections
+Label:
+Ordered Collection
+Super-classes:
+skos:Collection
+Properties
+skos:alt Label
+URI:
+http://www.w3.org/2004/02/skos/core#alt Label
+Definition:
+Section 5. Lexical Labels
+Label:
+alternative label
+Super-properties:
+http://www.w3.org/2000/01/rdf-schema#label
+skos:broad Match
+URI:
+http://www.w3.org/2004/02/skos/core#broad Match
+Definition:
+Section 10. Mapping Properties
+Label:
+has broader match
+Super-properties:
+skos:broader
+skos:mapping Relation
+Inverse of:
+skos:narrow Match
+skos:broader
+URI:
+http://www.w3.org/2004/02/skos/core#broader
+Definition:
+Section 8. Semantic Relations
+Label:
+has broader
+Super-properties:
+skos:broader Transitive
+Inverse of:
+skos:narrower
+skos:broader Transitive
+URI:
+http://www.w3.org/2004/02/skos/core#broader Transitive
+Definition:
+Section 8. Semantic Relations
+Label:
+has broader transitive
+Super-properties:
+skos:semantic Relation
+Inverse of:
+skos:narrower Transitive
+Other characteristics:
+Transitive
+skos:change Note
+URI:
+http://www.w3.org/2004/02/skos/core#change Note
+Definition:
+Section 7. Documentation Properties
+Label:
+change note
+Super-properties:
+skos:note
+skos:close Match
+URI:
+http://www.w3.org/2004/02/skos/core#close Match
+Definition:
+Section 10. Mapping Properties
+Label:
+has close match
+Super-properties:
+skos:mapping Relation
+Other characteristics:
+Symmetric
+skos:definition
+URI:
+http://www.w3.org/2004/02/skos/core#definition
+Definition:
+Section 7. Documentation Properties
+Label:
+definition
+Super-properties:
+skos:note
+skos:editorial Note
+URI:
+http://www.w3.org/2004/02/skos/core#editorial Note
+Definition:
+Section 7. Documentation Properties
+Label:
+editorial note
+Super-properties:
+skos:note
+skos:exact Match
+URI:
+http://www.w3.org/2004/02/skos/core#exact Match
+Definition:
+Section 10. Mapping Properties
+Label:
+has exact match
+Super-properties:
+skos:close Match
+Other characteristics:
+Transitive
+Symmetric
+skos:example
+URI:
+http://www.w3.org/2004/02/skos/core#example
+Definition:
+Section 7. Documentation Properties
+Label:
+example
+Super-properties:
+skos:note
+skos:has Top Concept
+URI:
+http://www.w3.org/2004/02/skos/core#has Top Concept
+Definition:
+Section 4. Concept Schemes
+Label:
+label
+Domain:
+skos:Concept Scheme
+Range:
+skos:Concept
+Inverse of:
+skos:top Concept Of
+skos:hidden Label
+URI:
+http://www.w3.org/2004/02/skos/core#hidden Label
+Definition:
+Section 5. Lexical Labels
+Label:
+hidden label
+Super-properties:
+http://www.w3.org/2000/01/rdf-schema#label
+skos:history Note
+URI:
+http://www.w3.org/2004/02/skos/core#history Note
+Definition:
+Section 7. Documentation Properties
+Label:
+history note
+Super-properties:
+skos:note
+skos:in Scheme
+URI:
+http://www.w3.org/2004/02/skos/core#in Scheme
+Definition:
+Section 4. Concept Schemes
+Label:
+is in scheme
+Range:
+skos:Concept Scheme
+skos:mapping Relation
+URI:
+http://www.w3.org/2004/02/skos/core#mapping Relation
+Definition:
+Section 10. Mapping Properties
+Label:
+is in mapping relation with
+Super-properties:
+skos:semantic Relation
+skos:member
+URI:
+http://www.w3.org/2004/02/skos/core#member
+Definition:
+Section 9. Concept Collections
+Label:
+has member
+Domain:
+skos:Collection
+Range:
+union of skos:Concept and skos:Collection
+skos:member List
+URI:
+http://www.w3.org/2004/02/skos/core#member List
+Definition:
+Section 9. Concept Collections
+Label:
+has member list
+Domain:
+skos:Ordered Collection
+Range:
+http://www.w3.org/1999/02/22-rdf-syntax-ns#List
+Other characteristics:
+Functional
+skos:narrow Match
+URI:
+http://www.w3.org/2004/02/skos/core#narrow Match
+Definition:
+Section 10. Mapping Properties
+Label:
+has narrower match
+Super-properties:
+skos:mapping Relation
+skos:narrower
+Inverse of:
+skos:broad Match
+skos:narrower
+URI:
+http://www.w3.org/2004/02/skos/core#narrower
+Definition:
+Section 8. Semantic Relations
+Label:
+has narrower
+Super-properties:
+skos:narrower Transitive
+Inverse of:
+skos:broader
+skos:narrower Transitive
+URI:
+http://www.w3.org/2004/02/skos/core#narrower Transitive
+Definition:
+Section 8. Semantic Relations
+Label:
+has narrower transitive
+Super-properties:
+skos:semantic Relation
+Inverse of:
+skos:broader Transitive
+Other characteristics:
+Transitive
+skos:notation
+URI:
+http://www.w3.org/2004/02/skos/core#notation
+Definition:
+Section 6. Notations
+Label:
+notation
+skos:note
+URI:
+http://www.w3.org/2004/02/skos/core#note
+Definition:
+Section 7. Documentation Properties
+Label:
+note
+skos:pref Label
+URI:
+http://www.w3.org/2004/02/skos/core#pref Label
+Definition:
+Section 5. Lexical Labels
+Label:
+preferred label
+Super-properties:
+http://www.w3.org/2000/01/rdf-schema#label
+skos:related
+URI:
+http://www.w3.org/2004/02/skos/core#related
+Definition:
+Section 8. Semantic Relations
+Label:
+has related
+Super-properties:
+skos:semantic Relation
+Other characteristics:
+Symmetric
+skos:related Match
+URI:
+http://www.w3.org/2004/02/skos/core#related Match
+Definition:
+Section 10. Mapping Properties
+Label:
+has related match
+Super-properties:
+skos:mapping Relation
+skos:related
+Other characteristics:
+Symmetric
+skos:scope Note
+URI:
+http://www.w3.org/2004/02/skos/core#scope Note
+Definition:
+Section 7. Documentation Properties
+Label:
+scope note
+Super-properties:
+skos:note
+skos:semantic Relation
+URI:
+http://www.w3.org/2004/02/skos/core#semantic Relation
+Definition:
+Section 8. Semantic Relations
+Label:
+is in semantic relation with
+Domain:
+skos:Concept
+Range:
+skos:Concept
+skos:top Concept Of
+URI:
+http://www.w3.org/2004/02/skos/core#top Concept Of
+Definition:
+Section 4. Concept Schemes
+Label:
+is top concept in scheme
+Super-properties:
+skos:in Scheme
+Inverse of:
+skos:has Top Concept
+References
+[SKOS-REFERENCE]
+SKOS
+"Reference, Alistair Miles, Sean Bechhofer, Editors. Latest version available"
+at http://www.w3.org/TR/skos-reference.
+[SKOS-RDF]
+SKOS Namespace - RDF/XML Variant. Latest version available at http://www.w3.org/TR/skos-reference/skos.rdf
+[SKOS-PRIMER]
+SKOS
+"Primer, Antoine Isaac, Ed Summers, Editors. Latest version available at"
+http://www.w3.org/TR/skos-primer.
+[RDF-RECIPES]
+Best Practice
+"Recipes for Publishing RDF Vocabularies , Diego Berrueta,"
+"Jon Phipps, Editors, W3C Working Group Note, 28 August 2008. Latest version"
+available at http://www.w3.org/TR/swbp-vocab-pub.
+[OWL-REFERENCE]
+OWL Web Ontology
+"Language Semantics and Abstract Syntax , Mike Dean, Guus"
+"Schreiber, Editors, W3C Working Draft, 10 February 2004. W3C"
+Recommendation available at http://www.w3.org/TR/owl-ref.
+[OWL-SEMANTICS]
+OWL Web Ontology
+"Language Semantics and Abstract Syntax , Peter F."
+"Patel-Schneider, Patrick Hayes, Ian Horrocks, Editors, W3C Working"
+"Draft, 10 February 2004. W3C Recommendation available at"
+http://www.w3.org/TR/owl-semantics.
+-->
+Acknowledgements
+This document is the result of extensive discussions within the
+W3C's Semantic Web
+Deployment Working Group. The document drew on the experiences of
+earlier groups and projects including SWAD-Europe and W3C's Semantic Web Best
+Practices and Deployment Working Group. Members of the W3C's public-esw-thes
+also made valuable contributions.
+$Revision: 1.2 $ of $Date: 2011/08/06 11:16:36 $
+""
+""
+Zakład Techniki Sterowania - Instytut Automatyki
+- Politechnika Łódzka
+&nbsp;
+Instytut Automatyki
+Zakłady: &nbsp;&nbsp;&nbsp;
+Napędu Elektrycznego i Automatyki Przemysłowej |
+Sterowania Robotów |
+Techniki Sterowania |
+Teorii Sterowania
+-->
+O Zakładzie
+O nas ...
+Pracownicy
+Godziny konsultacji
+Działalność
+Publikacje
+Projekty badawcze
+Prace dla przemysłu
+Laboratoria
+Systemów Mikroprocesorowych
+Materiały
+Dydaktyka
+-->
+Ogłoszenia
+Bieżące
+// -->
+Zakład Techniki Sterowania
+Kierownik Zakładu
+dr inż. Piotr Chudzik
+email: pchudzik&nbsp; _na_ &nbsp;p.lodz.pl
+tel. (+48) 42-631-25-45
+Zakład Techniki Sterowania jest jednym z czterech zakładów Instytutu Automatyki Politechniki Łódzkiej. W swojej pracy dydaktycznej i badawczej zespół pracowników zakładu od
+wielu lat zajmuje się analogowymi i cyfrowymi elementami i układami
+sterowania.
+Główne kierunki badań Zakładu Techniki Sterowania związane są z następującą tematyką:
+"projektowanie systemów mikroprocesorowych i układów elektronicznych dla zastosowań przemysłowych,"
+"wspomagane komputerowo modelowanie procesów przemysłowych,"
+rozwijanie algorytmów sterowania dla układów
+"działających w oparciu o sterowniki programowalne PLC,"
+"projektowanie układów automatyki z wykorzystaniem pakietów programowych: Matlab - Simulink, PSIM, Pspice - Or CAD, Scilab, Auto CAD,"
+"projektowanie i programowanie systemów wbudowanych opartych na rdzeniach jednostek STM, TMS, ARM, PIC i innych."
+"W ostatnich latach tematyka naukowo-badawcza Zakładu Techniki Sterowania koncentruje się wokół zagadnień, związanych z zastosowaniem teorii sterowania w napędach elektrycznych ze sterowaniem mikroprocesorowym"
+przy wykorzystaniu mikroprocesorów sygnałowych oraz w układach automatyki
+przemysłowej z wykorzystaniem sterowników programowalnych.
+Zakład Techniki Sterowania może pochwalić się kilkoma ciekawymi rozwiązaniami autorskimi
+wykonanymi przy współpracy z przemysłem. Należą do nich:
+"mikroprocesorowe przekaźniki zabezpieczeniowo-sterownicze dla rozdzielni średnich napięć,"
+"mikroprocesorowy miernik energii cieplnej,"
+"algorytm i oprogramowanie sterujące hamowaniem docelowym pociągu Metropolis dla Metra Warszawskiego,"
+metoda diagnostyki sygnałów wejściowych systemu wizualizacji i sterowania nadrzędnego
+"układ wektorowego sterowania z procesorem sygnałowym dla trakcyjnych (tramwajowych i trolejbusowych) falownikowych napędów z silnikami indukcyjnymi,"
+"układ regulacyjny w systemie ciepłowniczym w Łodzi, pozwalający na ciągłą współpracę elektrociepłowni EC-2 i EC-3 na wspólną"
+magistralę ciepłowniczą.
+Strona zaktualizowana: 14.10.2021
+""
+""
+Sumo Challenge 2020
+Konkurencje
+Sumo
+"To najbardziej znana i&nbsp;charakterystyczna konkurencja turniejów robotycznych. Zadaniem sumo robotów, tak&nbsp;samo&nbsp;jak prawdziwych zawodników sumo, jest wypchnięcie przeciwnika poza ring. Zmagania odbywają się w&nbsp;kilku klasach różniących się rozmiarami i&nbsp;wagą - od&nbsp;dużych, silnych robotów w&nbsp;klasie Mega, po&nbsp;maleńkie roboty Nano, nieprzekraczające rozmiarami pudełka od&nbsp;zapałek!"
+Regulamin
+Line Follower
+"W skrócie można powiedzieć, że jest to Formuła 1 w świecie robotów: wygrywa ten, który najszybciej pokona wyznaczoną trasę. W klasie Turbo roboty wykorzystują napędy tunelowe umożliwiające osiąganie większych prędkości, a w wersji Enhanced na trasie występują przeszkody i utrudnienia, które roboty muszą odpowiednio pokonać."
+Regulamin
+Micro Mouse
+"Celem robota (tzw. myszy) w&nbsp;tej&nbsp;kategorii jest znalezienie możliwie najszybszej lub&nbsp;najkrótszej drogi w&nbsp;labiryncie. Zadanie to&nbsp;jest&nbsp;szczególnym wyzwaniem dla&nbsp;programistów, gdyż&nbsp;kluczowy jest&nbsp;dobry algorytm."
+Regulamin
+Humanoid Sprint
+"To jedna z&nbsp;dwóch (obok Humanoid Sumo) kategorii dla&nbsp;robotów kroczących, których&nbsp;kształt i&nbsp;sposób poruszania przypomina ludzi. Z&nbsp;racji skomplikowanej konstrukcji mechanicznej zmagania te&nbsp;uchodzą za&nbsp;jedne z&nbsp;najtrudniejszych w&nbsp;świecie robotów."
+Regulamin
+Freestyle
+"W&nbsp;tej&nbsp;kategorii obowiązuje pełna dowolność - brać w&nbsp;niej udział może każda konstrukcja, niezależnie od&nbsp;wymiarów ani&nbsp;zadań, które&nbsp;wykonuje. Roboty oceniane są&nbsp;przez&nbsp;jury i&nbsp;publiczność - celem jest wzbudzenie zainteresowania ciekawym pomysłem na&nbsp;robota."
+Regulamin
+Bear Rescue
+Zadanie polega na&nbsp;zlokalizowaniu w&nbsp;prostym labiryncie małego misia-maskotki i&nbsp;przetransportowaniu go&nbsp;w&nbsp;bezpieczne miejsce.
+Regulamin
+Roborace
+"Line follower jest dla&nbsp;Ciebie zbyt monotonny? A&nbsp;co&nbsp;jeśli zmierzysz się w&nbsp;prawdziwym wyścigu, w&nbsp;którym&nbsp;wszystkie chwyty są dozwolone, a&nbsp;na&nbsp;raz ściga się kilka robotów?"
+Regulamin
+Ketchup House
+"""Keczup"" czy&nbsp;""Keczap""? Niezależnie którą&nbsp;wersję preferujesz, zapraszamy Cię do&nbsp;udziału w&nbsp;tej&nbsp;kategorii, gdzie&nbsp;dwa roboty szukają w&nbsp;prostym labiryncie puszek z&nbsp;ketchupem. Smacznego!"
+Regulamin
+Tom Tom Self-Driving Cars
+"Autonomiczne samochody wyposażone w kamerę oraz sieć neuronową mają za zadanie w jak najkrótszym czasie wykonać pełne okrążenie toru. Istotna jest również precyzja, ponieważ tor nie posiada fizycznych ograniczeń uniemożliwiających samochodom wyjechanie poza jego obręb."
+Regulamin
+-->
+Ramowy harmonogram imprezy
+"8:00-10:00 Rejestracja zawodników (wcześniej zarejestrowanych internetowo), ważenie i&nbsp;pomiary robotów"
+"10:00-15:00 Faza eliminacyjna zawodów, warsztaty z&nbsp;budowania i&nbsp;programowania robotów"
+15:00-18:00 Faza finałowa zawodów
+18:00 Rozdanie nagród
+"Harmonogram i&nbsp;przebieg zawodów może ulec zmianom, a&nbsp;czas zakończenia imprezy jest orientacyjny."
+Zatoka Sportu Politechniki Łódzkiej Al. Politechniki 10 93-590 Łódź
+Sumo Challenge
+Organizatorzy
+Studenckie Koło Naukowe Robotyki S Ka Ne R
+"Koło Naukowe, które już od ponad 15 lat działa na Politechnice Łódzkiej. Od 2008 roku studenci regularnie organizują zawody Sumo Challenge."
+"Wydzial Elektrotechniki, Elektroniki, Informatyki i&nbsp;Automatyki"
+"Jednostka wydziałowa Politechniki Łódzkiej, do której należy Studenckie Koło Naukowe Robotyki S Ka Ne R."
+Politechnika Łódzka
+Politechnika Łódzka jest jedną z najlepszych uczelni technicznych w kraju. To właśnie do tej uczelni na co dzień uczęszczają organizatorzy imprezy.
+Ale Robot
+Warsztaty edukacyjne z robotyki dla dzieci i młodzieży. Dzieci podczas warsztatów poznają podstawy konstrukcji maszyn i robotów oraz techniki programowania.
+Zatoka Sportu Politechniki Łódzkiej
+Akademickie Centrum Sportowo-Dydaktyczne
+Patronat honorowy
+JM Rektor Politechniki Łódzkiej Prof.&nbsp;dr&nbsp;hab.&nbsp;inż.&nbsp;Sławomir&nbsp;Wiak
+75 lat Politechniki Łódzkiej
+Prezydent Miasta Łodzi Hanna Zdanowska
+-->
+Młodzi w Łodzi
+Sponsorzy i Partnerzy
+SEW-EURODRIVE
+Renex
+Botland
+Patroni medialni
+Studenckie Radio Żak Politechniki Łódzkiej
+Forbot
+TVP Łódź
+Czwórka
+-->
+Kontakt
+Tytuł
+Email
+Wiadomość
+Accept Information clause
+Studenckie Koło Naukowe Robotyki S Ka Ne R Politechnika Łódzka - Instytut Automatyki
+"Opiekun koładr hab. inż. Grzegorz Granosik, prof.PŁgranosik@.p.lodz.pl"
++48 609 62 66 86 (Małgorzata)+48 663 28 09 28 (Paweł)
+skaner@info.p.lodz.pl
+facebook.com/Sumo Challenge
+youtube.com/Sumo Challenge Lodz
+&copy; S Ka Ne R. All rights reserved.
+Design & development: Paweł Rogowski
+""
+""
+My w mediach społecznościowych
+Nasze usługi
+transmisje internetowe
+wideokonferencje HD telemosty
+produkcja filmowo-telewizyjna
+webmastering serwisy www -->
+spoty promocyjne
+multimedialne know-how
+Kontakt
+Centrum Multimedialne Politechniki Łódzkiej
+"•&nbsp;ul.&nbsp;Żeromskiego&nbsp;116, budynek A33, wejście A, I Ip."
+•&nbsp;cm@adm.p.lodz.pl
+•&nbsp;tel.&nbsp;42 638 37 20
+""
+""
+S Ka Ne R
+Menu
+O nas
+Projekty
+Dołącz do nas
+Zarząd
+Regulamin
+Kontakt
+Studenckie Koło Naukowe Robotyki
+S Ka Ne R
+Dowiedz się więcej
+O nas
+"Studenckie Koło Naukowe Robotyki Studenckie Koło Naukowe Robotyki S Ka Ne R działa przy Zakładzie Sterowania Robotów Instytutu Automatyki na Wydziale Elektrotechniki, Elektroniki, Informatyki i Automatyki (WEEIA) PŁ od 2001 roku."
+"Pomysłodawcą oraz opiekunem koła jest dr hab. inż. Grzegorz Granosik, prof. PŁ. W ramach prac Koła studenci mogą realizować własne pomysły, a także rozwijać już istniejące projekty. Członkami S Ka Ne Ra są studenci praktycznie"
+"wszystkich lat, wystarczy zapał do pracy i pomysły. S Ka Ne R działa przy Zakładzie Sterowania Robotów Instytutu Automatyki na Wydziale Elektrotechniki, Elektroniki, Informatyki i Automatyki (WEEIA) PŁ od 2001 roku."
+"Pomysłodawcą oraz opiekunem koła jest dr hab. inż. Grzegorz Granosik, prof. PŁ. W ramach prac Koła studenci mogą realizować własne pomysły, a także rozwijać już istniejące projekty. Członkami S Ka Ne Ra są studenci praktycznie"
+"wszystkich lat, wystarczy zapał do pracy i pomysły."
+Robotyka
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto"
+"quo inventore harum ex magni, dicta impedit. -->"
+Programowanie
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto"
+"quo inventore harum ex magni, dicta impedit. -->"
+Elektronika
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto"
+"quo inventore harum ex magni, dicta impedit. -->"
+Projekty
+Projekty rozwijane w naszym kole
+Raptors
+raptors.p.lodz.pl
+Drony
+Sumo Challenge
+sumochallenge.eu
+TTN-TUL
+Robotyka turniejowa
+Robots for Humans
+Dołącz do nas!
+Kilka prostych kroków aby zostać S Ka Ne Rowiczem.
+Zapoznaj się z regulaminem
+Regulamin dostępny tutaj
+Zapoznaj się z działalnością koła
+Zastanów się jak chciałbyś tworzyć społeczność koła. Co chciałbyś w nim robić. Do jakich projektów należeć i w jakich warsztatach uczestniczyć.
+aktualne warsztaty
+Spotkaj się z nami
+"Oprowadzimy Cię po kole, porozmawiamy o twoich planach, oraz pomożemy Ci w dołączeniu do projektów"
+Twórz
+społeczność
+koła!
+Zarząd
+"dr hab. inż. Grzegorz Granosik, prof. PŁ"
+Opiekun koła
+Filip Szewczyk
+Prezes koła
+Magdalena Ścibiorek
+wiceprezes ds. Informacyjnych
+Natalia Grzelak
+wiceprezes ds. zasobów ludzkich
+Agata Kalenik
+wiceprezes ds. Public Relations
+Damian Szewczyk
+wiceprezes ds. projektów naukowych
+Projekt współfinansowany przez Fundusze Europejskie Program Wiedza Edukacja Rozwój [POWER].
+"Projekt „Roboty lądowe i latające Koła S Ka Ne R najlepsze w konkursach indywidualnych i we wspólnym działaniu” jest finansowany z programu Najlepsi z Najlepszych! Numer umowy: M Ni SW/2016/DIR/199/NN, w okresie 1.03.2016 – 31.01.2017."
+"Projekt „Autonomia na lądzie i w powietrzu z robotami Koła S Ka Ne R” jest finansowany z programu Najlepsi z Najlepszych! 2.0. Numer umowy: M Ni SW/2017/78/DIR/NN2, w okresie 24.04.2017 – 31.12.2017."
+"Projekt „Zadania kosmiczne i bardziej przy-Ziemne realizowane przez roboty koła S Ka Ne R” jest finansowany z programu Najlepsi z Najlepszych! 3.0. Numer umowy: M Ni SW/2019/11/DIR/NN3, w okresie 10.04.2018 do 08.04.2019."
+Projekt „System współpracy robotów heterogenicznych o wysokim stopniu autonomii” jest finansowany z programu Najlepsi z Najlepszych! 4.0. Numer umowy: M Ni SW/2020/150/DIR/NN4.
+"Projekt ""Wykorzystanie systemu autonomicznych robotów heterogenicznych w reagowaniu kryzysowym"" jest finansowany z programu Najlepsi z Najlepszych! 4.0. Numer umowy: M Ei N/2021/223/DIR/NN4."
+Bilety lotnicze na zawody robotyczne dla grupy Raptors zostały zakupione przez firmę Why Not TRAVEL Sp. z o.o. zgodnie z obowiązującą na Politechnice Łódzkiej umową nr CWM.SA.384.15.2020
+Skontaktuj się znami
+"Instytut Automatyki PŁ, ul. Bohdana Stefanowskiego 18, 90-537 Łódź"
+Wyślij
+wiadomość
+Copyright &copy; Paweł Rogowski 2019
+Instytut Automatyki
+Polityka prywatności
+Raptors
+"Drużyna Raptors to studenci czterech wydziałów Politechniki Łódzkiej, których połączyła idea zaprojektowania i budowy łazika marsjańskiego na międzynarodowe zawody specjalistycznych robotów mobilnych."
+1 miejsce European Rover Challenge 2016
+2 miejsce European Rover Challenge 2018
+4 miejsce University Rover Challenge 2018
+5 miejsce University Rover Challenge 2017
+5 miejsce University Rover Challenge 2016
+2 miejsce World Robot Summit 2018
+2 miejsce ERL Emergency Robots 2017
+2 miejsce ERL Emergency 2019
+6 miejsce Mohamed Bin Zayed International Robotics Challenge 2017
+Łódzkie Eureka 2016 Wyróżnienie za wybitne osiągnięcia techniczne
+Lorem ipsum dolor sit amet consectetur. -->
+Strona projektu
+Drony
+Opis i osiągnięcia wkrótce
+-->
+Sumo Challenge
+"Ogólnopolskie Zawody Robotów Sumo Challenge odbywają się od roku 2008. Przez kilka lat istnienia imprezy mieliśmy okazję podziwiać w Łodzi zmagania kilkuset robotów z całej Polski, a także z zagranicy. Nasza impreza ma"
+"niepowtarzalny charakter, ze względu na przyjazną atmosferę, a także ze względu na ogromną liczbę publiczności, z której każdy, nawet zupełny laik w dziedzinie robotyki poza obserwowaniem zmagań najlepszych robotów,"
+ma okazję samemu je programować i budować.
+Strona projektu
+TTN-TUL
+"TTN-TUL jest inicjatywą studentów Politechniki Łódzkiej (TUL - Technical University of Lodz) mającą na celu popularyzację Internet of Things (Io T), technologii Lo Ra oraz infrastruktury The Things Network (TTN). W ramach naszej"
+"działalności powstaje wiele projektów składowych skupiających się na poszczególnych częściach rozwiązań Io T, począwszy od projektowania modułów elektronicznych, poprzez rozwijanie i wdrażanie aplikacji webowych do przetwarzania"
+i prezentacji danych aż po rozwój łódzkiej infrastruktury Io T.
+Strona projektu
+Robotyka turniejowa
+"Warsztaty wprowadzające do świata robotyki amatorskiej. Podczas warsztatów postaramy się omówić wszystkie nurtujące was tematy. Efektem naszych warsztatów mają być działające roboty, które wystartują na zawodach Sumo Challenge"
+2019.
+Aby uczestniczyć w warsztatach nie trzeba należeć do koła albo chodzić na konkretny kierunek.
+Zapraszamy wszystkich chętnych!|
+Planowany harmonogram:
+Spotkanie organizacyjne
+Wstęp do elektroniki
+- komponenty wykorzystywane w robotach
+- pozyskiwanie wiedzy na temat elektronicznych
+Oprogramowanie
+- Arduino IDE
+- Visual Studio Code i Platform I/O
+- Autodesk Eagle
+- Autodesk Fusion 360
+- Autodesk Inventor
+Zajęcia odbywają się w czwartki od godziny 14:15.
+Robots for Humans
+"R4H – Robots for Humans – niedawno powstała sekcja koła naukowego Politechniki Łódzkiej S Ka Ne R, która ma już na koncie niemałe sukcesy. Sekcja pozwala rozwijać studentom umiejętności, brać udział w różnych warsztatach,"
+"ale przede wszystkim pracować nad projektami, które kiedyś mogą pomagać ludziom. Jednym z takich projektów są badania nad urządzeniem do rehabilitacji dłoni i testowania jej sprawności u pacjentów po udarze mózgu. Inicjatywa"
+"powstała dzięki współpracy z grupą naukowców z Nagoya Institute Of Technology w Japonii. Ale to nie wszystko! Prowadzone są również badania w dziedzinie zbierania pomiarów mechanomiograficznych, które pozwolą dobrze"
+rozwinąć umiejętności z dziedziny przetwarzania sygnałów.
+Regulamin
+Postanowienia og&oacute;lne
+Koło Naukowe jest podstawową formą organizacyjną Studenckiego Ruchu Naukowego.
+Koło Naukowe jest formą aktywności naukowej i zawodowej student&oacute;w.
+"Podstawowe cele pracy Koła Naukowego to podnoszenie wiedzy student&oacute;w, pogłębianie ich zainteresowań, nauka rozwiązywania problem&oacute;w, kształtowanie postaw tw&oacute;rczych, przygotowanie do samodzielnej"
+pracy i umiejętność zorganizowania wsp&oacute;łpracy w zespole.
+Koło Naukowe nie posiada osobowości prawnej.
+Podstawy prawne działania Studenckiego Koła Naukowego Robotyki S Ka Ne R są następujące:
+ustawa o Szkolnictwie Wyższym (w aktualnej jednolitej wersji)
+"rozporządzenie Ministra Nauki i Szkolnictwa Wyższego w sprawie tworzenia, trybu rejestrowania, prowadzenia rejestru oraz zasad i trybu likwidacji k&oacute;ł naukowych, artystycznych i sportowych w Szkołach"
+Wyższych
+statut Politechniki Ł&oacute;dzkiej i Regulamin Studi&oacute;w na PŁ
+niniejszy regulamin
+Zmiany do niniejszego regulaminu mogą być wnoszone po przegłosowaniu ich na Zebraniu Koła zwykłą większością głos&oacute;w i zatwierdzeniu ich (lub braku wyrażenia sprzeciwu) przez odpowiedni organ Uczelni upoważniony
+do rejestracji Koła Naukowego.
+Nazwa i siedziba Koła Naukowego
+"Nazwa Koła Naukowego: ""Studenckie Koło Naukowe Robotyki S Ka Ne R"""
+"Siedzibą Koła Naukowego jest Zakład Sterowania Robot&oacute;w Instytutu Automatyki PŁ - ul. Stefanowskiego 18/22, 90-924 Ł&oacute;dź."
+Zasady członkostwa w Kole Naukowym
+Członkami Studenckiego Koła Naukowego Robotyki S Ka Ner mogą być studenci Politechniki Ł&oacute;dzkiej.
+Członkostwo Koła rozpoczyna się dla studenta gdy jest on jednym z członk&oacute;w-założycieli Koła Naukowego lub gdy Zarząd Koła podjął uchwałę o przyjęciu go do Koła Naukowego.
+"Członkostwo Koła kończy się dla studenta gdy jest on skreślony z listy student&oacute;w, wystąpi osobiście lub gdy Zarząd Koła podjął odpowiednią uchwałę."
+Członkostwo w Kole Naukowym dla os&oacute;b niebędących
+studentami Politechniki Ł&oacute;dzkiej
+"Byli członkowie Studenckiego Koła Naukowego Robotyki S Ka Ne R, kt&oacute;rzy są już absolwentami PŁ, jednakże dalej są zaangażowani w działalność Studenckiego Koła Naukowego Robotyki S Ka Ne R uznani są za Radę Starc&oacute;w"
+(Honorowi Członkowie Studenckiego Koła Naukowego Robotyki S Ka Ne R).
+"Osoby niebędące studentami Politechniki Ł&oacute;dzkiej, zaangażowane w działalność Studenckiego Koła Naukowego Robotyki S Ka Ne R, mogą otrzymać status Sympatyka."
+"Status Sympatyka pozwala udzielać się na forum, posiadać aktywne konto użytkownika na oficjalnej stronie WWW Studenckiego Koła Naukowego Robotyki S Ka Ne R."
+Osoby będące Honorowymi Członkami bądź Sympatykami Koła Naukowego mogą korzystać z zasob&oacute;w Koła Naukowego pod nadzorem Zarządu.
+Rada Starc&oacute;w oraz Sympatycy Studenckiego Koła Naukowego Robotyki S Ka Ne R nie mogą brać udziału w głosowaniach podczas spotkań Koła Naukowego.
+Władze Koła Naukowego
+Najwyższą władzą Studenckiego Koła Naukowego Robotyki S Ka Ne R jest Walne Zebranie jego członk&oacute;w.
+Uchwały podczas Walnego Zebrania zapadają zwykłą większością głos&oacute;w.
+Pracą Koła Naukowego kieruje Zarząd Koła w porozumieniu z opiekunem Koła.
+Zarząd Koła Naukowego Robotyki może liczyć od 3 do 6 os&oacute;b.
+Podstawowe zakresy obowiązk&oacute;w Zarządu są następujące:
+"Prezes Koła Naukowego jest odpowiedzialny za kierowanie pracą Koła Naukowego, reprezentację Koła Naukowego na terenie Uczelni i zewnątrz, sprawy personalne, og&oacute;lny nadz&oacute;r nad gospodarką,"
+wszelkie rozliczenia finansowe.
+"Wiceprezes lub Wiceprezesi: organizacja prac badawczych, opieka nad powierzoną aparaturą, gospodarka narzędziami i materiałami oraz programami i nośnikami informacji oraz opieka nad tablicą ogłoszeń"
+"Koła, tworzenie i aktualizacja stron WWW Koła, dysponowanie kontem poczty elektronicznej."
+"Sekretarz Koła Naukowego Robotyki: prowadzenie aktualnej dokumentacji Koła, listy członk&oacute;w Koła i temat&oacute;w prowadzonych prac, redagowanie i przechowywanie sprawozdań oraz plan&oacute;w prac,"
+przyjmowanie i wysyłanie korespondencji (w tym dostęp do konta poczty elektronicznej).
+Wybory władz Koła Naukowego
+Kadencja Zarządu Studenckiego Koła Naukowego Robotyki S Ka Ne R trwa 1 rok. Na koniec kadencji Zarząd Koła składa sprawozdanie.
+Wyb&oacute;r Zarządu Koła następuje na Walnym Zebraniu Koła Naukowego zwykłą większością głos&oacute;w.
+W razie uzasadnionej potrzeby skład Zarządu może być uzupełniany podczas kadencji w spos&oacute;b określony w p. 5.2
+W przypadku stwierdzenia poważnych nieprawidłowości w pracy Zarządu Koła Naukowego opiekunowie Koła mogą zwołać Walne Zebranie Koła w celu powołania nowego Zarządu Koła.
+Rozwiązanie Koła Naukowego
+Studenckie Koło Naukowe Robotyki S Ka Ne R może zostać rozwiązane na podstawie uchwały Walnego Zebrania członk&oacute;w Koła
+Koło Naukowe może ulec likwidacji na podstawie decyzji Władz uczelni w wyniku stwierdzenia działalności sprzecznej z prawem lub niezgodnej z celami Koła Naukowego (jak w p. 1.3)
+Brak działania Koła Naukowego przez okres co najmniej roku upoważnia opiekun&oacute;w do złożenia wniosku o rozwiązanie Koła.
+W przypadku stwierdzenia poważnych nieprawidłowości w pracy Koła Naukowego opiekunowie Koła mogą zwołać Walne Zebranie Koła w celu rozwiązania Koła.
+Postanowienia końcowe
+W sprawach nieobjętych niniejszym regulaminem obowiązują og&oacute;lne przepisy prawa i szczeg&oacute;lne przepisy prawa dla Uczelni Wyższych wymienione w p. 1.5.
+Regulamin niniejszy wchodzi w życie z dniem zarejestrowania Koła.
+Zamknij
+""
+""
+SIOC Core Ontology Namespace
+Revision: 1.36
+SIOC (Semantically-Interlinked Online Communities) is an ontology for describing the information in online communities.
+"This information can be used to export information from online communities and to link them together. The scope of the application areas that SIOC can be used for includes (and is not limited to) weblogs, message boards, mailing lists and chat channels."
+Community
+Community is a high-level concept that defines an online community and what it consists of.
+Container
+An area in which content Items are contained.
+Forum
+A discussion area on which Posts or entries are made.
+Item
+An Item is something which can be in a Container.
+Post
+An article or message that can be posted to a Forum.
+Role
+"A Role is a function of a User Account within a scope of a particular Forum, Site, etc."
+Space
+"A Space is a place where data resides, e.g. on a website, desktop, fileshare, etc."
+Site
+"A Site can be the location of an online community or set of communities, with User Accounts and Usergroups creating Items in a set of Containers. It can be thought of as a web-accessible data Space."
+Thread
+A container for a series of threaded discussion Posts or Items.
+User Account
+A user account in an online community site.
+Usergroup
+A set of User Accounts whose owners have a common purpose or interest. Can be used for access control purposes.
+about
+"Specifies that this Item is about a particular resource, e.g. a Post describing a book, hotel, etc."
+account of
+Refers to the foaf:Agent or foaf:Person who owns this sioc:User Account.
+addressed to
+"Refers to who (e.g. a User Account, e-mail address, etc.) a particular Item is addressed to."
+administrator of
+A Site that the User Account is an administrator of.
+attachment
+The URI of a file attached to an Item.
+avatar
+An image or depiction used to represent this User Account.
+container of
+An Item that this Container contains.
+content
+The content of the Item in plain text format.
+creator of
+A resource that the User Account is a creator of.
+delivered at
+"When this was delivered, in ISO 8601 format."
+discussion of
+The Item that this discussion is about.
+Links to a previous (older) revision of this Item or Post.
+earlier version
+email
+An electronic mail address of the User Account.
+email sha1
+"An electronic mail address of the User Account, encoded using SHA1."
+embeds knowledge
+"This links Items to embedded statements, facts and structured content."
+feed
+"A feed (e.g. RSS, Atom, etc.) pertaining to this resource (e.g. for a Forum, Site, User Account, etc.)."
+follows
+Indicates that one User Account follows another User Account (e.g. for microblog posts or other content item updates).
+function of
+A User Account that has this Role.
+generator
+A URI for the application used to generate this Item.
+has administrator
+A User Account that is an administrator of this Site.
+has container
+The Container to which this Item belongs.
+has creator
+This is the User Account that made this resource.
+has discussion
+"A discussion that is related to this Item. The discussion can be anything, for example, a sioc:Forum or sioc:Thread, a sioct:Wiki Article or simply a foaf:Document."
+has function
+A Role that this User Account has.
+has host
+The Site that hosts this Container.
+has member
+A User Account that is a member of this Usergroup.
+has moderator
+A User Account that is a moderator of this Forum.
+has modifier
+"A User Account that modified this resource (e.g. Item, Container, Space)."
+has owner
+A User Account that this resource is owned by.
+has parent
+A Container or Forum that this Container or Forum is a child of.
+has reply
+Points to an Item or Post that is a reply or response to this Item or Post.
+has scope
+A resource that this Role applies to.
+has space
+A data Space which this resource is a part of.
+has subscriber
+A User Account that is subscribed to this Container.
+has usergroup
+Points to a Usergroup that has certain access to this Space.
+host of
+A Container that is hosted on this Site.
+id
+"An identifier of a SIOC concept instance. For example, a user ID. Must be unique for instances of each type of SIOC concept within the same site."
+ip address
+"The IP address used when creating this Item, User Account, etc. This can be associated with a creator. Some wiki articles list the IP addresses for the creator or modifiers when the usernames are absent."
+last activity date
+"The date and time of the last activity associated with a SIOC concept instance, and expressed in ISO 8601 format. This could be due to a reply Post or Comment, a modification to an Item, etc."
+last item date
+"The date and time of the last Post (or Item) in a Forum (or a Container), in ISO 8601 format."
+last reply date
+"The date and time of the last reply Post or Comment, which could be associated with a starter Item or Post or with a Thread, and expressed in ISO 8601 format."
+Links to a later (newer) revision of this Item or Post.
+later version
+Links to the latest revision of this Item or Post.
+latest version
+likes
+"Used to indicate some form of endorsement by a User Account or Agent of an Item, Container, Space, User Account, etc."
+link
+A URI of a document which contains this SIOC object.
+links to
+"Links extracted from hyperlinks within a SIOC concept, e.g. Post or Site."
+member of
+A Usergroup that this User Account is a member of.
+mentions
+Refers to a User Account that a particular Item mentions.
+moderator of
+A Forum that a User Account is a moderator of.
+modifier of
+A resource that this User Account has modified.
+name
+"The name of a SIOC concept instance, e.g. a username for a User Account, group name for a Usergroup, etc."
+next by date
+Next Item or Post in a given Container sorted by date.
+next version
+Links to the next revision of this Item or Post.
+note
+"A note associated with this resource, for example, if it has been edited by a User Account."
+num authors
+"The number of unique authors (User Accounts and unregistered posters) who have contributed to this Item, Thread, Post, etc."
+num items
+The number of Posts (or Items) in a Forum (or a Container).
+num replies
+"The number of replies that this Item, Thread, Post, etc. has. Useful for when the reply structure is absent."
+num threads
+The number of Threads (AKA discussion topics) in a Forum.
+num views
+"The number of times this Item, Thread, User Account profile, etc. has been viewed."
+owner of
+"A resource owned by a particular User Account, for example, a weblog or image gallery."
+parent of
+A child Container or Forum that this Container or Forum is a parent of.
+previous by date
+Previous Item or Post in a given Container sorted by date.
+previous version
+Links to the previous revision of this Item or Post.
+read at
+"When this was read, in ISO 8601 format."
+related to
+"Related resources for this resource, e.g. for Posts, perhaps determined implicitly from topics or references."
+reply of
+Links to an Item or Post which this Item or Post is a reply to.
+respond to
+"For the reply-to address set in email messages, I Ms, etc. The property name was chosen to avoid confusion with has_reply/reply_of (the reply graph)."
+scope of
+A Role that has a scope of this resource.
+shared by
+For shared Items where there is a certain creator_of and an intermediary who shares or forwards it (e.g. as a sibling Item).
+sibling
+"An Item may have a sibling or a twin that exists in a different Container, but the siblings may differ in some small way (for example, language, category, etc.). The sibling of this Item should be self-describing (that is, it should contain all available information)."
+space of
+A resource which belongs to this data Space.
+subscriber of
+A Container that a User Account is subscribed to.
+topic
+"A topic of interest, linking to the appropriate URI, e.g. in the Open Directory Project or of a SKOS category."
+usergroup of
+A Space that the Usergroup has access to.
+User
+User Account is now preferred. This is a deprecated class for a User in an online community site.
+This class is deprecated. Use sioc:User Account from the SIOC ontology instead.
+title
+"This is the title (subject line) of the Post. Note that for a Post within a threaded discussion that has no parents, it would detail the topic thread."
+This property is deprecated. Use dcterms:title from the Dublin Core ontology instead.
+content encoded
+"The encoded content of the Post, contained in CDATA areas."
+This property is deprecated. Use content:encoded from the RSS 1.0 content module instead.
+created at
+"When this was created, in ISO 8601 format."
+This property is deprecated. Use dcterms:created from the Dublin Core ontology instead.
+description
+The content of the Post.
+"This property is deprecated. Use sioc:content or other methods (Atom Owl, content:encoded from RSS 1.0, etc.) instead."
+first name
+First (real) name of this User. Synonyms include given name or christian name.
+This property is deprecated. Use foaf:name or foaf:first Name from the FOAF vocabulary instead.
+group of
+This property has been renamed. Use sioc:usergroup_of instead.
+has group
+This property has been renamed. Use sioc:has_usergroup instead.
+has part
+An resource that is a part of this subject.
+This property is deprecated. Use dcterms:has Part from the Dublin Core ontology instead.
+last name
+Last (real) name of this user. Synonyms include surname or family name.
+This property is deprecated. Use foaf:name or foaf:surname from the FOAF vocabulary instead.
+modified at
+"When this was modified, in ISO 8601 format."
+This property is deprecated. Use dcterms:modified from the Dublin Core ontology instead.
+part of
+A resource that the subject is a part of.
+This property is deprecated. Use dcterms:is Part Of from the Dublin Core ontology instead.
+reference
+Links either created explicitly or extracted implicitly on the HTML level from the Post.
+Renamed to sioc:links_to.
+subject
+Keyword(s) describing subject of the Post.
+This property is deprecated. Use dcterms:subject from the Dublin Core ontology for text keywords and sioc:topic if the subject can be represented by a URI instead.
+""
+""
 RDF Site Summary 1.0 Modules: Content
 RDF Site Summary 1.0 Modules: Content
 Authors
@@ -3162,126 +3693,215 @@ Example
 &lt;/rdf:RDF&gt;
 ""
 ""
-Sumo Challenge 2020
-Konkurencje
-Sumo
-"To najbardziej znana i&nbsp;charakterystyczna konkurencja turniejów robotycznych. Zadaniem sumo robotów, tak&nbsp;samo&nbsp;jak prawdziwych zawodników sumo, jest wypchnięcie przeciwnika poza ring. Zmagania odbywają się w&nbsp;kilku klasach różniących się rozmiarami i&nbsp;wagą - od&nbsp;dużych, silnych robotów w&nbsp;klasie Mega, po&nbsp;maleńkie roboty Nano, nieprzekraczające rozmiarami pudełka od&nbsp;zapałek!"
-Regulamin
-Line Follower
-"W skrócie można powiedzieć, że jest to Formuła 1 w świecie robotów: wygrywa ten, który najszybciej pokona wyznaczoną trasę. W klasie Turbo roboty wykorzystują napędy tunelowe umożliwiające osiąganie większych prędkości, a w wersji Enhanced na trasie występują przeszkody i utrudnienia, które roboty muszą odpowiednio pokonać."
-Regulamin
-Micro Mouse
-"Celem robota (tzw. myszy) w&nbsp;tej&nbsp;kategorii jest znalezienie możliwie najszybszej lub&nbsp;najkrótszej drogi w&nbsp;labiryncie. Zadanie to&nbsp;jest&nbsp;szczególnym wyzwaniem dla&nbsp;programistów, gdyż&nbsp;kluczowy jest&nbsp;dobry algorytm."
-Regulamin
-Humanoid Sprint
-"To jedna z&nbsp;dwóch (obok Humanoid Sumo) kategorii dla&nbsp;robotów kroczących, których&nbsp;kształt i&nbsp;sposób poruszania przypomina ludzi. Z&nbsp;racji skomplikowanej konstrukcji mechanicznej zmagania te&nbsp;uchodzą za&nbsp;jedne z&nbsp;najtrudniejszych w&nbsp;świecie robotów."
-Regulamin
-Freestyle
-"W&nbsp;tej&nbsp;kategorii obowiązuje pełna dowolność - brać w&nbsp;niej udział może każda konstrukcja, niezależnie od&nbsp;wymiarów ani&nbsp;zadań, które&nbsp;wykonuje. Roboty oceniane są&nbsp;przez&nbsp;jury i&nbsp;publiczność - celem jest wzbudzenie zainteresowania ciekawym pomysłem na&nbsp;robota."
-Regulamin
-Bear Rescue
-Zadanie polega na&nbsp;zlokalizowaniu w&nbsp;prostym labiryncie małego misia-maskotki i&nbsp;przetransportowaniu go&nbsp;w&nbsp;bezpieczne miejsce.
-Regulamin
-Roborace
-"Line follower jest dla&nbsp;Ciebie zbyt monotonny? A&nbsp;co&nbsp;jeśli zmierzysz się w&nbsp;prawdziwym wyścigu, w&nbsp;którym&nbsp;wszystkie chwyty są dozwolone, a&nbsp;na&nbsp;raz ściga się kilka robotów?"
-Regulamin
-Ketchup House
-"""Keczup"" czy&nbsp;""Keczap""? Niezależnie którą&nbsp;wersję preferujesz, zapraszamy Cię do&nbsp;udziału w&nbsp;tej&nbsp;kategorii, gdzie&nbsp;dwa roboty szukają w&nbsp;prostym labiryncie puszek z&nbsp;ketchupem. Smacznego!"
-Regulamin
-Tom Tom Self-Driving Cars
-"Autonomiczne samochody wyposażone w kamerę oraz sieć neuronową mają za zadanie w jak najkrótszym czasie wykonać pełne okrążenie toru. Istotna jest również precyzja, ponieważ tor nie posiada fizycznych ograniczeń uniemożliwiających samochodom wyjechanie poza jego obręb."
-Regulamin
--->
-Ramowy harmonogram imprezy
-"8:00-10:00 Rejestracja zawodników (wcześniej zarejestrowanych internetowo), ważenie i&nbsp;pomiary robotów"
-"10:00-15:00 Faza eliminacyjna zawodów, warsztaty z&nbsp;budowania i&nbsp;programowania robotów"
-15:00-18:00 Faza finałowa zawodów
-18:00 Rozdanie nagród
-"Harmonogram i&nbsp;przebieg zawodów może ulec zmianom, a&nbsp;czas zakończenia imprezy jest orientacyjny."
-Zatoka Sportu Politechniki Łódzkiej Al. Politechniki 10 93-590 Łódź
-Sumo Challenge
-Organizatorzy
-Studenckie Koło Naukowe Robotyki S Ka Ne R
-"Koło Naukowe, które już od ponad 15 lat działa na Politechnice Łódzkiej. Od 2008 roku studenci regularnie organizują zawody Sumo Challenge."
-"Wydzial Elektrotechniki, Elektroniki, Informatyki i&nbsp;Automatyki"
-"Jednostka wydziałowa Politechniki Łódzkiej, do której należy Studenckie Koło Naukowe Robotyki S Ka Ne R."
-Politechnika Łódzka
-Politechnika Łódzka jest jedną z najlepszych uczelni technicznych w kraju. To właśnie do tej uczelni na co dzień uczęszczają organizatorzy imprezy.
-Ale Robot
-Warsztaty edukacyjne z robotyki dla dzieci i młodzieży. Dzieci podczas warsztatów poznają podstawy konstrukcji maszyn i robotów oraz techniki programowania.
-Zatoka Sportu Politechniki Łódzkiej
-Akademickie Centrum Sportowo-Dydaktyczne
-Patronat honorowy
-JM Rektor Politechniki Łódzkiej Prof.&nbsp;dr&nbsp;hab.&nbsp;inż.&nbsp;Sławomir&nbsp;Wiak
-75 lat Politechniki Łódzkiej
-Prezydent Miasta Łodzi Hanna Zdanowska
--->
-Młodzi w Łodzi
-Sponsorzy i Partnerzy
-SEW-EURODRIVE
-Renex
-Botland
-Patroni medialni
-Studenckie Radio Żak Politechniki Łódzkiej
-Forbot
-TVP Łódź
-Czwórka
--->
-Kontakt
-Tytuł
-Email
-Wiadomość
-Accept Information clause
-Studenckie Koło Naukowe Robotyki S Ka Ne R Politechnika Łódzka - Instytut Automatyki
-"Opiekun koładr hab. inż. Grzegorz Granosik, prof.PŁgranosik@.p.lodz.pl"
-+48 609 62 66 86 (Małgorzata)+48 663 28 09 28 (Paweł)
-skaner@info.p.lodz.pl
-facebook.com/Sumo Challenge
-youtube.com/Sumo Challenge Lodz
-&copy; S Ka Ne R. All rights reserved.
-Design & development: Paweł Rogowski
+No Such Key The specified key does not exist.ns Q6G72KCCFKX4ZGG Qj8wpf V6zyl Xkj/VJ Hxar PMWX Xfp3RR Hkke S8r G6jkwto Wg Te+U8i T Xnn8Afcl FE Oq Ya17n G0wo4=
 ""
-""
-﻿
-Zakład Napędu Elektrycznego i Automatyki Przemysłowej - Instytut Automatyki
-- Politechnika Łódzka
-&nbsp;
-﻿
-Instytut Automatyki
-Zakłady: &nbsp;&nbsp;&nbsp;
-Napędu Elektrycznego i Automatyki Przemysłowej |
-Sterowania Robotów |
-Techniki Sterowania |
-Teorii Sterowania
--->
-﻿
-O Zakładzie
-O nas ...
-Mapa dojazdu
-Pracownicy
+O zakładzie | Zakład Sterowania Robotów - PŁ
+Zakład Sterowania Robotów Instytut Automatyki
+O zakładzie Pracownicy
+"dr hab. inż. Grzegorz Granosik, prof. PŁ"
+prof. dr hab. inż. Edward Jezierski
+dr inż. Dariusz Zarychta
+dr inż. Igor Zubrycki
+mgr inż. Przemysław Dawid
+mgr inż. Mateusz Kubat
+mgr inż. Paweł Smyczyński
+mgr inż. Piotr Łuczak
+mgr inż. Kacper Andrzejczak
+mgr inż. Mateusz Kujawiński
+mgr inż. Agnieszka Węgierska
+mgr inż. Natalia Kucharek
+mgr inż. Bartłomiej Cybulski
+mgr inż. Łukasz Chlebowicz
+mgr inż. Damian Wroński
+mgr inż. Krystian Góra
+mgr inż. Damian Wroński
 Godziny przyjęć
-Działalność
-Publikacje
-Projekty badawcze
-Nagrody i wyróżnienia
-Materiały
-Do pobrania
-Ogłoszenia
-Bieżące
-﻿Zakład Napędu Elektrycznego i Automatyki Przemysłowej
-Kierownik Zakładu
-prof. dr hab. inż. Andrzej Bartoszewicz
-andrzej.bartoszewicz&nbsp;@&nbsp;p.lodz.pl
-Zakład Napędu Elektrycznego i Automatyki Przemysłowej jest jednym z czterech zakładów Instytutu Automatyki Politechniki Łódzkiej. W swojej pracy dydaktycznej i badawczej zespół pracowników Zakładu od wielu lat zajmuje się tematyką związaną ze sterowaniem napędów i procesów przemysłowych.
-Obecnie w Zakładzie realizowane są następujące tematy badawcze:
-"sterowanie o zmiennej strukturze z ruchem ślizgowym,"
-"zastosowanie logiki rozmytej i sieci neuronowych do sterowania układami napędowymi,"
-"napędy wielosilnikowe prądu przemiennego,"
-"sterowanie ruchem w sieciach teleinformatycznych,"
-"sterowanie falowników poprzez sieci komputerowe,"
-zastosowanie sterowników mikroprogramowalnych (PLC) do sterowania procesami przemysłowymi i napędami.
-"Zakład realizował kilkanaście projektów badawczych NCN, FNP, KBN i M Ni SW. Wyniki niektórych badań zostały wdrożone w przemyśle. Obecnie trwają prace nad kolejnymi projektami."
-Strona zaktualizowana: 11.09.2019
+Dydaktyka Metody i Systemy Sterowania Produkcją
+Podstawy Robotyki
+Roboty Mobilne
+Wprowadzenie do współczesnej inżynierii
+Sterowanie Robotów
+Dynamika i Sterowanie Robotów
+Roboty usługowe i rehabilitacyjne
+Oprogramowanie systemów czasu rzeczywistego
+Systemy i Sieci Przemysłowe
+Robotics
+Techniki Programowania w Robotyce
+Ogłoszenia Archiwum
+Projekty badawcze Najlepsi z najlepszych
+ROBREX
+Roboterapia
+SMART
+My Hand
+Lider X
+Lider XII
+"Erasmus+ Ready, Teady, Go!"
+Erasmus+ HEART
+Konferencje RIE 2013
+Japan - Poland Workshop
+Koło Robotyki Raptors
+S Ka Ne R
+Sumo Challenge
+Laboratoria
+O zakładzie
+Kierownik zakładu
+gg_face_color.jpg
+"dr hab. inż. Grzegorz Granosik, prof. PŁ"
+granosik@p.lodz.pl
+tel. 0-42 631-25-54
+"W swojej pracy dydaktycznej i badawczej zespół pracowników zakładu od wielu lat zajmuje się tematyką związaną ze sterowaniem i konstruowaniem robotów (przemysłowych, społecznych, ratunkowych i medycznych), oraz zastosowaniem technologii sztucznej inteligencji (AI)."
+Główne kierunki badań naukowych prowadzonych w Zakładzie Sterowania Robotów to:
+"konstrukcja i sterowanie robotów mobilnych oraz robotów do zastosowań specjalnych,"
+"sterowanie elektrycznych i pneumatycznych napędów robotów,"
+"wykorzystanie informacji wizyjnej w sterowaniu robotów,"
+"zaawansowane sterowanie obiektów nieliniowych,"
+"systemy teleoperacyjne i sterowanie przez sieć,"
+"sterowanie impedancyjne.,"
+interakcja człowiek-robot.
+W ramach prac badawczych w ostatnim czasie wykonano następujące projekty:
+"Opracowanie i budowa Autonomicznych Robotów Mobilnych (AMR) do transportu wewnątrzzakładowego, zintegrowanych z modularnym systemem uniwersalnych stanowisk zrobotyzowanych – SMART."
+Sterowanie impedancyjne dla robotów ratunkowych - ROBREX.
+Stworzenie systemu urządzeń i środowiska programistycznego do wspomagania terapii sensorycznej dzieci ze spektrum Autyzmu – Roboterapia. Innowacyjne urządzenia nie tylko pozwalają personalizować i monitorować terapię ale także odciążają terapeutę i mogą uczynić jego pracę przyjemniejszą.
+Rozwój urządzeń wspierających terapię osób po udarze – projekt we współpracy z Nagoya Institute of Technology oraz szpitalem im. dr Jonschera w Łodzi.
+"Budowa robotów modułowych (lądowych i latających) do inspekcji i akcji poszukiwawczo-ratunkowych – Raptors, Najlepsi z najlepszych."
+"Zakład Sterowania Robotów specjalizuje się w zajęciach z zakresu podstaw robotyki, sterowania robotów, robotów mobilnych, automatyki przemysłowej oraz systemów wizyjnych w robotyce i systemów autonomicznych."
+"Istnieje możliwość rozwijania zainteresowań w ramach Studenckiego Koła Naukowego Robotyki S Ka Ne R, gdzie realizowane są projekty, które często pokazywane są na międzynarodowych wystawach i nagradzane w ramach różnych konkursów. Studenci od 2008 roku organizują jedne z największych w Polsce – międzynarodowe zawody robotów Sumo Challenge."
+logo-pl.png
+Instytut Automatyki Politechniki Łódzkiej
+Zakład Napędu Elektrycznego i Automatyki Przemysłowej
+Zakład Sterowania Robotów
+Zakład Techniki Sterowania
+Zakład Teorii Sterowania
+Polityka prywatności
+"Copyright &copy; 2022, Centrum Multimedialne Politechniki Łódzkiej"
+""
+﻿
+2021 Japan-Poland International Workshop on Technologies supporting rehabilitation and medical services
+2021 Japan-Poland International Workshop on Technologies supporting rehabilitation and medical services
+Scientific Meeting of Polish Chapter of the IEEE Robotics &amp; Automation Society
+"The workshop was conducted on October 5th, 2021, from 9:30 Central European Time (4:30 JST)."
+Book of abstracts if available here
+Schedule:
+Time
+Presentation
+Authors
+9:30
+Introduction by Grzegorz Granosik
+9:35
+Introduction by Igor Zubrycki
+9:40 – 10:00
+i Wakka and its various applications
+Yoshifumi Morita
+10:00 - 10:15
+"Luna – a new promising tool for reeducation of gross motor function of the upper limb instroke patients. Rationale, design, and feasibility study results."
+"Ewa Zasadzka, Tomasz Trzmiel, Renata Marchewka, Sławomir Tobis, Dominika Kozak, Katarzyna Hojan"
+10:15 – 10:20
+short break
+October 5th 2021
+10:20 – 10:35
+i Wakka can enhance cortical excitability of motor related areas in stroke patients
+"Toshiaki Wasaka, Kazuya Toshima, Kohei Ando, Masakazu Nomura, Keishi Omori, Moe Nishiya, Tsukasa Tamaru, Yoshifumi Morita"
+10:35 – 10:50
+Passive hand exercises in post-stroke rehabilitation
+"Ilona Czyż, Magdalena Halsagard, Maja Śmietańska, Julia Wojdyn, Justyna Redlicka, Elżbieta Miller"
+10:50 – 11:05
+Evaluation and Training Device for Adjustability of Pinching Force “i Wakka-pinch”: Application to Upper Limb Training in Hemiplegic Stroke Patients
+"Moe Nishiya, Keishi Omori, Yoshifumi Morita, Kazuya Toshima, Tsukasa Tamaru"
+11:05 – 11:20
+Automatic device for hand rehabilitation
+Wioletta Chmurska
+11:20 – 11:35
+Relationship between MP Joint Angle and Muscle Activity in Training with a Finger Extensor Facilitation Training Device “i PARKO”
+"Shota Ishigaki, Ai Nakamura, Yoshifumi Morita, Hirofumi Tanabe"
+11:35 - 11:50
+Active Range of Motion Digital Testing Device of Finger Joints Using an RGB-D Camera
+"Huu-Hieu Quang, Yoshifumi Morita, Noritaka Sato, Makoto Takekawa"
+11:50—12: 05
+Considerations and architecture of hand measurement system for post-stroke patients
+Igor Zubrycki
+12:05 – 12:20
+Discussion and final words
+"We would like to congratulate Moe Nishiya from Morita's Lab in Nagoya Institute of Technology in Japan for winning the Student Contest. Her presentation: ""Evaluation and Training Device for Adjustability of Pinching Force “i Wakka-pinch”: Application to Upper Limb Training in Hemiplegic Stroke Patients"" was rated as best by the Scientific Council."
+Call for papers
+"It’s a pleasure to invite you to submit your early research to the 2021 Japan-Poland International Workshop on Technologies supporting rehabilitation and medical services. The aim of the workshop is to bring together medical doctors and robotic engineers to strengthen collaboration between medicine and robotics. The main focus will be post-stroke medical services and technologies. Exchanging different forms of knowledge can give great results such as new thoughts, ideas, and joint projects. The workshop is also an opportunity for young researchers to present the results of their work and participate in a discussion that may be useful in later scientific and publishing work."
+"The 5th edition of Japan-Poland meeting will be held online. The final program of the workshop will be the result of a review process to extract the most exciting research in areas of robotics in rehabilitation medicine. Submissions will be evaluated in terms of their novelty, technical quality, significance and potential impact. The program will include oral presentations of accepted papers."
+"Participants should submit an abstract of the presentation, written in English (1-2 pages), according to included template."
+"As a part of the workshop, The Student Contest was organized. Presentations were evaluated in terms of their originality, importance of the topic and presentation quality."
+The award winner will be announced during the workshop.-->
+Subject Areas
+"We invite submissions in areas of robotics and medicine, including healthcare, rehabilitation and medical robotics, control and dynamics, sensing, human-robot interaction."
+Important dates:
+"September 15th, 2021: Abstract Submission Deadline"
+"September 25th, 2021: Abstract Acceptance Notification"
+"October 5th, 2021: Virtual Japan-Poland Workshop 2021"
+Submitting
+Please submit your abstracts using e-mail:
+conf2021@roboterapia.eu
+Abstract format
+Please use the following template for your abstract
+Paper template
+We encourage everyone interested in medical and rehabilitation robotics to participate in the workshop.
+"In the case of listeners who do not deliver presentations, the willingness to participate should be sent to the e-mail address of the event: conf2021@roboterapia.eu providing your name and e-mail address."
+Organizers
+"dr inż. Igor Zubrycki, Lodz University of Technology"
+"prof. Yoshifumi Morita, Nagoya Institute of Technology"
+"dr inż. Katarzyna Koter, Lodz University of Technology"
+"mgr Justyna Redlicka, Medical University of Lodz"
+Scientific Council
+"prof. dr hab. Elżbieta Miller, Medical University of Lodz"
+"dr hab. inż. Grzegorz Granosik, Lodz University of Technology"
+"prof. Yoshifumi Morita, Nagoya Institute of Technology"
+"dr hab. n. med. Katarzyna Hojan, FEBPRM"
+"dr inż. Igor Zubrycki, Lodz University of Technology"
+"dr inż. Katarzyna Koter, Lodz University of Technology"
+""
+""
+XML Schema
+XML Schema
+15 October 2014
+Table of contents
+Introduction
+Resources
+Introduction
+This document describes the XML Schema namespace.
+"It also contains a directory of links to these related resources, using"
+Resource Directory Description Language.
+Related Resources for XML Schema
+Schemas for XML Schema
+DTD
+XML Schema 1.1
+A (non-normative) DTD XML Schema.dtd
+for XML Schema.
+"It incorporates an auxiliary DTD, datatypes.dtd."
+XML Schema 1.0
+A (non-normative) DTD XML Schema.dtd for XML Schema.
+It
+"incorporates an auxiliary DTD, datatypes.dtd."
+XML Schema
+XML Schema 1.1
+An XML Schema schema
+document for XML Schema schema documents.
+XML Schema 1.0
+An XML Schema schema document for XML
+Schema schema documents. Last updated with release of XML Schema 2nd
+edition in July 2004.
+Normative References
+W3C XML Schema
+Definition Language (XSD) 1.1 Part 1:
+"Structures,"
+W3C XML Schema
+Definition Language (XSD) 1.1 Part 2:
+Datatypes
+XML Schema Part 1:
+"Structures (2nd Edition),"
+XML Schema Part 2:
+"Datatypes (2nd Edition),"
+XML Schema Part 0:
+Primer (2nd Edition)
+X Path and X Query
+"Functions and Operators 3.1 introduces a new type,"
+"xs:numeric, that is a union of"
+"xs:decimal, xs:float, and xs:double."
 ""
 ""
 FOAF Vocabulary Specification
@@ -5227,629 +5847,9 @@ Previous Changes
 be said to have homepages (eg. Events)
 ""
 ""
-Zakład Teorii Sterowania - Instytut Automatyki
-- Politechnika Łódzka
-A+ / A-
-Zakład Teorii Sterowania
-&nbsp;-->
-strona główna
-&nbsp;/&nbsp;
-Uczelnia
-&nbsp;/&nbsp;
-Aktualności
-&nbsp;/&nbsp;
-Nasze sukcesy
--->
-Kierownik Zakładu
-"dr hab. inż. Jacek Kabziński, prof. PŁ"
-jacek.kabzinski&nbsp;@&nbsp;p.lodz.pl
-tel. (+48) 42 631 2553
-Prace naukowe Zakładu Teorii Sterowania koncentrują się na badaniach podstawowych w dziedzinie nowoczesnych metod sterowania i ich zastosowaniu do sterowania układami elektromechanicznymi.
-Obecnie w Zakładzie realizowane są następujące tematy badawcze:
-"projektowanie odpornych układów liniowych metodami syntezy modalnej,"
-"zastosowanie regulatorów typu CRONE w odpornych układach regulacji prędkości silników prądu stałego i silników indukcyjnych,"
-"synteza odpornych układów nieliniowych metodami sterowania optymalnego,"
-"synteza odpornych układów nieliniowych metodami sterowania adaptacyjnego,"
-"zastosowanie metod sztucznej inteligencji w sterowaniu,"
-"układy hybrydowe sztucznej inteligencji - sterowanie neuro-rozmyte i neuro-adaptacyjne,"
-"zastosowanie algorytmów genetycznych do optymalizacji układów regulacji,"
-"teoria obserwatorów,"
-"nieliniowe, adaptacyjne układy napędowe z bezszczotkowymi silnikami z magnesami trwałymi."
-Data wpisu:
-2020.09.27
-strona główna
-newsletter
-Newsletter
-mapa strony
-kontakt
-"Zakład Teorii Sterowania, Instytut Automatyki Politechniki Łódzkiej"
-ul. B. Stefanowskiego 18
-90-537 Łódź
-NIP: 727 002 18 95
--->
-"Tel. +48 42 631 25 60, +48 42 631 25 47"
-Fax +48 42 631 25 51
-&nbsp;
-"Pracownicy ZTS Strona pracownika - dr inż. Tomasz Sobieraj Publikacje Programy Ai R 1 stop.Strona pracownika - dr hab. inż. Jacek Kabziński, profesor Politechniki Łódzkiej Programy Informatyka (2006-08)Programy Ai R ns. 1 stop.Strona pracownika - dr inż. Marcin Jastrzębski Godziny konsultacji w semestrze letnim 2021/2022Programy Informatyka wieczorowe Konferencja Rektorów Polskich Uczelni Technicznych"
-Konferencja Rektorów Akademickich Szkół Polskich
-Ministerstwo Nauki i Szkolnictwa Wyższego
-Polska Akademia Nauk
-Fundacja na rzecz Nauki Polskiej
-Narodowe Centrum Badań i Rozwoju
-Narodowe Centrum Nauki
-Europejskie Konsorcjum Innowacyjnych &nbsp;&nbsp;Uniwersytetów (ECIU) -->
-Politechnika Łódzka
-Instytut Automatyki
-Polski oddział IEEE Control Systems Society
--->
-Polityka prywatności
-On-line: 118
-Dla zamieszczających
-koniec licznik -->
-""
-""
-XML Schema
-XML Schema
-15 October 2014
-Table of contents
-Introduction
-Resources
-Introduction
-This document describes the XML Schema namespace.
-"It also contains a directory of links to these related resources, using"
-Resource Directory Description Language.
-Related Resources for XML Schema
-Schemas for XML Schema
-DTD
-XML Schema 1.1
-A (non-normative) DTD XML Schema.dtd
-for XML Schema.
-"It incorporates an auxiliary DTD, datatypes.dtd."
-XML Schema 1.0
-A (non-normative) DTD XML Schema.dtd for XML Schema.
-It
-"incorporates an auxiliary DTD, datatypes.dtd."
-XML Schema
-XML Schema 1.1
-An XML Schema schema
-document for XML Schema schema documents.
-XML Schema 1.0
-An XML Schema schema document for XML
-Schema schema documents. Last updated with release of XML Schema 2nd
-edition in July 2004.
-Normative References
-W3C XML Schema
-Definition Language (XSD) 1.1 Part 1:
-"Structures,"
-W3C XML Schema
-Definition Language (XSD) 1.1 Part 2:
-Datatypes
-XML Schema Part 1:
-"Structures (2nd Edition),"
-XML Schema Part 2:
-"Datatypes (2nd Edition),"
-XML Schema Part 0:
-Primer (2nd Edition)
-X Path and X Query
-"Functions and Operators 3.1 introduces a new type,"
-"xs:numeric, that is a union of"
-"xs:decimal, xs:float, and xs:double."
-""
-""
-SIOC Types Ontology Module Namespace
-Extends the SIOC Core Ontology (Semantically-Interlinked Online Communities) by defining subclasses and subproperties of SIOC terms.
-Address Book
-Describes a collection of personal or organisational addresses.
-Annotation Set
-"Describes a set of annotations, for example, those created by a particular user or related to a particular topic."
-Audio Channel
-"Describes a channel for distributing audio or sound files, for example, a podcast."
-Bookmark Folder
-Describes a shared collection of bookmarks.
-Briefcase
-Describes a briefcase or file service.
-Event Calendar
-Describes a calendar of events.
-Image Gallery
-"Describes an image gallery, for example, a photo album."
-Project Directory
-Describes a project directory.
-Resume Bank
-Describes a collection of resumes.
-Review Area
-Describes an area where reviews are posted.
-Subscription List
-Describes a shared set of feed subscriptions.
-Survey Collection
-"Describes an area where survey data can be collected, e.g. from polls."
-Video Channel
-"Describes a channel for distributing videos (moving image) files, for example, a video podcast."
-Wiki
-Describes a wiki space.
-Favourite Things
-Describes a list or a collection of one's favourite things.
-Offer List
-Describes a list of the items someone has available to offer.
-Playlist
-Describes a list of media items that have been played or can be played.
-Reading List
-Describes a list of books or other materials that have been read or are suggested for reading.
-Wish List
-Describes a list of the items someone wishes to get.
-Argumentative Discussion
-Describes a discussion area where logical arguments can take place.
-Chat Channel
-"Describes a channel for chat or instant messages, for example, via IRC or IM."
-Mailing List
-Describes an electronic mailing list.
-Message Board
-"Describes a message board, also known as an online bulletin board or discussion forum."
-Microblog
-"Describes a microblog, i.e. a blog consisting of short text messages."
-Weblog
-"Describes a weblog (blog), i.e. an online journal."
-Poll
-Describes a posted item that contains a poll or survey content.
-Blog Post
-Describes a post that is specifically made on a weblog.
-Board Post
-Describes a post that is specifically made on a message board.
-Comment
-Comment is a subtype of sioc:Post and allows one to explicitly indicate that this SIOC post is a comment.
-Note that comments have a narrower scope than sioc:Post and may not apply to all types of community site.
-Instant Message
-"Describes an instant message, e.g. sent via Jabber."
-Mail Message
-"Describes an electronic mail message, e.g. a post sent to a mailing list."
-Microblog Post
-Describes a post that is specifically made on a microblog.
-Wiki Article
-Describes a wiki article.
-Answer
-A Post that provides an answer in reply to a Question.
-Best Answer
-"A Post that is the best answer to a Question, as chosen by the User Account who asked the Question or as voted by a Community of User Accounts."
-Question
-A Post that asks a Question.
-Category
-Category is used on the object of sioc:topic to indicate that this resource is a category on a site.
-Tag
-Tag is used on the object of sioc:topic to indicate that this resource is a tag on a site.
-""
-""
-SIOC Core Ontology Namespace
-Revision: 1.36
-SIOC (Semantically-Interlinked Online Communities) is an ontology for describing the information in online communities.
-"This information can be used to export information from online communities and to link them together. The scope of the application areas that SIOC can be used for includes (and is not limited to) weblogs, message boards, mailing lists and chat channels."
-Community
-Community is a high-level concept that defines an online community and what it consists of.
-Container
-An area in which content Items are contained.
-Forum
-A discussion area on which Posts or entries are made.
-Item
-An Item is something which can be in a Container.
-Post
-An article or message that can be posted to a Forum.
-Role
-"A Role is a function of a User Account within a scope of a particular Forum, Site, etc."
-Space
-"A Space is a place where data resides, e.g. on a website, desktop, fileshare, etc."
-Site
-"A Site can be the location of an online community or set of communities, with User Accounts and Usergroups creating Items in a set of Containers. It can be thought of as a web-accessible data Space."
-Thread
-A container for a series of threaded discussion Posts or Items.
-User Account
-A user account in an online community site.
-Usergroup
-A set of User Accounts whose owners have a common purpose or interest. Can be used for access control purposes.
-about
-"Specifies that this Item is about a particular resource, e.g. a Post describing a book, hotel, etc."
-account of
-Refers to the foaf:Agent or foaf:Person who owns this sioc:User Account.
-addressed to
-"Refers to who (e.g. a User Account, e-mail address, etc.) a particular Item is addressed to."
-administrator of
-A Site that the User Account is an administrator of.
-attachment
-The URI of a file attached to an Item.
-avatar
-An image or depiction used to represent this User Account.
-container of
-An Item that this Container contains.
-content
-The content of the Item in plain text format.
-creator of
-A resource that the User Account is a creator of.
-delivered at
-"When this was delivered, in ISO 8601 format."
-discussion of
-The Item that this discussion is about.
-Links to a previous (older) revision of this Item or Post.
-earlier version
-email
-An electronic mail address of the User Account.
-email sha1
-"An electronic mail address of the User Account, encoded using SHA1."
-embeds knowledge
-"This links Items to embedded statements, facts and structured content."
-feed
-"A feed (e.g. RSS, Atom, etc.) pertaining to this resource (e.g. for a Forum, Site, User Account, etc.)."
-follows
-Indicates that one User Account follows another User Account (e.g. for microblog posts or other content item updates).
-function of
-A User Account that has this Role.
-generator
-A URI for the application used to generate this Item.
-has administrator
-A User Account that is an administrator of this Site.
-has container
-The Container to which this Item belongs.
-has creator
-This is the User Account that made this resource.
-has discussion
-"A discussion that is related to this Item. The discussion can be anything, for example, a sioc:Forum or sioc:Thread, a sioct:Wiki Article or simply a foaf:Document."
-has function
-A Role that this User Account has.
-has host
-The Site that hosts this Container.
-has member
-A User Account that is a member of this Usergroup.
-has moderator
-A User Account that is a moderator of this Forum.
-has modifier
-"A User Account that modified this resource (e.g. Item, Container, Space)."
-has owner
-A User Account that this resource is owned by.
-has parent
-A Container or Forum that this Container or Forum is a child of.
-has reply
-Points to an Item or Post that is a reply or response to this Item or Post.
-has scope
-A resource that this Role applies to.
-has space
-A data Space which this resource is a part of.
-has subscriber
-A User Account that is subscribed to this Container.
-has usergroup
-Points to a Usergroup that has certain access to this Space.
-host of
-A Container that is hosted on this Site.
-id
-"An identifier of a SIOC concept instance. For example, a user ID. Must be unique for instances of each type of SIOC concept within the same site."
-ip address
-"The IP address used when creating this Item, User Account, etc. This can be associated with a creator. Some wiki articles list the IP addresses for the creator or modifiers when the usernames are absent."
-last activity date
-"The date and time of the last activity associated with a SIOC concept instance, and expressed in ISO 8601 format. This could be due to a reply Post or Comment, a modification to an Item, etc."
-last item date
-"The date and time of the last Post (or Item) in a Forum (or a Container), in ISO 8601 format."
-last reply date
-"The date and time of the last reply Post or Comment, which could be associated with a starter Item or Post or with a Thread, and expressed in ISO 8601 format."
-Links to a later (newer) revision of this Item or Post.
-later version
-Links to the latest revision of this Item or Post.
-latest version
-likes
-"Used to indicate some form of endorsement by a User Account or Agent of an Item, Container, Space, User Account, etc."
-link
-A URI of a document which contains this SIOC object.
-links to
-"Links extracted from hyperlinks within a SIOC concept, e.g. Post or Site."
-member of
-A Usergroup that this User Account is a member of.
-mentions
-Refers to a User Account that a particular Item mentions.
-moderator of
-A Forum that a User Account is a moderator of.
-modifier of
-A resource that this User Account has modified.
-name
-"The name of a SIOC concept instance, e.g. a username for a User Account, group name for a Usergroup, etc."
-next by date
-Next Item or Post in a given Container sorted by date.
-next version
-Links to the next revision of this Item or Post.
-note
-"A note associated with this resource, for example, if it has been edited by a User Account."
-num authors
-"The number of unique authors (User Accounts and unregistered posters) who have contributed to this Item, Thread, Post, etc."
-num items
-The number of Posts (or Items) in a Forum (or a Container).
-num replies
-"The number of replies that this Item, Thread, Post, etc. has. Useful for when the reply structure is absent."
-num threads
-The number of Threads (AKA discussion topics) in a Forum.
-num views
-"The number of times this Item, Thread, User Account profile, etc. has been viewed."
-owner of
-"A resource owned by a particular User Account, for example, a weblog or image gallery."
-parent of
-A child Container or Forum that this Container or Forum is a parent of.
-previous by date
-Previous Item or Post in a given Container sorted by date.
-previous version
-Links to the previous revision of this Item or Post.
-read at
-"When this was read, in ISO 8601 format."
-related to
-"Related resources for this resource, e.g. for Posts, perhaps determined implicitly from topics or references."
-reply of
-Links to an Item or Post which this Item or Post is a reply to.
-respond to
-"For the reply-to address set in email messages, I Ms, etc. The property name was chosen to avoid confusion with has_reply/reply_of (the reply graph)."
-scope of
-A Role that has a scope of this resource.
-shared by
-For shared Items where there is a certain creator_of and an intermediary who shares or forwards it (e.g. as a sibling Item).
-sibling
-"An Item may have a sibling or a twin that exists in a different Container, but the siblings may differ in some small way (for example, language, category, etc.). The sibling of this Item should be self-describing (that is, it should contain all available information)."
-space of
-A resource which belongs to this data Space.
-subscriber of
-A Container that a User Account is subscribed to.
-topic
-"A topic of interest, linking to the appropriate URI, e.g. in the Open Directory Project or of a SKOS category."
-usergroup of
-A Space that the Usergroup has access to.
-User
-User Account is now preferred. This is a deprecated class for a User in an online community site.
-This class is deprecated. Use sioc:User Account from the SIOC ontology instead.
-title
-"This is the title (subject line) of the Post. Note that for a Post within a threaded discussion that has no parents, it would detail the topic thread."
-This property is deprecated. Use dcterms:title from the Dublin Core ontology instead.
-content encoded
-"The encoded content of the Post, contained in CDATA areas."
-This property is deprecated. Use content:encoded from the RSS 1.0 content module instead.
-created at
-"When this was created, in ISO 8601 format."
-This property is deprecated. Use dcterms:created from the Dublin Core ontology instead.
-description
-The content of the Post.
-"This property is deprecated. Use sioc:content or other methods (Atom Owl, content:encoded from RSS 1.0, etc.) instead."
-first name
-First (real) name of this User. Synonyms include given name or christian name.
-This property is deprecated. Use foaf:name or foaf:first Name from the FOAF vocabulary instead.
-group of
-This property has been renamed. Use sioc:usergroup_of instead.
-has group
-This property has been renamed. Use sioc:has_usergroup instead.
-has part
-An resource that is a part of this subject.
-This property is deprecated. Use dcterms:has Part from the Dublin Core ontology instead.
-last name
-Last (real) name of this user. Synonyms include surname or family name.
-This property is deprecated. Use foaf:name or foaf:surname from the FOAF vocabulary instead.
-modified at
-"When this was modified, in ISO 8601 format."
-This property is deprecated. Use dcterms:modified from the Dublin Core ontology instead.
-part of
-A resource that the subject is a part of.
-This property is deprecated. Use dcterms:is Part Of from the Dublin Core ontology instead.
-reference
-Links either created explicitly or extracted implicitly on the HTML level from the Post.
-Renamed to sioc:links_to.
-subject
-Keyword(s) describing subject of the Post.
-This property is deprecated. Use dcterms:subject from the Dublin Core ontology for text keywords and sioc:topic if the subject can be represented by a URI instead.
-""
-""
-Instytut Automatyki Politechniki Łódzkiej
-Menu
--->
-strona główna
-|
-kontakt
--->
--->
--->
-O nas
-Władze instytutu
-Struktura
-Zakład Napędu Elektrycznego i Automatyki Przemysłowej
-Zakład Sterowania Robotów
-Zakład Techniki Sterowania
-Zakład Teorii Sterowania
-Kontakt
-Badania
-Zaplecze badawcze
-Działalność naukowa
-Dla kandydatów
-Ai SR zaprasza
-Dla studentów
-Przedmioty obieralne
-Automatyka i Sterowanie Robotów
-Elektrotechnika
-Informatyka
-Inżynieria kosmiczna
-Programy zajęć
-Tematy prac magisterskich
-Tematy prac inżynierskich
-Informacje dla dyplomantów
-Expo 21XX
-Podział roku akademickiego
-Konferencje
-KKA 2020
-Sene 2022
-Kursy i szkolenia
-Altium Designer
-Sterowniki PLC
-Seminarium: Zastosowanie sterowników PLC w przemyśle
-SMART
-Stomia-Alert
-Informacje o projekcie
-Serwis Stomia-Edit
-Stomia-Alert-Final
-Informacje o projekcie
-Ogłoszenia
-Menu
-Submenu
-A+ / A-
-Instytut Automatyki
-&nbsp;-->
-strona główna
-&nbsp;/&nbsp;
-Uczelnia
-&nbsp;/&nbsp;
-Aktualności
-&nbsp;/&nbsp;
-Nasze sukcesy
--->
-"Instytut Automatyki jest jednym z największych instytutów Wydziału Elektrotechniki, Elektroniki, Informatyki i Automatyki Politechniki Łódzkiej. Na etacie jest zatrudnionych: pięciu profesorów tytularnych, dwóch doktorów habilitowanych, dziewiętnastu doktorów, trzynastu magistrów inżynierów na etatach naukowo-dydaktycznych i dziewięciu na etatach technicznych. Pracownicy Instytutu są opiekunami naukowymi jedenastu słuchaczy studiów doktoranckich."
-Strukturę Instytutu tworzą cztery zakłady:
-"Zakład Napędu Elektrycznego i Automatyki Przemysłowej,"
-"Zakład Sterowania Robotów,"
-"Zakład Techniki Sterowania,"
-Zakład Teorii Sterowania
-W oparciu o naszą bazę i doświadczenie oferujemy:
-"usługi dydaktyczne – prowadzenie szkoleń pracowników, studia podyplomowe, kursy specjalistyczne,"
-"usługi projektowe,"
-"współpracę przy wdrożeniach nowych rozwiązań technicznych,"
-prace badawcze z wykorzystaniem naszej aparatury.
-"90-537 Łódź, ul. B. Stefanowskiego 18"
-"tel. (+48) 42 631 2560, (+48) 42 631 2547"
-fax. (+48) 42 631 2551
-e-mail:
-w2i21@adm.p.lodz.pl
-www: automatyka.p.lodz.pl
-Data wpisu:
-2022.04.05
-"Imię i nazwisko,&nbsp; -->"
-Instytut Automatyki Politechniki Łódzkiej
-ul. B. Stefanowskiego 18
-90-537 Łódź
-NIP: 727 002 18 95
--->
-"Tel. (+48) 42 631 2560, (+48) 42 631 2547"
-Fax (+48) 42 631 2551
-&nbsp;
-Działalność naukowa Kontakt Projekt Stomia-Alert-FINAL - Postępowania / Ogłoszenia o zamówieniu Przedmioty obieralne - Automatyka i Sterowanie Robotów Tematy prac inżynierskich Projekt Stomia-Alert Programy zajęćProjekt Stomia-Alert Informacje dla dyplomantów Konferencja SENE Konferencja Rektorów Polskich Uczelni Technicznych
-Konferencja Rektorów Akademickich Szkół Polskich
-Ministerstwo Nauki i Szkolnictwa Wyższego
-Polska Akademia Nauk
-Fundacja na rzecz Nauki Polskiej
-Narodowe Centrum Badań i Rozwoju
-Narodowe Centrum Nauki
-Europejskie Konsorcjum Innowacyjnych &nbsp;&nbsp;Uniwersytetów (ECIU) -->
-Politechnika Łódzka
-Instytut Automatyki
-Polski oddział IEEE Control Systems Society
--->
-Polityka prywatności
-On-line: 118
-Dla zamieszczających
-koniec licznik -->
-""
-""
-My Hand
-""
-""
-O zakładzie | Zakład Sterowania Robotów - PŁ
-Zakład Sterowania Robotów Instytut Automatyki
-O zakładzie Pracownicy
-"dr hab. inż. Grzegorz Granosik, prof. PŁ"
-prof. dr hab. inż. Edward Jezierski
-dr inż. Dariusz Zarychta
-dr inż. Igor Zubrycki
-mgr inż. Przemysław Dawid
-mgr inż. Mateusz Kubat
-mgr inż. Paweł Smyczyński
-mgr inż. Piotr Łuczak
-mgr inż. Kacper Andrzejczak
-mgr inż. Mateusz Kujawiński
-mgr inż. Agnieszka Węgierska
-mgr inż. Natalia Kucharek
-mgr inż. Bartłomiej Cybulski
-mgr inż. Łukasz Chlebowicz
-mgr inż. Damian Wroński
-mgr inż. Krystian Góra
-mgr inż. Damian Wroński
-Godziny przyjęć
-Dydaktyka Metody i Systemy Sterowania Produkcją
-Podstawy Robotyki
-Roboty Mobilne
-Wprowadzenie do współczesnej inżynierii
-Sterowanie Robotów
-Dynamika i Sterowanie Robotów
-Roboty usługowe i rehabilitacyjne
-Oprogramowanie systemów czasu rzeczywistego
-Systemy i Sieci Przemysłowe
-Robotics
-Techniki Programowania w Robotyce
-Ogłoszenia Archiwum
-Projekty badawcze Najlepsi z najlepszych
-ROBREX
-Roboterapia
-SMART
-My Hand
-Lider X
-Lider XII
-"Erasmus+ Ready, Teady, Go!"
-Erasmus+ HEART
-Konferencje RIE 2013
-Japan - Poland Workshop
-Koło Robotyki Raptors
-S Ka Ne R
-Sumo Challenge
-Laboratoria
-O zakładzie
-Kierownik zakładu
-gg_face_color.jpg
-"dr hab. inż. Grzegorz Granosik, prof. PŁ"
-granosik@p.lodz.pl
-tel. 0-42 631-25-54
-"W swojej pracy dydaktycznej i badawczej zespół pracowników zakładu od wielu lat zajmuje się tematyką związaną ze sterowaniem i konstruowaniem robotów (przemysłowych, społecznych, ratunkowych i medycznych), oraz zastosowaniem technologii sztucznej inteligencji (AI)."
-Główne kierunki badań naukowych prowadzonych w Zakładzie Sterowania Robotów to:
-"konstrukcja i sterowanie robotów mobilnych oraz robotów do zastosowań specjalnych,"
-"sterowanie elektrycznych i pneumatycznych napędów robotów,"
-"wykorzystanie informacji wizyjnej w sterowaniu robotów,"
-"zaawansowane sterowanie obiektów nieliniowych,"
-"systemy teleoperacyjne i sterowanie przez sieć,"
-"sterowanie impedancyjne.,"
-interakcja człowiek-robot.
-W ramach prac badawczych w ostatnim czasie wykonano następujące projekty:
-"Opracowanie i budowa Autonomicznych Robotów Mobilnych (AMR) do transportu wewnątrzzakładowego, zintegrowanych z modularnym systemem uniwersalnych stanowisk zrobotyzowanych – SMART."
-Sterowanie impedancyjne dla robotów ratunkowych - ROBREX.
-Stworzenie systemu urządzeń i środowiska programistycznego do wspomagania terapii sensorycznej dzieci ze spektrum Autyzmu – Roboterapia. Innowacyjne urządzenia nie tylko pozwalają personalizować i monitorować terapię ale także odciążają terapeutę i mogą uczynić jego pracę przyjemniejszą.
-Rozwój urządzeń wspierających terapię osób po udarze – projekt we współpracy z Nagoya Institute of Technology oraz szpitalem im. dr Jonschera w Łodzi.
-"Budowa robotów modułowych (lądowych i latających) do inspekcji i akcji poszukiwawczo-ratunkowych – Raptors, Najlepsi z najlepszych."
-"Zakład Sterowania Robotów specjalizuje się w zajęciach z zakresu podstaw robotyki, sterowania robotów, robotów mobilnych, automatyki przemysłowej oraz systemów wizyjnych w robotyce i systemów autonomicznych."
-"Istnieje możliwość rozwijania zainteresowań w ramach Studenckiego Koła Naukowego Robotyki S Ka Ne R, gdzie realizowane są projekty, które często pokazywane są na międzynarodowych wystawach i nagradzane w ramach różnych konkursów. Studenci od 2008 roku organizują jedne z największych w Polsce – międzynarodowe zawody robotów Sumo Challenge."
-logo-pl.png
-Instytut Automatyki Politechniki Łódzkiej
-Zakład Napędu Elektrycznego i Automatyki Przemysłowej
-Zakład Sterowania Robotów
-Zakład Techniki Sterowania
-Zakład Teorii Sterowania
-Polityka prywatności
-"Copyright &copy; 2022, Centrum Multimedialne Politechniki Łódzkiej"
-""
-""
 Raptors
 -->
 -->
 -->
 -->
-""
-""
--->
-&nbsp;
-HOME
-/
-O PROJEKCIE
-/
-PUBLIKACJE
-/
-ORGANIZACJA
-/
-KONTAKT
-/
-EN
-O ROBOTERAPIIQUESTIONS / SPONSORS-->
-"Projekt roboterapia powstał we współpracy trzech instytucji: Łódzkiego ASP, Politechniki Łódzkiej i fundacji Navicula."
-"Jego celem jest skonstruowanie urządzeń i programów do wsparcia terapeutów dzieci głęboko upośledzonych, szczególnie z autyzmem."
-W projekcie skupiamy się na pomocy terapeucie czy rodzicu nie tylko przy samej terapii ale także w odciążeniu go i uczynieniu jego pracy przyjemniejszą. Opieka nad dziećmi głęboko upośledzonymi wiąże się bowiem z dużym ryzykiem wypalenia.
-"Na stronie można zapoznać się z opisem projektu jak i jego poszczególnych części, umieściliśmy także listę wszystkich publikacji związanych z projektem."
-Najnowsze informacje
-Tweets by @roboterapia
-Copyright 2018
 ""

@@ -7,7 +7,6 @@ from nltk.corpus import stopwords
 
 
 class Crawler:
-
     def __init__(self, initialURL):
         self.initialURL = initialURL
         try:
@@ -18,7 +17,7 @@ class Crawler:
             if self.requestResponse.status_code != 200:
                 print("Status code different than 200, skipping page!")
         except:
-            raise ValueError("Provided invalid URL address.")
+            raise ValueError("Provided invalid URL address or cannot connect to the page (check internet).")
         self.textWithHtmlTags = self.requestResponse.text
         self.extensionsToIgnore = [".js", ".css", ".png", ".jpg", ".pdf", ".jpeg", ".ico"]
         self.initialInvertedIndexDict = self.getInvertedIndex(self.removeTagsFromHtml(), self.initialURL)
@@ -27,8 +26,9 @@ class Crawler:
         regex = r'<(script|style).*>(.|\n)*?</(script|style)>|<[^>]*>'
         tagsRemoved = re.sub(regex, "", self.textWithHtmlTags)
         whitespacesRemoved = re.sub(r"\s{2,}", "\n", tagsRemoved)
-        noSpaceSplitter = re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', whitespacesRemoved)
-        filteredText = noSpaceSplitter
+        # noSpaceSplitter = re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', whitespacesRemoved)
+        # filteredText = noSpaceSplitter
+        filteredText = whitespacesRemoved
         return filteredText
 
     def getUrls(self):
@@ -80,26 +80,23 @@ class Crawler:
         tokens = [i for i in tokens if i not in string.punctuation]
         invertedIndexDict = {i:URL for i in tokens}
         print(invertedIndexDict)
-        return 0
 
     def createInvertedIndex(self):
         urlsToVisit = self.getUrls()
-        invertedIndex = self.initialInvertedIndexDict
+        print(urlsToVisit)
+        invertedIndexBuilder = self.initialInvertedIndexDict
         for url in urlsToVisit:
             localCrawl = Crawler(url)
-            crawledInvIndx = localCrawl.initialInvertedIndexDict
-            for key in crawledInvIndx:
-                if key in invertedIndex:
-                    invertedIndex[key] = invertedIndex[key].extend(crawledInvIndx[key])
-                else:
-                    invertedIndex[key] = crawledInvIndx[key]
-
-
-
-
+            # for key in crawledInvIndx:
+            #     if key in invertedIndex:
+            #         invertedIndex[key] = invertedIndex[key].extend(crawledInvIndx[key])
+            #     else:
+            #         invertedIndex[key] = crawledInvIndx[key]
 
 
 if __name__ == "__main__":
-    URL = input("Enter the URL (press Enter for default): ") or "http://robotyka.p.lodz.pl/pl/pracownicy"
+    URL = input("Enter the URL (press Enter for default): ") or "https://en.wikipedia.org/wiki/Wykop.pl"
+    # URL = input("Enter the URL (press Enter for default): ") or "http://robotyka.p.lodz.pl/pl/pracownicy"
     crawler = Crawler(URL)
-    crawler.initialInvertedIndexDict
+    # crawler.createInvertedIndex()
+    print(crawler.removeTagsFromHtml())
