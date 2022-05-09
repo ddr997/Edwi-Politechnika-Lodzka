@@ -25,9 +25,8 @@ class Crawler():
         return filteredText
 
     def getUrls(self):
-        regexForURL = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+        regexForURL = r'(https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]+\.[a-zA-Z0-9()]+\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*))'
         urlsFound = set(re.findall(regexForURL, self.textWithHtmlTags))
-        # [".js", ".css", ".png", ".jpg"]
         urlsFound = {i for i in urlsFound if not any(j in i for j in self.extensionsToIgnore)}  # ignore
         print("URLS on the main page: ", urlsFound)
         return urlsFound

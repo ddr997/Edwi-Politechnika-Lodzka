@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e38d266-1810-450e-a245-25dd94a8da44" name="Changes" comment="cw1 fix etc">
+    <list default="true" id="9e38d266-1810-450e-a245-25dd94a8da44" name="Changes" comment="working on iteration of inverted index">
+      <change beforePath="$PROJECT_DIR$/.idea/Edwi-Politechnika-Lodzka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Edwi-Politechnika-Lodzka.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cw1/Cw1_239550_MaciejLukaszewicz.py" beforeDir="false" afterPath="$PROJECT_DIR$/cw1/Cw1_239550_MaciejLukaszewicz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cw1/emailsFound.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cw1/emailsFound.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cw1/sitesContent.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cw1/sitesContent.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cw2/Cw2_239550_MaciejLukaszewicz.py" beforeDir="false" afterPath="$PROJECT_DIR$/cw2/Cw2_239550_MaciejLukaszewicz.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,12 +25,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
-  <component name="RunManager" selected="Python.Cw1_239550_MaciejLukaszewicz">
+}]]></component>
+  <component name="RunManager" selected="Python.Cw2_239550_MaciejLukaszewicz">
     <configuration name="Cw1_239550_MaciejLukaszewicz" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Edwi-Politechnika-Lodzka" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -69,10 +73,14 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.Cw1_239550_MaciejLukaszewicz" />
+      <item itemvalue="Python.Cw2_239550_MaciejLukaszewicz" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Cw1_239550_MaciejLukaszewicz" />
         <item itemvalue="Python.Cw2_239550_MaciejLukaszewicz" />
+        <item itemvalue="Python.Cw1_239550_MaciejLukaszewicz" />
       </list>
     </recent_temporary>
   </component>
@@ -99,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652010169208</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="working on iteration of inverted index">
+      <created>1652044064973</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1652044064973</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -116,6 +131,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixing text filter on site content" />
     <MESSAGE value="cw1 fix etc" />
-    <option name="LAST_COMMIT_MESSAGE" value="cw1 fix etc" />
+    <MESSAGE value="working on iteration of inverted index" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on iteration of inverted index" />
   </component>
 </project>
