@@ -4,6 +4,7 @@ import string
 import requests, re, csv
 import nltk
 from nltk.corpus import stopwords
+from collections import Counter
 
 
 class Crawler:
@@ -36,7 +37,7 @@ class Crawler:
         urlsFound = list(set(re.findall(regexForURL, self.textWithHtmlTags)))
         urlsFound = [i for i in urlsFound if not any(j in i for j in Crawler.extensionsToIgnore)]  # ignore
         print("URLS on the main page: ", urlsFound)
-        self.URLS = urlsFound
+        self.URLS = [self.initialURL] + urlsFound
         return urlsFound
 
     def getEmails(self):
@@ -84,6 +85,7 @@ class Crawler:
         pattern = re.compile(r"\b[^\d\W]+\b")
         noDigits = [t for t in noPunctuation if pattern.match(t)]
         invertedIndexDict = {key:[URL] for key in noDigits}
+        # print(invertedIndexDict)
         return invertedIndexDict
 
     def createInvertedIndex(self):
@@ -106,8 +108,31 @@ class Crawler:
         self.invertedIndex = Builder
         return Builder
 
+    def askForDocument(self, question: str):
+        tokens = nltk.tokenize.word_tokenize(question)
+        noPunctuation = [t for t in tokens if t not in string.punctuation] # filtr znakow
+        pattern = re.compile(r"\b[^\d\W]+\b")
+        question = [t for t in noPunctuation if pattern.match(t)]
+        # testdict = {"a":['https://www.google.com/'], "b":['https://github.com/'], "c":['https://www.google.com/', 'https://github.com/'],
+        #             "wykop.pl":["https://wp.pl"]}
+
+        print("Zadane pytanie: ", " ".join(question))
+        links = []
+        for word in question:
+            try:
+                links.extend(self.invertedIndex[word])
+                # links.extend(testdict[word])
+            except:
+                continue
+        counter = Counter(links)
+        found = counter.most_common(5)
+        print("Dokumenty pasujace do zapytania: ", found)
+        for i in found:
+            print(self.URLS[i[0]])
+
 
 if __name__ == "__main__":
     URL = input("Enter the URL (press Enter for default): ") or "https://en.wikipedia.org/wiki/Wykop.pl"
     crawler = Crawler(URL)
     crawler.createInvertedIndex()
+    crawler.askForDocument("wykop.pl janusz korwin-mikke ama")
