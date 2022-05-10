@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e38d266-1810-450e-a245-25dd94a8da44" name="Changes" comment="dzialaja indexy, ale optymalizacja wpisywania indeksow z geturl zamiast linkow + zrobic zapytanie i ranking">
+      <change beforePath="$PROJECT_DIR$/.idea/Edwi-Politechnika-Lodzka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Edwi-Politechnika-Lodzka.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cw1/emailsFound.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cw1/emailsFound.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cw1/sitesContent.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cw1/sitesContent.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cw2/Cw2_239550_MaciejLukaszewicz.py" beforeDir="false" afterPath="$PROJECT_DIR$/cw2/Cw2_239550_MaciejLukaszewicz.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,11 +25,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
-  }
-}]]></component>
   <component name="RunManager" selected="Python.Cw2_239550_MaciejLukaszewicz">
     <configuration name="Cw1_239550_MaciejLukaszewicz" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Edwi-Politechnika-Lodzka" />
@@ -55,7 +54,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\Maciek\AppData\Local\Programs\Python\Python39\python.exe" />
+      <option name="SDK_HOME" value="/opt/homebrew/bin/python3" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cw2" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -130,6 +129,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixing text filter on site content" />

@@ -1,9 +1,7 @@
 # Cw.2 EDWI (8.04.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
-import string
 
-import requests, re, csv
+import requests, re, csv, string
 import nltk
-from nltk.corpus import stopwords
 from collections import Counter
 
 
@@ -35,9 +33,10 @@ class Crawler:
     def getUrls(self):
         regexForURL = r'(https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]+\.[a-zA-Z0-9()]+\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*))'
         urlsFound = list(set(re.findall(regexForURL, self.textWithHtmlTags)))
-        urlsFound = [i for i in urlsFound if not any(j in i for j in Crawler.extensionsToIgnore)]  # ignore
+        urlsFound = [i for i in urlsFound if not any(j in i for j in Crawler.extensionsToIgnore)]  # ext. ignore
+        urlsFound = list(set([re.sub("https", "http", i) for i in urlsFound])) # filtr prefixow http
         print("URLS on the main page: ", urlsFound)
-        self.URLS = [self.initialURL] + urlsFound
+        self.URLS = urlsFound
         return urlsFound
 
     def getEmails(self):
@@ -84,15 +83,14 @@ class Crawler:
         noPunctuation = [t for t in tokens if t not in string.punctuation] # filtr znakow
         pattern = re.compile(r"\b[^\d\W]+\b")
         noDigits = [t for t in noPunctuation if pattern.match(t)]
-        invertedIndexDict = {key:[URL] for key in noDigits}
+        invertedIndexDict = {key.lower():[URL] for key in noDigits}
         # print(invertedIndexDict)
         return invertedIndexDict
 
     def createInvertedIndex(self):
         urlsToVisit = self.getUrls()
         Builder = self.initialInvertedIndexDict
-        for i,v in enumerate(urlsToVisit):
-            # print(Builder)
+        for i, v in enumerate(urlsToVisit):
             try:
                 localCrawl = Crawler(v)
                 print(f"Visiting and updating index: {v}")
@@ -103,7 +101,7 @@ class Crawler:
                     else:
                         Builder[key] = [i+1]
             except:
-                print(f"--Crawling of this site failed--")
+                print("--Crawling of this site failed--")
                 continue
         self.invertedIndex = Builder
         return Builder
@@ -112,7 +110,7 @@ class Crawler:
         tokens = nltk.tokenize.word_tokenize(question)
         noPunctuation = [t for t in tokens if t not in string.punctuation] # filtr znakow
         pattern = re.compile(r"\b[^\d\W]+\b")
-        question = [t for t in noPunctuation if pattern.match(t)]
+        question = [t.lower() for t in noPunctuation if pattern.match(t)]
         # testdict = {"a":['https://www.google.com/'], "b":['https://github.com/'], "c":['https://www.google.com/', 'https://github.com/'],
         #             "wykop.pl":["https://wp.pl"]}
 
@@ -125,14 +123,15 @@ class Crawler:
             except:
                 continue
         counter = Counter(links)
-        found = counter.most_common(5)
+        found = counter.most_common(8)
         print("Dokumenty pasujace do zapytania: ", found)
         for i in found:
-            print(self.URLS[i[0]])
+            print(self.URLS[ i[0] ])
 
 
 if __name__ == "__main__":
     URL = input("Enter the URL (press Enter for default): ") or "https://en.wikipedia.org/wiki/Wykop.pl"
     crawler = Crawler(URL)
     crawler.createInvertedIndex()
-    crawler.askForDocument("wykop.pl janusz korwin-mikke ama")
+    question = input("Zadaj pytanie: ") or "wykop.pl Janusz Krzysztof AMA"
+    crawler.askForDocument(question)
