@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e38d266-1810-450e-a245-25dd94a8da44" name="Changes" comment="working on iteration of inverted index">
-      <change beforePath="$PROJECT_DIR$/.idea/Edwi-Politechnika-Lodzka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Edwi-Politechnika-Lodzka.iml" afterDir="false" />
+    <list default="true" id="9e38d266-1810-450e-a245-25dd94a8da44" name="Changes" comment="dzialaja indexy, ale optymalizacja wpisywania indeksow z geturl zamiast linkow + zrobic zapytanie i ranking">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cw1/Cw1_239550_MaciejLukaszewicz.py" beforeDir="false" afterPath="$PROJECT_DIR$/cw1/Cw1_239550_MaciejLukaszewicz.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cw1/emailsFound.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cw1/emailsFound.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cw1/sitesContent.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cw1/sitesContent.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cw2/Cw2_239550_MaciejLukaszewicz.py" beforeDir="false" afterPath="$PROJECT_DIR$/cw2/Cw2_239550_MaciejLukaszewicz.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652044064973</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="dzialaja indexy, ale optymalizacja wpisywania indeksow z geturl zamiast linkow + zrobic zapytanie i ranking">
+      <created>1652134615919</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1652134615919</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,6 +135,7 @@
     <MESSAGE value="fixing text filter on site content" />
     <MESSAGE value="cw1 fix etc" />
     <MESSAGE value="working on iteration of inverted index" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on iteration of inverted index" />
+    <MESSAGE value="dzialaja indexy, ale optymalizacja wpisywania indeksow z geturl zamiast linkow + zrobic zapytanie i ranking" />
+    <option name="LAST_COMMIT_MESSAGE" value="dzialaja indexy, ale optymalizacja wpisywania indeksow z geturl zamiast linkow + zrobic zapytanie i ranking" />
   </component>
 </project>

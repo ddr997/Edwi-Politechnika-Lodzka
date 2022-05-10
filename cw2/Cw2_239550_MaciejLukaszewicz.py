@@ -10,13 +10,15 @@ class Crawler:
     extensionsToIgnore = [".js", ".css", ".png", ".jpg", ".pdf", ".jpeg", ".ico"]
     def __init__(self, initialURL):
         self.initialURL = initialURL
+        self.URLS = []
+        self.invertedIndex = {}
         try:
             headers = {
                 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36', }
             self.requestResponse = requests.get(self.initialURL, headers=headers)
             self.requestResponse.encoding = 'utf-8'
             self.textWithHtmlTags = self.requestResponse.text
-            self.initialInvertedIndexDict = self.getInvertedIndex(self.removeTagsFromHtml(), self.initialURL)
+            self.initialInvertedIndexDict = self.getInvertedIndex(self.removeTagsFromHtml(), 0)
         except:
             raise ValueError("Provided invalid URL address or cannot connect to the page (check internet).")
 
@@ -31,9 +33,10 @@ class Crawler:
 
     def getUrls(self):
         regexForURL = r'(https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]+\.[a-zA-Z0-9()]+\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*))'
-        urlsFound = set(re.findall(regexForURL, self.textWithHtmlTags))
-        urlsFound = {i for i in urlsFound if not any(j in i for j in Crawler.extensionsToIgnore)}  # ignore
+        urlsFound = list(set(re.findall(regexForURL, self.textWithHtmlTags)))
+        urlsFound = [i for i in urlsFound if not any(j in i for j in Crawler.extensionsToIgnore)]  # ignore
         print("URLS on the main page: ", urlsFound)
+        self.URLS = urlsFound
         return urlsFound
 
     def getEmails(self):
@@ -86,17 +89,23 @@ class Crawler:
     def createInvertedIndex(self):
         urlsToVisit = self.getUrls()
         Builder = self.initialInvertedIndexDict
-        for url in urlsToVisit:
+        for i,v in enumerate(urlsToVisit):
+            # print(Builder)
             try:
-                localCrawl = Crawler(url)
-                print(f"Visiting: {localCrawl.initialURL}")
-                for key in localCrawl.initialInvertedIndexDict:
-                    if key in Builder:
-                        Builder[key].extend(localCrawl.initialInvertedIndexDict[key])
+                localCrawl = Crawler(v)
+                print(f"Visiting and updating index: {v}")
+                localDict = localCrawl.initialInvertedIndexDict
+                for key in localDict:
+                    if key in Builder.keys():
+                        Builder[key].append(i+1)
                     else:
-                        Builder[key] = localCrawl.initialInvertedIndexDict[key]
-                    print(Builder)
-            except: continue
+                        Builder[key] = [i+1]
+            except:
+                print(f"--Crawling of this site failed--")
+                continue
+        self.invertedIndex = Builder
+        return Builder
+
 
 if __name__ == "__main__":
     URL = input("Enter the URL (press Enter for default): ") or "https://en.wikipedia.org/wiki/Wykop.pl"
