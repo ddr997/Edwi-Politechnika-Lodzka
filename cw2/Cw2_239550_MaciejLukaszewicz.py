@@ -84,7 +84,9 @@ class Crawler:
         noPunctuation = [t for t in tokens if t not in string.punctuation] # filtr znakow
         pattern = re.compile(r"\b[^\d\W]+\b")
         noDigits = [t for t in noPunctuation if pattern.match(t)]
-        invertedIndexDict = {key.lower():[URL] for key in noDigits}
+        ps = PorterStemmer()
+        stemming = [ps.stem(token) for token in noDigits]
+        invertedIndexDict = {key.lower():[URL] for key in stemming}
         # print(invertedIndexDict)
         return invertedIndexDict
 
@@ -112,7 +114,9 @@ class Crawler:
         tokens = nltk.tokenize.word_tokenize(question)
         noPunctuation = [t for t in tokens if t not in string.punctuation] # filtr znakow
         pattern = re.compile(r"\b[^\d\W]+\b")
-        question = [t.lower() for t in noPunctuation if pattern.match(t)]
+        noDigits = [t.lower() for t in noPunctuation if pattern.match(t)]
+        ps = PorterStemmer()
+        question = [ps.stem(token) for token in noDigits]
         print("Zadane pytanie: ", " ".join(question))
         links = []
         for word in question:
