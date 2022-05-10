@@ -3,6 +3,7 @@
 import requests, re, csv, string
 import nltk
 from collections import Counter
+from nltk.stem import PorterStemmer
 
 
 class Crawler:
@@ -93,17 +94,18 @@ class Crawler:
         for i, v in enumerate(urlsToVisit):
             try:
                 localCrawl = Crawler(v)
-                print(f"Visiting and updating index: {v}")
+                print(f"({i})Visiting and updating index: {v}")
                 localDict = localCrawl.initialInvertedIndexDict
                 for key in localDict:
                     if key in Builder.keys():
-                        Builder[key].append(i+1)
+                        Builder[key].append(i)
                     else:
-                        Builder[key] = [i+1]
+                        Builder[key] = [i]
             except:
-                print("--Crawling of this site failed--")
+                print(f"({i})--Crawling of this site failed--")
                 continue
         self.invertedIndex = Builder
+        print("--Created inverted index:\n", self.invertedIndex)
         return Builder
 
     def askForDocument(self, question: str):
@@ -111,15 +113,11 @@ class Crawler:
         noPunctuation = [t for t in tokens if t not in string.punctuation] # filtr znakow
         pattern = re.compile(r"\b[^\d\W]+\b")
         question = [t.lower() for t in noPunctuation if pattern.match(t)]
-        # testdict = {"a":['https://www.google.com/'], "b":['https://github.com/'], "c":['https://www.google.com/', 'https://github.com/'],
-        #             "wykop.pl":["https://wp.pl"]}
-
         print("Zadane pytanie: ", " ".join(question))
         links = []
         for word in question:
             try:
                 links.extend(self.invertedIndex[word])
-                # links.extend(testdict[word])
             except:
                 continue
         counter = Counter(links)
