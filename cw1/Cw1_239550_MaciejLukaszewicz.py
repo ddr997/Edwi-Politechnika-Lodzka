@@ -1,6 +1,7 @@
 import requests, re, csv
-
 # Cw.1 EDWI (8.04.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
+
+
 class Crawler():
 
     def __init__(self, initialURL):
@@ -20,8 +21,9 @@ class Crawler():
         regex = r'<(script|style).*>(.|\n)*?</(script|style)>|<[^>]*>'
         tagsRemoved = re.sub(regex, "", self.textWithHtmlTags)
         whitespacesRemoved = re.sub(r"\s{2,}", "\n", tagsRemoved)
-        noSpaceSplitter = re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', whitespacesRemoved)
-        filteredText = noSpaceSplitter
+        # noSpaceSplitter = re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', whitespacesRemoved)
+        # filteredText = noSpaceSplitter
+        filteredText = whitespacesRemoved
         return filteredText
 
     def getUrls(self):
