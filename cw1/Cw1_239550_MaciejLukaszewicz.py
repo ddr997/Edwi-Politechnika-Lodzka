@@ -21,8 +21,6 @@ class Crawler():
         regex = r'<(script|style).*>(.|\n)*?</(script|style)>|<[^>]*>'
         tagsRemoved = re.sub(regex, "", self.textWithHtmlTags)
         whitespacesRemoved = re.sub(r"\s{2,}", "\n", tagsRemoved)
-        # noSpaceSplitter = re.sub(r'([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', r'\1 ', whitespacesRemoved)
-        # filteredText = noSpaceSplitter
         filteredText = whitespacesRemoved
         return filteredText
 
@@ -35,38 +33,34 @@ class Crawler():
 
     def getEmails(self):
         regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
-        emailsFound = set(re.findall(regex, self.textWithHtmlTags))
+        emailsFound = " ".join(set(re.findall(regex, self.textWithHtmlTags)))
         print("Emails crawled from this page: ", emailsFound)
         return emailsFound
 
-    def writeToCsv(self, text, filename):
+    def writeToCsv(self, item, filename):
         with open(f'{filename}.csv', 'w+', encoding="utf-8", newline='') as csvfile:
             writer = csv.writer(csvfile)
-            if type(text) is str:
-                for i in text.split("\n"):
-                    writer.writerow([i])
-            else:
-                for i in text:
-                    writer.writerow([i])
+            writer.writerows(item)
 
     def crawlAndSaveToFiles(self):
         urlsToVisit = self.getUrls()
-        emailsToFile = self.getEmails()
-        textToFile = self.removeTags()
+        initEmails = self.getEmails()
+        initText = self.removeTags()
+        listOfText = [[self.initialURL, initText]]
+        listOfEmails = [[self.initialURL, initEmails]]
 
-        for i in urlsToVisit:
-            print("\nEntering URL: ", i)
+        for url in urlsToVisit:
+            print("\nEntering URL: ", url)
             try:
-                localInstance = Crawler(i)
+                localInstance = Crawler(url)
             except:
                 continue
-            emailsToFile.update(localInstance.getEmails())
-            # print(localInstance.removeTags()) # to check site content
-            textToFile += "\n" + localInstance.removeTags()
+            listOfText.append([url, localInstance.removeTags()])
+            listOfEmails.append([url, localInstance.getEmails()])
 
-        self.writeToCsv(textToFile, "sitesContent")
-        self.writeToCsv(emailsToFile, "emailsFound")
-        print("\nEmails across the sites found:", emailsToFile)
+        self.writeToCsv(listOfText, "sitesContent")
+        self.writeToCsv(listOfEmails, "emailsFound")
+        print("\nEmails across the sites found:", initEmails)
         print("--Program ended, 2 csv files were created locally containing emails and crawled sites content.")
 
 
