@@ -1,6 +1,6 @@
 # Cw.2 EDWI (10.05.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
 
-import requests, re, csv, string
+import requests, re, csv, string, json
 import nltk
 import numpy as np
 from collections import Counter
@@ -12,8 +12,6 @@ class Crawler:
     def __init__(self, initialURL):
         self.initialURL = initialURL
         self.URLS = []
-        self.invertedIndex = {}
-        self.decodedInvertedIndex = []
         self.Ngrams = []
         try:
             headers = {
@@ -21,7 +19,6 @@ class Crawler:
             self.requestResponse = requests.get(self.initialURL, headers=headers)
             self.requestResponse.encoding = 'utf-8'
             self.textWithHtmlTags = self.requestResponse.text
-            self.initialInvertedIndexDict = self.getInvertedIndex(self.removeTagsFromHtml(), 0)
         except:
             raise ValueError("Provided invalid URL address or cannot connect to the page (check internet).")
 
@@ -40,12 +37,6 @@ class Crawler:
         print("URLS on the main page: ", urlsFound)
         self.URLS = urlsFound
         return urlsFound
-
-    def getEmails(self):
-        regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
-        emailsFound = " ".join(set(re.findall(regex, self.textWithHtmlTags)))
-        print("Emails crawled from this page: ", emailsFound)
-        return emailsFound
 
     def writeToCsv(self, item, filename):
         with open(f'{filename}.csv', 'w+', encoding="utf-8", newline='') as csvfile:
@@ -77,53 +68,6 @@ class Crawler:
         stemmed = [ps.stem(token) for token in noDigits]
         return stemmed
 
-    def getInvertedIndex(self, text, URL):
-        tokens = self.tokenize(text)
-        # print(tokens)
-        invertedIndexDict = {key.lower():[URL] for key in tokens}
-        return invertedIndexDict
-
-    def createInvertedIndex(self):
-        urlsToVisit = self.getUrls()
-        Builder = self.initialInvertedIndexDict
-        for i, v in enumerate(urlsToVisit):
-            try:
-                localCrawl = Crawler(v)
-                print(f"({i})Visiting and updating index: {v}")
-                localDict = localCrawl.initialInvertedIndexDict
-                for key in localDict:
-                    if key in Builder.keys():
-                        Builder[key].append(i)
-                    else:
-                        Builder[key] = [i]
-            except:
-                print(f"({i})--Crawling of this site failed: {v}--")
-                continue
-
-        self.invertedIndex = Builder
-        self.decodedInvertedIndex = self.decodeIndex(Builder)
-        print("--Created inverted index (also created file):\n", self.decodedInvertedIndex)
-        self.writeToCsv([[i[0], " ".join(i[1])] for i in self.decodedInvertedIndex], "index")
-        return Builder
-
-    def decodeIndex(self, toDecode):
-        return [[item, [self.URLS[index] for index in self.invertedIndex.get(item)]] for item in toDecode]
-
-    def askForDocument(self, question: str):
-        tokenizedQuestion = self.tokenize(question)
-        print("Tokeny pytania: ", tokenizedQuestion)
-        linksFound = []
-        for word in tokenizedQuestion:
-            try:
-                linksFound.extend(self.invertedIndex[word])
-            except:
-                continue
-        counter = Counter(linksFound)
-        mostCommon = counter.most_common(8)
-        print("Dokumenty pasujace do zapytania: ", mostCommon)
-        for linkIndex in mostCommon:
-            print(f"Count:({linkIndex[1]}) ",self.URLS[linkIndex[0]])
-
     def createNGram(self, tokens: list, n: int):
         length = len(tokens)
         Ngrams = []
@@ -137,13 +81,8 @@ class Crawler:
 
     def createNgrams(self, n: int):
         urlsToVisit = self.getUrls()
-        # Builder = [self.createNGram(
-        #     self.tokenize(
-        #         self.removeTagsFromHtml()
-        #     )
-        # , n)]
         Builder = []
-
+        errors = []
         for i, v in enumerate(urlsToVisit):
             try:
                 localCrawl = Crawler(v)
@@ -156,16 +95,41 @@ class Crawler:
                     , n)
                 )
             except:
-                print(f"({i})--  Ngrams creation failed: {v}  --")
-                Builder.append(["error"])
+                print(f"({i})--  Ngrams creation failed, ignoring this site {v}  --")
+                errors.append(i)
                 continue
+        for i in errors:
+            self.URLS.pop(i)
         self.Ngrams = Builder
         return Builder
 
     def calculateJaccardIndex(self, set1, set2):
-        commonElements = list(set(set1).intersection(set2))
-        output = len(commonElements)/(len(set(set1))+len(set(set2))-len(commonElements))
-        return output
+        if set1 and set2:
+            commonElements = list(set(set1).intersection(set2))
+            output = len(commonElements)/(len(set(set1))+len(set(set2))-len(commonElements))
+        else:
+            return -1
+        return np.round(output,4)
+
+    def calculateCosineDistance(self, set1: list, set2: list):
+        if set1 and set2:
+            bagOfWords = list(set(
+                set1 + set2
+            ))
+            vec1 = np.asarray([0]*len(bagOfWords))
+            vec2 = np.asarray([0]*len(bagOfWords))
+            for i,v in enumerate(bagOfWords):
+                if v in set1:
+                    vec1[i] = 1
+                if v in set2:
+                    vec2[i] = 1
+            numerator = np.einsum('i,i',vec1, vec2)
+            # dist = np.linalg.norm(vec1) * np.linalg.norm(vec2)
+            dist = np.sqrt(vec1.dot(vec1)) * np.sqrt(vec2.dot(vec2))
+            cosine = numerator/dist
+            return np.round(cosine,4)
+        else:
+            return -1
 
     def createJaccardIndexRanking(self):
         length = len(self.URLS)
@@ -173,24 +137,7 @@ class Crawler:
         for i, A in enumerate(self.Ngrams):
             for j, B in enumerate(self.Ngrams):
                 jaccardMatrix[i,j] = self.calculateJaccardIndex(A,B)
-        return np.round(jaccardMatrix, 3)
-
-    def calculateCosineDistance(self, set1: list, set2: list):
-        bagOfWords = list(set(
-            set1 + set2
-        ))
-        vec1 = np.asarray([0]*len(bagOfWords))
-        vec2 = np.asarray([0]*len(bagOfWords))
-        for i,v in enumerate(bagOfWords):
-            if v in set1:
-                vec1[i] = 1
-            if v in set2:
-                vec2[i] = 1
-        numerator = np.einsum('i,i',vec1, vec2)
-        dist = np.linalg.norm(vec1) * np.linalg.norm(vec2)
-        cosine = numerator/dist
-        return np.round(cosine,3)
-
+        return jaccardMatrix
 
     def createCosineDistanceRanking(self):
         length = len(self.URLS)
@@ -200,13 +147,41 @@ class Crawler:
                 cosineMatrix[i,j] = self.calculateCosineDistance(A,B)
         return cosineMatrix
 
+    def askForSimilarDocument(self, URL, n):
+        site = Crawler(URL)
+        tokens = site.tokenize(site.removeTagsFromHtml())
+        nGram = site.createNGram(tokens, n)
+        cosineSimilarity = []
+        jaccardSimilarity = []
+        self.createNgrams(n)
+        for i in self.Ngrams:
+            cosineSimilarity.append(self.calculateCosineDistance(nGram, i))
+            jaccardSimilarity.append(self.calculateJaccardIndex(nGram, i))
+        print(cosineSimilarity)
+        print(jaccardSimilarity)
+
+    def createJSON(self, URL, content, Ngram):
+        with open('sites.json', 'r') as file:
+            j = json.load(file)
+            if j["sites"]:
+                toSave = {"url":URL, "content":content, "Ngram":Ngram}
+                initFile = file["sites"].append(toSave)
+                write = open("sites.json","w")
+                json.dump(initFile, write)
+            else:
+                j["sites"] = []
+            print("The json file is created")
+
+    # def writeToJSON(self, URL, content, Ngram):
+    #     toSave = {"url": URL, "content": content, "Ngram": Ngram}
 
 if __name__ == "__main__":
+    np.set_printoptions(threshold=np.inf)
     URL = input("Enter the URL (press Enter for default): ") or "https://en.wikipedia.org/wiki/Wykop.pl"
     crawler = Crawler(URL)
-    # crawler.createInvertedIndex()
-    # question = input("Zadaj pytanie: ") or "wykop.pl Janusz Krzysztof AMA"
-    # crawler.askForDocument(question)
-    crawler.createNgrams(2)
-    print(crawler.createJaccardIndexRanking())
-    print(crawler.createCosineDistanceRanking())
+    crawler.createJSON("https://en.wikipedia.org/wiki/Wykop.pl", "jebac psy policje", ["jebac psy", "psy policje"])
+    crawler.createJSON("https://en.wikipedia.org/wiki/Wykop", "jebac psy policje", ["jebac psy", "psy policje"])
+    # crawler.askForSimilarDocument("https://dziennikbaltycki.pl/lech-walesa-spotkal-sie-z-internautami-portalu-wykoppl-zdjecia/ar/3343979", 3)
+
+    # print(crawler.createJaccardIndexRanking())
+    # print(crawler.createCosineDistanceRanking())
