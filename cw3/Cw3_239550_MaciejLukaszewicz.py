@@ -162,27 +162,43 @@ class Crawler:
         self.Ngrams = Builder
         return Builder
 
+    def calculateJaccardIndex(self, set1, set2):
+        commonElements = list(set(set1).intersection(set2))
+        output = len(commonElements)/(len(set(set1))+len(set(set2))-len(commonElements))
+        return output
+
     def createJaccardIndexRanking(self):
         length = len(self.URLS)
-        jaccard = np.zeros((length, length))
+        jaccardMatrix = np.zeros((length, length))
         for i, A in enumerate(self.Ngrams):
             for j, B in enumerate(self.Ngrams):
-                sameElements = list(set(A).intersection(B))
-                jaccard[i, j] = len(sameElements)/(len(set(A))+len(set(B))-len(sameElements))
-        return np.round(jaccard, 3)
+                jaccardMatrix[i,j] = self.calculateJaccardIndex(A,B)
+        return np.round(jaccardMatrix, 3)
+
+    def calculateCosineDistance(self, set1: list, set2: list):
+        bagOfWords = list(set(
+            set1 + set2
+        ))
+        vec1 = np.asarray([0]*len(bagOfWords))
+        vec2 = np.asarray([0]*len(bagOfWords))
+        for i,v in enumerate(bagOfWords):
+            if v in set1:
+                vec1[i] = 1
+            if v in set2:
+                vec2[i] = 1
+        numerator = np.einsum('i,i',vec1, vec2)
+        dist = np.linalg.norm(vec1) * np.linalg.norm(vec2)
+        cosine = numerator/dist
+        return np.round(cosine,3)
+
 
     def createCosineDistanceRanking(self):
-        bagOfWords = list(set(
-            [j for i in self.Ngrams for j in i]
-        ))
-        vectors = []
-        for siteGrams in self.Ngrams:
-            emptyVector = [0] * len(bagOfWords)
-            for i, word in enumerate(bagOfWords):
-                if word in siteGrams:
-                    emptyVector[i] = 1
-            vectors.append(emptyVector)
-        return vectors
+        length = len(self.URLS)
+        cosineMatrix = np.zeros((length, length))
+        for i, A in enumerate(self.Ngrams):
+            for j, B in enumerate(self.Ngrams):
+                cosineMatrix[i,j] = self.calculateCosineDistance(A,B)
+        return cosineMatrix
 
 
 if __name__ == "__main__":
@@ -191,6 +207,6 @@ if __name__ == "__main__":
     # crawler.createInvertedIndex()
     # question = input("Zadaj pytanie: ") or "wykop.pl Janusz Krzysztof AMA"
     # crawler.askForDocument(question)
-    x = crawler.createNgrams(2)
+    crawler.createNgrams(2)
     print(crawler.createJaccardIndexRanking())
     print(crawler.createCosineDistanceRanking())
