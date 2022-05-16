@@ -1,10 +1,8 @@
-# Cw.2 EDWI (10.05.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
+# Cw.3 EDWI (17.05.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
 import os.path
-
 import requests, re, csv, string, json
 import nltk
 import numpy as np
-from pathlib import Path
 from collections import Counter
 from nltk.stem import PorterStemmer
 
@@ -92,7 +90,7 @@ class Crawler:
                 nGram = self.createNGram(self.tokenize(text), n)
                 print(f"({i})Visiting and creating Ngram: {v}")
                 Builder.append(nGram)
-                self.writeToJSON(i, text, nGram)
+                self.writeToJSON(v, text, nGram)
             except:
                 print(f"({i})--  Ngrams creation failed, ignoring this site {v}  --")
                 errors.append(i)
@@ -102,7 +100,21 @@ class Crawler:
         self.Ngrams = Builder
         return Builder
 
-    def calculateJaccardIndex(self, set1, set2):
+    def writeToJSON(self, URL, content, Ngram):
+        toSave = {"content": content, "Ngram": Ngram}
+        if not os.path.isfile('sites.json'):
+            with open('sites.json', "w") as begin:
+                begin.write("{}")
+
+        with open('sites.json', 'r', encoding="utf8") as fileReader:
+            file = json.load(fileReader)
+            file[URL] = toSave
+
+        with open('sites.json', 'w', encoding="utf8") as fileWriter:
+            json.dump(file, fileWriter, indent=2, ensure_ascii=False)
+            print("Adding site to JSON database.")
+
+    def calculateJaccardIndex(set1: list, set2: list):
         if set1 and set2:
             commonElements = list(set(set1).intersection(set2))
             output = len(commonElements)/(len(set(set1))+len(set(set2))-len(commonElements))
@@ -110,7 +122,7 @@ class Crawler:
             return -1
         return np.round(output, 6)
 
-    def calculateCosineDistance(self, set1: list, set2: list):
+    def calculateCosineDistance(set1: list, set2: list):
         if set1 and set2:
             bagOfWords = list(set(
                 set1 + set2
@@ -130,23 +142,27 @@ class Crawler:
         else:
             return -1
 
-    def createJaccardIndexRanking(self):
-        length = len(self.URLS)
+    def createJaccardIndexRanking():
+        with open("sites.json", 'r', encoding = "utf8") as file:
+            database = json.load(file)
+        length = len(database)
         jaccardMatrix = np.zeros((length, length))
-        for i, A in enumerate(self.Ngrams):
-            for j, B in enumerate(self.Ngrams):
-                jaccardMatrix[i,j] = self.calculateJaccardIndex(A,B)
-        return jaccardMatrix
+        for i, A in enumerate(database):
+            for j, B in enumerate(database):
+                jaccardMatrix[i, j] = Crawler.calculateJaccardIndex(database[A]["Ngram"], database[B]["Ngram"])
+        return np.round(jaccardMatrix, 3)
 
-    def createCosineDistanceRanking(self):
-        length = len(self.URLS)
+    def createCosineDistanceRanking():
+        with open("sites.json", 'r', encoding = "utf8") as file:
+            database = json.load(file)
+        length = len(database)
         cosineMatrix = np.zeros((length, length))
-        for i, A in enumerate(self.Ngrams):
-            for j, B in enumerate(self.Ngrams):
-                cosineMatrix[i,j] = self.calculateCosineDistance(A,B)
-        return cosineMatrix
+        for i, A in enumerate(database):
+            for j, B in enumerate(database):
+                cosineMatrix[i, j] = Crawler.calculateCosineDistance(database[A]["Ngram"], database[B]["Ngram"])
+        return np.round(cosineMatrix, 3)
 
-    def askForSimilarDocument(self, URL, n):
+    def askForSimilarDocument(URL, n):
         site = Crawler(URL)
         tokens = site.tokenize(site.removeTagsFromHtml())
         nGram = site.createNGram(tokens, n)
@@ -157,43 +173,42 @@ class Crawler:
         except:
             raise FileNotFoundError("Database not found.")
 
-        cosineSimilarity = []
-        jaccardSimilarity = []
+        test = database[list(database.keys())[0]]["Ngram"][0]
+        l = len(test.split(" "))
+        if l != n:
+            raise ValueError(f"Ngrams in database are differ with declared n, please update your database.(nArgumentu = {n}, nBazy = {l})")
+            # Crawler().createNgrams(n)
+            # try:
+            #     with open('sites.json', 'r', encoding="utf8") as fileReader:
+            #         database = json.load(fileReader)
+            # except:
+            #     raise FileNotFoundError("Database not found.")
+
+        cosineSimilarity = {}
+        jaccardSimilarity = {}
         for i in database:
-            cosineSimilarity.append(self.calculateCosineDistance(nGram, database[i]["Ngram"]))
-            jaccardSimilarity.append(self.calculateJaccardIndex(nGram, database[i]["Ngram"]))
-        print(cosineSimilarity)
-        print(jaccardSimilarity)
-
-
-    def writeToJSON(self, URL, content, Ngram):
-        toSave = {"content": content, "Ngram": Ngram}
-        if not os.path.isfile('sites.json'):
-            with open('sites.json', "w") as begin:
-                begin.write("{}")
-
-        with open('sites.json', 'r', encoding="utf8") as fileReader:
-            file = json.load(fileReader)
-            file[URL] = toSave
-
-        with open('sites.json', 'w', encoding="utf8") as fileWriter:
-            json.dump(file, fileWriter, indent=2, ensure_ascii=False)
-            print("Adding site to JSON database.")
+            cosineVal = Crawler.calculateCosineDistance(nGram, database[i]["Ngram"])
+            jaccardVal = Crawler.calculateJaccardIndex(nGram, database[i]["Ngram"])
+            cosineSimilarity[i] = cosineVal
+            jaccardSimilarity[i] = jaccardVal
+        print("Cosine dict:\n", cosineSimilarity)
+        print("Jaccard dict:\n", jaccardSimilarity)
+        print("Cosine values: ", cosineSimilarity.values())
+        print("Jaccard values: ", jaccardSimilarity.values())
+        print("Top 3 values of cosine:\n ", Counter(cosineSimilarity).most_common(3))
+        print("Top 3 values of jaccard:\n", Counter(jaccardSimilarity).most_common(3))
 
 
 if __name__ == "__main__":
-    np.set_printoptions(threshold=np.inf)
-    URL = input("Enter the URL (press Enter for default): ") or "https://en.wikipedia.org/wiki/Wykop.pl"
+    # np.set_printoptions(threshold=np.inf)
+    URL = input("Enter the URL for generating database (press Enter for default): ") or \
+          "https://en.wikipedia.org/wiki/Wykop.pl"
     crawler = Crawler(URL)
-
     crawler.createNgrams(2)
-    crawler.askForSimilarDocument("https://dziennikbaltycki.pl/lech-walesa-spotkal-sie-z-internautami-portalu-wykoppl-zdjecia/ar/3343979", 2)
 
+    URL = input("Enter the URL for similarity check (press Enter for default): ") or \
+          'http://www.wykop.pl/ludzie/lechwalesa/'
+    Crawler.askForSimilarDocument(URL, 2)
 
-    # crawler.writeToJSON("http://test.pl", "to jest kebab", ["to jest", "jest kebab"])
-    # crawler.createJSON("https://en.wikipedia.org/wiki/Wykop.pl", "jebac psy policje", ["jebac psy", "psy policje"])
-    # crawler.createJSON("https://en.wikipedia.org/wiki/Wykop", "jebac psy policje", ["jebac psy", "psy policje"])
-    # crawler.askForSimilarDocument("https://dziennikbaltycki.pl/lech-walesa-spotkal-sie-z-internautami-portalu-wykoppl-zdjecia/ar/3343979", 4)
-
-    # print(crawler.createJaccardIndexRanking())
-    # print(crawler.createCosineDistanceRanking())
+    print("Podobienstwo dokumentów Jaccarda:\n", Crawler.createJaccardIndexRanking())
+    print("Podobienstwo dokumentów cosinusowe:\n", Crawler.createCosineDistanceRanking())
