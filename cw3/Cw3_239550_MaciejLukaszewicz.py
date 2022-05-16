@@ -88,14 +88,11 @@ class Crawler:
         for i, v in enumerate(urlsToVisit):
             try:
                 localCrawl = Crawler(v)
+                text = localCrawl.removeTagsFromHtml()
+                nGram = self.createNGram(self.tokenize(text), n)
                 print(f"({i})Visiting and creating Ngram: {v}")
-                Builder.append(
-                    localCrawl.createNGram(
-                        self.tokenize(
-                            localCrawl.removeTagsFromHtml()
-                        )
-                    , n)
-                )
+                Builder.append(nGram)
+                self.writeToJSON(i, text, nGram)
             except:
                 print(f"({i})--  Ngrams creation failed, ignoring this site {v}  --")
                 errors.append(i)
@@ -153,31 +150,35 @@ class Crawler:
         site = Crawler(URL)
         tokens = site.tokenize(site.removeTagsFromHtml())
         nGram = site.createNGram(tokens, n)
+
+        try:
+            with open('sites.json', 'r', encoding="utf8") as fileReader:
+                database = json.load(fileReader)
+        except:
+            raise FileNotFoundError("Database not found.")
+
         cosineSimilarity = []
         jaccardSimilarity = []
-        self.createNgrams(n)
-        for i in self.Ngrams:
-            cosineSimilarity.append(self.calculateCosineDistance(nGram, i))
-            jaccardSimilarity.append(self.calculateJaccardIndex(nGram, i))
+        for i in database:
+            cosineSimilarity.append(self.calculateCosineDistance(nGram, database[i]["Ngram"]))
+            jaccardSimilarity.append(self.calculateJaccardIndex(nGram, database[i]["Ngram"]))
         print(cosineSimilarity)
         print(jaccardSimilarity)
 
 
     def writeToJSON(self, URL, content, Ngram):
         toSave = {"content": content, "Ngram": Ngram}
-        file = None
-
         if not os.path.isfile('sites.json'):
             with open('sites.json', "w") as begin:
                 begin.write("{}")
 
-        with open('sites.json', 'r') as fileReader:
+        with open('sites.json', 'r', encoding="utf8") as fileReader:
             file = json.load(fileReader)
             file[URL] = toSave
 
-        with open('sites.json', 'w') as fileWriter:
-            json.dump(file, fileWriter, indent=2)
-            print("The json file is created")
+        with open('sites.json', 'w', encoding="utf8") as fileWriter:
+            json.dump(file, fileWriter, indent=2, ensure_ascii=False)
+            print("Adding site to JSON database.")
 
 
 if __name__ == "__main__":
@@ -185,7 +186,11 @@ if __name__ == "__main__":
     URL = input("Enter the URL (press Enter for default): ") or "https://en.wikipedia.org/wiki/Wykop.pl"
     crawler = Crawler(URL)
 
-    crawler.writeToJSON("http://test.pl", "to jest kebab", ["to jest", "jest kebab"])
+    crawler.createNgrams(2)
+    crawler.askForSimilarDocument("https://dziennikbaltycki.pl/lech-walesa-spotkal-sie-z-internautami-portalu-wykoppl-zdjecia/ar/3343979", 2)
+
+
+    # crawler.writeToJSON("http://test.pl", "to jest kebab", ["to jest", "jest kebab"])
     # crawler.createJSON("https://en.wikipedia.org/wiki/Wykop.pl", "jebac psy policje", ["jebac psy", "psy policje"])
     # crawler.createJSON("https://en.wikipedia.org/wiki/Wykop", "jebac psy policje", ["jebac psy", "psy policje"])
     # crawler.askForSimilarDocument("https://dziennikbaltycki.pl/lech-walesa-spotkal-sie-z-internautami-portalu-wykoppl-zdjecia/ar/3343979", 4)
