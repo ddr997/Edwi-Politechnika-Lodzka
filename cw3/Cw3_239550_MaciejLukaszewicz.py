@@ -1,8 +1,10 @@
 # Cw.2 EDWI (10.05.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
+import os.path
 
 import requests, re, csv, string, json
 import nltk
 import numpy as np
+from pathlib import Path
 from collections import Counter
 from nltk.stem import PorterStemmer
 
@@ -109,7 +111,7 @@ class Crawler:
             output = len(commonElements)/(len(set(set1))+len(set(set2))-len(commonElements))
         else:
             return -1
-        return np.round(output,4)
+        return np.round(output, 6)
 
     def calculateCosineDistance(self, set1: list, set2: list):
         if set1 and set2:
@@ -127,7 +129,7 @@ class Crawler:
             # dist = np.linalg.norm(vec1) * np.linalg.norm(vec2)
             dist = np.sqrt(vec1.dot(vec1)) * np.sqrt(vec2.dot(vec2))
             cosine = numerator/dist
-            return np.round(cosine,4)
+            return np.round(cosine, 6)
         else:
             return -1
 
@@ -160,28 +162,33 @@ class Crawler:
         print(cosineSimilarity)
         print(jaccardSimilarity)
 
-    def createJSON(self, URL, content, Ngram):
-        with open('sites.json', 'r') as file:
-            j = json.load(file)
-            if j["sites"]:
-                toSave = {"url":URL, "content":content, "Ngram":Ngram}
-                initFile = file["sites"].append(toSave)
-                write = open("sites.json","w")
-                json.dump(initFile, write)
-            else:
-                j["sites"] = []
+
+    def writeToJSON(self, URL, content, Ngram):
+        toSave = {"content": content, "Ngram": Ngram}
+        file = None
+
+        if not os.path.isfile('sites.json'):
+            with open('sites.json', "w") as begin:
+                begin.write("{}")
+
+        with open('sites.json', 'r') as fileReader:
+            file = json.load(fileReader)
+            file[URL] = toSave
+
+        with open('sites.json', 'w') as fileWriter:
+            json.dump(file, fileWriter, indent=2)
             print("The json file is created")
 
-    # def writeToJSON(self, URL, content, Ngram):
-    #     toSave = {"url": URL, "content": content, "Ngram": Ngram}
 
 if __name__ == "__main__":
     np.set_printoptions(threshold=np.inf)
     URL = input("Enter the URL (press Enter for default): ") or "https://en.wikipedia.org/wiki/Wykop.pl"
     crawler = Crawler(URL)
-    crawler.createJSON("https://en.wikipedia.org/wiki/Wykop.pl", "jebac psy policje", ["jebac psy", "psy policje"])
-    crawler.createJSON("https://en.wikipedia.org/wiki/Wykop", "jebac psy policje", ["jebac psy", "psy policje"])
-    # crawler.askForSimilarDocument("https://dziennikbaltycki.pl/lech-walesa-spotkal-sie-z-internautami-portalu-wykoppl-zdjecia/ar/3343979", 3)
+
+    crawler.writeToJSON("http://test.pl", "to jest kebab", ["to jest", "jest kebab"])
+    # crawler.createJSON("https://en.wikipedia.org/wiki/Wykop.pl", "jebac psy policje", ["jebac psy", "psy policje"])
+    # crawler.createJSON("https://en.wikipedia.org/wiki/Wykop", "jebac psy policje", ["jebac psy", "psy policje"])
+    # crawler.askForSimilarDocument("https://dziennikbaltycki.pl/lech-walesa-spotkal-sie-z-internautami-portalu-wykoppl-zdjecia/ar/3343979", 4)
 
     # print(crawler.createJaccardIndexRanking())
     # print(crawler.createCosineDistanceRanking())
