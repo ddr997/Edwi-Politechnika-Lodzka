@@ -11,16 +11,17 @@ class Crawler():
             self.requestResponse = requests.get(self.initialURL, timeout=3, headers=headers)
             self.requestResponse.encoding = 'utf-8'
             if self.requestResponse.status_code != 200:
-                print("Status code different than 200, skipping page!")
+                print("Status code different than 200, skipping page!\n")
+                raise ValueError
         except:
-            raise ValueError("Provided invalid URL address.")
+            raise ValueError("Provided invalid URL address or cannot connect to the page (check internet).")
         self.textWithHtmlTags = self.requestResponse.text
         self.extensionsToIgnore = [".js", ".css", ".png", ".jpg", ".pdf", ".jpeg", ".ico"]
 
     def removeTags(self):
         regex = r'<(script|style).*>(.|\n)*?</(script|style)>|<[^>]*>'
         tagsRemoved = re.sub(regex, "", self.textWithHtmlTags)
-        whitespacesRemoved = re.sub(r"\s{2,}", "\n", tagsRemoved)
+        whitespacesRemoved = re.sub(r"\s{2,}", " ", tagsRemoved)
         filteredText = whitespacesRemoved
         return filteredText
 

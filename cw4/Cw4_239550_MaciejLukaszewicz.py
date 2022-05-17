@@ -1,4 +1,4 @@
-# Cw.3 EDWI (17.05.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
+# Cw.4 EDWI (24.05.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
 import os.path
 import requests, re, csv, string, json
 import nltk
@@ -25,7 +25,7 @@ class Crawler:
     def removeTagsFromHtml(self):
         regex = r'<(script|style).*>(.|\n)*?</(script|style)>|<[^>]*>'
         tagsRemoved = re.sub(regex, "", self.textWithHtmlTags)
-        whitespacesRemoved = re.sub(r"\s{2,}", " ", tagsRemoved)
+        whitespacesRemoved = re.sub(r"\s{2,}", "\n", tagsRemoved)
         filteredText = whitespacesRemoved
         return filteredText
 
@@ -200,6 +200,7 @@ class Crawler:
 
 
 if __name__ == "__main__":
+    # np.set_printoptions(threshold=np.inf)
     URL = input("Enter the URL for generating database (press Enter for default): ") or \
           "https://en.wikipedia.org/wiki/Wykop.pl"
     crawler = Crawler(URL)
@@ -208,6 +209,3 @@ if __name__ == "__main__":
     URL = input("Enter the URL for similarity check (press Enter for default): ") or \
           'http://www.wykop.pl/ludzie/lechwalesa/'
     Crawler.askForSimilarDocument(URL, 2)
-
-    print("Podobienstwo dokumentów Jaccarda:\n", Crawler.createJaccardIndexRanking())
-    print("Podobienstwo dokumentów cosinusowe:\n", Crawler.createCosineDistanceRanking())

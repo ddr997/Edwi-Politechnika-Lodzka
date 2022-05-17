@@ -18,6 +18,9 @@ class Crawler:
                 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36', }
             self.requestResponse = requests.get(self.initialURL, headers=headers)
             self.requestResponse.encoding = 'utf-8'
+            if self.requestResponse.status_code != 200:
+                print("Status code different than 200, skipping page!\n")
+                raise ValueError
             self.textWithHtmlTags = self.requestResponse.text
             self.initialInvertedIndexDict = self.getInvertedIndex(self.removeTagsFromHtml(), 0)
         except:
@@ -53,7 +56,7 @@ class Crawler:
     def crawlAndSaveToFiles(self):
         urlsToVisit = self.getUrls()
         initEmails = self.getEmails()
-        initText = self.removeTags()
+        initText = self.removeTagsFromHtml()
         listOfText = [[self.initialURL, initText]]
         listOfEmails = [[self.initialURL, initEmails]]
 
