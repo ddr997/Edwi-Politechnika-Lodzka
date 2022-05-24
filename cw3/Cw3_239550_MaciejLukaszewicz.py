@@ -16,11 +16,14 @@ class Crawler:
         try:
             headers = {
                 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36', }
-            self.requestResponse = requests.get(self.initialURL, headers=headers)
+            self.requestResponse = requests.get(self.initialURL, headers=headers, timeout=3)
             self.requestResponse.encoding = 'utf-8'
             self.textWithHtmlTags = self.requestResponse.text
+            if self.requestResponse.status_code != 200:
+                # print("Status code different than 200, skipping page! " + self.initialURL)
+                raise ValueError
         except:
-            raise ValueError("Provided invalid URL address or cannot connect to the page (check internet).")
+            raise ValueError("Status code different than 200, skipping page! " + self.initialURL)
 
     def removeTagsFromHtml(self):
         regex = r'<(script|style).*>(.|\n)*?</(script|style)>|<[^>]*>'
@@ -91,12 +94,12 @@ class Crawler:
                 print(f"({i})Visiting and creating Ngram: {v}")
                 Builder.append(nGram)
                 self.writeToJSON(v, text, nGram)
-            except:
-                print(f"({i})--  Ngrams creation failed, ignoring this site {v}  --")
-                errors.append(i)
+            except ValueError as ve:
+                print(f"({i}){ve}")
+                errors.append(v)
                 continue
         for i in errors:
-            self.URLS.pop(i)
+            self.URLS.remove(i)
         self.Ngrams = Builder
         return Builder
 
@@ -195,19 +198,19 @@ class Crawler:
         print("Jaccard dict:\n", jaccardSimilarity)
         print("Cosine values: ", cosineSimilarity.values())
         print("Jaccard values: ", jaccardSimilarity.values())
-        print("Top 3 values of cosine:\n ", Counter(cosineSimilarity).most_common(3))
-        print("Top 3 values of jaccard:\n", Counter(jaccardSimilarity).most_common(3))
+        print("Top 5 values of cosine:\n ", Counter(cosineSimilarity).most_common(5))
+        print("Top 5 values of jaccard:\n", Counter(jaccardSimilarity).most_common(5))
 
 
 if __name__ == "__main__":
     URL = input("Enter the URL for generating database (press Enter for default): ") or \
           "https://en.wikipedia.org/wiki/Wykop.pl"
     crawler = Crawler(URL)
-    crawler.createNgrams(2)
+    crawler.createNgrams(3)
 
     URL = input("Enter the URL for similarity check (press Enter for default): ") or \
           'http://www.wykop.pl/ludzie/lechwalesa/'
-    Crawler.askForSimilarDocument(URL, 2)
+    Crawler.askForSimilarDocument(URL, 3)
 
-    print("Podobienstwo dokumentów Jaccarda:\n", Crawler.createJaccardIndexRanking())
-    print("Podobienstwo dokumentów cosinusowe:\n", Crawler.createCosineDistanceRanking())
+    # print("Podobienstwo dokumentów Jaccarda:\n", Crawler.createJaccardIndexRanking())
+    # print("Podobienstwo dokumentów cosinusowe:\n", Crawler.createCosineDistanceRanking())
