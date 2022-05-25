@@ -1,31 +1,39 @@
-# Cw.4 EDWI (24.05.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
+# Cw.3 EDWI (17.05.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
+import math
 import os.path
+import sys
+
 import requests, re, csv, string, json
 import nltk
 import numpy as np
 from collections import Counter
 from nltk.stem import PorterStemmer
-
+from urllib.parse import urlparse
+np.set_printoptions(threshold=sys.maxsize)
 
 class Crawler:
-    extensionsToIgnore = [".js", ".css", ".png", ".jpg", ".pdf", ".jpeg", ".ico"]
+
+    extensionsToIgnore = [".js", ".css", ".png", ".jpg", ".pdf", ".jpeg", ".ico", ".webp", ".woff", ".woff2", ".svg"]
+
     def __init__(self, initialURL):
         self.initialURL = initialURL
         self.URLS = []
-        self.Ngrams = []
         try:
             headers = {
                 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36', }
             self.requestResponse = requests.get(self.initialURL, headers=headers)
             self.requestResponse.encoding = 'utf-8'
             self.textWithHtmlTags = self.requestResponse.text
+            if self.requestResponse.status_code != 200:
+                raise Exception("-- Status code different than 200, skipping this site! --")
         except:
-            raise ValueError("Provided invalid URL address or cannot connect to the page (check internet).")
+            raise ConnectionError("Provided invalid URL address or cannot connect to the page (check connection).")
 
     def removeTagsFromHtml(self):
         regex = r'<(script|style).*>(.|\n)*?</(script|style)>|<[^>]*>'
         tagsRemoved = re.sub(regex, "", self.textWithHtmlTags)
-        whitespacesRemoved = re.sub(r"\s{2,}", "\n", tagsRemoved)
+        newlinesRemoved = tagsRemoved.replace("\n", " ")
+        whitespacesRemoved = re.sub(r"\s{2,}", " ", newlinesRemoved)
         filteredText = whitespacesRemoved
         return filteredText
 
@@ -34,32 +42,11 @@ class Crawler:
         urlsFound = list(set(re.findall(regexForURL, self.textWithHtmlTags)))
         urlsFound = [i for i in urlsFound if not any(j in i for j in Crawler.extensionsToIgnore)]  # ext. ignore
         urlsFound = list(set([re.sub("https", "http", i) for i in urlsFound])) # filtr prefixow http
-        print("URLS on the main page: ", urlsFound)
         self.URLS = urlsFound
         return urlsFound
 
-    def writeToCsv(self, item, filename):
-        with open(f'{filename}.csv', 'w+', encoding="utf-8", newline='') as csvfile:
-            writer = csv.writer(csvfile)
-            writer.writerows(item)
-
-    def crawlAndSaveToFiles(self):
-        urlsToVisit = self.getUrls()
-        initEmails = self.getEmails()
-        initText = self.removeTags()
-        listOfText = [[self.initialURL, initText]]
-        listOfEmails = [[self.initialURL, initEmails]]
-
-        for url in urlsToVisit:
-            print("\nEntering URL: ", url)
-            try:
-                localInstance = Crawler(url)
-            except:
-                continue
-            listOfText.append([url, localInstance.removeTags()])
-            listOfEmails.append([url, localInstance.getEmails()])
-
-    def tokenize(self, textToFilter):
+    @staticmethod
+    def tokenize(textToFilter):
         tokens = nltk.tokenize.word_tokenize(textToFilter)
         noPunctuation = [t for t in tokens if t not in string.punctuation] # filtr znakow
         pattern = re.compile(r"\b[^\d\W]+\b")
@@ -68,144 +55,149 @@ class Crawler:
         stemmed = [ps.stem(token) for token in noDigits]
         return stemmed
 
-    def createNGram(self, tokens: list, n: int):
-        length = len(tokens)
-        Ngrams = []
-        for i in range(0, length-n+1):
-            Ngrams.append(
-                " ".join(
-                    tokens[i:i+n]
-                )
-            )
-        return Ngrams
+    @staticmethod
+    def readFromJSON(filename: str) -> dict:
+        try:
+            with open(filename, 'r', encoding="utf8") as fileReader:
+                file = json.load(fileReader)
+                return file
+        except:
+            return {}
 
-    def createNgrams(self, n: int):
-        urlsToVisit = self.getUrls()
-        Builder = []
-        errors = []
-        for i, v in enumerate(urlsToVisit):
-            try:
-                localCrawl = Crawler(v)
-                text = localCrawl.removeTagsFromHtml()
-                nGram = self.createNGram(self.tokenize(text), n)
-                print(f"({i})Visiting and creating Ngram: {v}")
-                Builder.append(nGram)
-                self.writeToJSON(v, text, nGram)
-            except:
-                print(f"({i})--  Ngrams creation failed, ignoring this site {v}  --")
-                errors.append(i)
-                continue
-        for i in errors:
-            self.URLS.pop(i)
-        self.Ngrams = Builder
-        return Builder
-
-    def writeToJSON(self, URL, content, Ngram):
-        toSave = {"content": content, "Ngram": Ngram}
-        if not os.path.isfile('sites.json'):
-            with open('sites.json', "w") as begin:
+    @staticmethod
+    def writeToJSON(filename, records):
+        if not os.path.isfile(filename):
+            with open(filename, "w") as begin:
                 begin.write("{}")
 
-        with open('sites.json', 'r', encoding="utf8") as fileReader:
-            file = json.load(fileReader)
-            file[URL] = toSave
+        file = Crawler.readFromJSON(filename)
+        file = file | records
 
-        with open('sites.json', 'w', encoding="utf8") as fileWriter:
-            json.dump(file, fileWriter, indent=2, ensure_ascii=False)
-            print("Adding site to JSON database.")
+        with open(filename, 'w', encoding="utf8") as fileWriter:
+            json.dump(file, fileWriter, ensure_ascii=False)
 
-    def calculateJaccardIndex(set1: list, set2: list):
-        if set1 and set2:
-            commonElements = list(set(set1).intersection(set2))
-            output = len(commonElements)/(len(set(set1))+len(set(set2))-len(commonElements))
-        else:
-            return -1
-        return np.round(output, 6)
 
-    def calculateCosineDistance(set1: list, set2: list):
-        if set1 and set2:
-            bagOfWords = list(set(
-                set1 + set2
-            ))
-            vec1 = np.asarray([0]*len(bagOfWords))
-            vec2 = np.asarray([0]*len(bagOfWords))
-            for i,v in enumerate(bagOfWords):
-                if v in set1:
-                    vec1[i] = 1
-                if v in set2:
-                    vec2[i] = 1
-            numerator = np.einsum('i,i',vec1, vec2)
-            # dist = np.linalg.norm(vec1) * np.linalg.norm(vec2)
-            dist = np.sqrt(vec1.dot(vec1)) * np.sqrt(vec2.dot(vec2))
-            cosine = numerator/dist
-            return np.round(cosine, 6)
-        else:
-            return -1
+    def createDatabase(self, depth: int):
+        urlsToVisit = self.getUrls()
+        database = Crawler.readFromJSON("sites.json")
+        databaseURLS = [i["URL"] for i in database.values()]
+        amountOfRecords = len(databaseURLS)
+        domain = urlparse(self.initialURL).netloc
+        currentIndex = amountOfRecords+1
+        while currentIndex <= amountOfRecords+depth:
+            url = urlsToVisit.pop(0)
+            if url in databaseURLS:
+                continue
+            try:
+                localCrawl = Crawler(url)
 
-    def createJaccardIndexRanking():
-        with open("sites.json", 'r', encoding = "utf8") as file:
-            database = json.load(file)
-        length = len(database)
-        jaccardMatrix = np.zeros((length, length))
-        for i, A in enumerate(database):
-            for j, B in enumerate(database):
-                jaccardMatrix[i, j] = Crawler.calculateJaccardIndex(database[A]["Ngram"], database[B]["Ngram"])
-        return np.round(jaccardMatrix, 3)
+                if (len(urlsToVisit) < 2*depth): # dla pewności crawlingu utrzymujemy x2 wiecej url niz depth
+                    urlsToVisit.extend(localCrawl.getUrls())
 
-    def createCosineDistanceRanking():
-        with open("sites.json", 'r', encoding = "utf8") as file:
-            database = json.load(file)
-        length = len(database)
-        cosineMatrix = np.zeros((length, length))
-        for i, A in enumerate(database):
-            for j, B in enumerate(database):
-                cosineMatrix[i, j] = Crawler.calculateCosineDistance(database[A]["Ngram"], database[B]["Ngram"])
-        return np.round(cosineMatrix, 3)
+                textToSave = localCrawl.removeTagsFromHtml()
+                database.update({currentIndex:{"URL":url, "Category":domain, "Content": textToSave}})
+                print(f"({currentIndex})Crawling successful: {url}")
+                currentIndex += 1
 
-    def askForSimilarDocument(URL, n):
-        site = Crawler(URL)
-        tokens = site.tokenize(site.removeTagsFromHtml())
-        nGram = site.createNGram(tokens, n)
+            except ValueError as ve: # status code error
+                print(f"({currentIndex})" + ve.args[0] + ": " + url)
+                urlsToVisit.pop(0)
+                continue
+            except ConnectionError as ce:
+                print(f"({currentIndex})" + ce.args[0] + ": " + url)
+                urlsToVisit.pop(0)
+                continue
 
-        try:
-            with open('sites.json', 'r', encoding="utf8") as fileReader:
-                database = json.load(fileReader)
-        except:
-            raise FileNotFoundError("Database not found.")
+        Crawler.writeToJSON("sites.json", database)
+        print("*** Added crawled sites to the database ***\n")
+        return 0
 
-        test = database[list(database.keys())[0]]["Ngram"][0]
-        l = len(test.split(" "))
-        if l != n:
-            raise ValueError(f"Ngrams in database are differ with declared n, please update your database.(nArgumentu = {n}, nBazy = {l})")
-            # Crawler().createNgrams(n)
-            # try:
-            #     with open('sites.json', 'r', encoding="utf8") as fileReader:
-            #         database = json.load(fileReader)
-            # except:
-            #     raise FileNotFoundError("Database not found.")
+    @staticmethod
+    def bagOfWords(filename) -> Counter:
+        bag = {}
+        database = Crawler.readFromJSON("sites.json")
+        for index in database:
+            text = database[index]["Content"]
+            tokens = set(Crawler.tokenize(text))
+            for word in tokens:
+                if word in bag:
+                    bag[word] += 1
+                else:
+                    bag[word] = 1
+        Crawler.writeToJSON("bow.json", bag)
+        print("*** Saved Bag of Words to json ***\n")
+        return bag
 
-        cosineSimilarity = {}
-        jaccardSimilarity = {}
-        for i in database:
-            cosineVal = Crawler.calculateCosineDistance(nGram, database[i]["Ngram"])
-            jaccardVal = Crawler.calculateJaccardIndex(nGram, database[i]["Ngram"])
-            cosineSimilarity[i] = cosineVal
-            jaccardSimilarity[i] = jaccardVal
-        print("Cosine dict:\n", cosineSimilarity)
-        print("Jaccard dict:\n", jaccardSimilarity)
-        print("Cosine values: ", cosineSimilarity.values())
-        print("Jaccard values: ", jaccardSimilarity.values())
-        print("Top 3 values of cosine:\n ", Counter(cosineSimilarity).most_common(3))
-        print("Top 3 values of jaccard:\n", Counter(jaccardSimilarity).most_common(3))
+    @staticmethod
+    def getSingleBow(index: int):
+        bagOfWords = list(Crawler.readFromJSON("bow.json"))
+        content = Crawler.readFromJSON("sites.json")[str(index)]["Content"]
+        tokens = Crawler.tokenize(content)
+
+        counter = Counter(tokens)
+        emptyBow = [0]*len(bagOfWords)
+        for word in counter:
+            indexInBag = bagOfWords.index(word)
+            count = counter.get(word)
+            emptyBow[indexInBag] = count
+        bow = emptyBow
+        return bow
+
+    @staticmethod
+    def extendDatabaseWithBows(filename):
+        database = Crawler.readFromJSON(filename)
+        for i in database.keys():
+            bow = Crawler.getSingleBow(i)
+            database[i]["bow"] = bow
+        Crawler.writeToJSON(filename, database)
+        print("*** Database extended with Bows ***\n")
+
+    @staticmethod
+    def calculateTF_IDF(index: int):
+        database = Crawler.readFromJSON("sites.json")
+        content = database[str(index)]["Content"]
+        tokens = Crawler.tokenize(content)
+
+        #tf
+        counter = Counter(tokens)
+        amountOfWords = sum(counter.values())
+        tf = {i:counter.get(i)/amountOfWords for i in counter.keys()}
+
+        #idf
+        documentsAmount = len(database.values())
+        bagOfWords = Crawler.readFromJSON("bow.json")
+        idf = {i:math.log10(documentsAmount/bagOfWords.get(i)) for i in counter.keys()}
+
+        #tf_idf
+        tf_idf = {i:round(tf.get(i)*idf.get(i), 7) for i in counter.keys()}
+        emptyVector = [0] * len(bagOfWords)
+        wordsInBag = list(bagOfWords.keys())
+
+        for word in tf_idf.keys():
+            indexInBag = wordsInBag.index(word)
+            value = tf_idf.get(word)
+            emptyVector[indexInBag] = value
+        vector = emptyVector
+        return vector
+
+    @staticmethod
+    def extendDatabaseWithTF_IDF(filename):
+        database = Crawler.readFromJSON(filename)
+        for i in database.keys():
+            tf_idf = Crawler.calculateTF_IDF(i)
+            database[i]["TF_IDF"] = tf_idf
+        Crawler.writeToJSON(filename, database)
+        print("*** Database extended with tf-idf ***\n")
 
 
 if __name__ == "__main__":
-    # np.set_printoptions(threshold=np.inf)
-    URL = input("Enter the URL for generating database (press Enter for default): ") or \
-          "https://en.wikipedia.org/wiki/Wykop.pl"
-    crawler = Crawler(URL)
-    crawler.createNgrams(2)
 
-    URL = input("Enter the URL for similarity check (press Enter for default): ") or \
-          'http://www.wykop.pl/ludzie/lechwalesa/'
-    Crawler.askForSimilarDocument(URL, 2)
+    baseSites = ["https://www.bbc.com/sport", "https://www.techradar.com/",
+                 "https://pinchofyum.com/", "https://www.britannica.com/"]
+    for i in baseSites:
+        print("*** Starting with site: *** " + i)
+        crawler = Crawler(i)
+        crawler.createDatabase(100)
+    Crawler.bagOfWords("sites.json")
+    Crawler.extendDatabaseWithBows("sites.json")
+    Crawler.extendDatabaseWithTF_IDF("sites.json")
