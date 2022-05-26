@@ -1,4 +1,4 @@
-# Cw.3 EDWI (17.05.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
+# Cw.4 EDWI (24.05.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
 import math
 import os.path
 import sys
@@ -153,12 +153,16 @@ class Crawler:
             database[i]["bow"] = bow
         Crawler.writeToJSON(filename, database)
         print("*** Database extended with Bows ***\n")
+        return
 
     @staticmethod
-    def calculateTF_IDF(index: int):
+    def calculateTF_IDF(index: int, externalTokens=list()):
         database = Crawler.readFromJSON("sites.json")
-        content = database[str(index)]["Content"]
-        tokens = Crawler.tokenize(content)
+        if not externalTokens:
+            content = database[str(index)]["Content"]
+            tokens = Crawler.tokenize(content)
+        else:
+            tokens = externalTokens
 
         counter = Counter(tokens)
         words = list(counter.keys())
@@ -193,12 +197,71 @@ class Crawler:
             database[i]["TF_IDF"] = tf_idf
         Crawler.writeToJSON(filename, database)
         print("*** Database extended with tf-idf ***\n")
+        return
+
+    @staticmethod
+    def calculateCosineDistance(set1: list, set2: list):
+        if set1 and set2:
+            bagOfWords = list(set(
+                set1 + set2
+            ))
+
+            c1 = Counter(set1)
+            c2 = Counter(set2)
+            vec1 = np.asarray([0]*len(bagOfWords))
+            vec2 = np.asarray([0]*len(bagOfWords))
+            for i,v in enumerate(bagOfWords):
+                if v in set1:
+                    vec1[i] = c1.get(v)
+                if v in set2:
+                    vec2[i] = c2.get(v)
+            numerator = np.einsum('i,i', vec1, vec2)
+            # dist = np.linalg.norm(vec1) * np.linalg.norm(vec2)
+            dist = np.sqrt(vec1.dot(vec1)) * np.sqrt(vec2.dot(vec2))
+            cosine = numerator/dist
+            return np.round(cosine, 6)
+        else:
+            return -1
+
+    @staticmethod
+    def calculateCosineDistanceWithTF_IDF(tf_idf1: list, tf_idf2: list):
+        if tf_idf1 and tf_idf1:
+            vec1 = np.asarray(tf_idf1)
+            vec2 = np.asarray(tf_idf2)
+            numerator = np.einsum('i,i', vec1, vec2)
+            dist = np.sqrt(vec1.dot(vec1)) * np.sqrt(vec2.dot(vec2))
+            cosine = numerator / dist
+            return np.round(cosine, 6)
+        else:
+            return -1
 
 
     @staticmethod
-    def askForSimilarDocument(self, URL):
+    def askForSimilarDocument(URL):
         site = Crawler(URL)
         tokens = site.tokenize(site.removeTagsFromHtml())
+        page_tfidf = Crawler.calculateTF_IDF(0, tokens)
+        database = Crawler.readFromJSON("sites.json")
+        documents = list(database.keys())
+
+        cos_normal = {}
+        cos_tfidf = {}
+
+        for doc in tqdm(documents):
+            cos_normal[database[doc]["URL"]] = Crawler.calculateCosineDistance(tokens, Crawler.tokenize(database[doc]["Content"]))
+
+            database_tfidf = database[doc]["TF_IDF"]
+            cos_tfidf[database[doc]["URL"]] = Crawler.calculateCosineDistanceWithTF_IDF(page_tfidf, database_tfidf)
+
+        cos_normal = Counter(cos_normal)
+        cos_tfidf = Counter(cos_tfidf)
+        print("\nTop 10 for occurences vector:")
+        for i in cos_normal.most_common(10):
+            print(i)
+        print("\nTop 10 for vector tf-idf:")
+        for i in cos_tfidf.most_common(10):
+            print(i)
+        return
 
 
 if __name__ == "__main__":
@@ -215,3 +278,4 @@ if __name__ == "__main__":
     Crawler.bagOfWords("sites.json")
     Crawler.extendDatabaseWithBows("sites.json")
     Crawler.extendDatabaseWithTF_IDF("sites.json")
+    Crawler.askForSimilarDocument("http://www.pcgamer.com/cd-projekt-red-pulls-the-plug-on-real-life-witcher-school/")
