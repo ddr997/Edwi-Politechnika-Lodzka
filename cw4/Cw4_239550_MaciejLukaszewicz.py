@@ -2,6 +2,8 @@
 import math
 import os.path
 import sys
+import time
+from tqdm import tqdm
 
 import requests, re, csv, string, json
 import nltk
@@ -21,7 +23,7 @@ class Crawler:
         try:
             headers = {
                 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36', }
-            self.requestResponse = requests.get(self.initialURL, headers=headers)
+            self.requestResponse = requests.get(self.initialURL, headers=headers, timeout=3)
             self.requestResponse.encoding = 'utf-8'
             self.textWithHtmlTags = self.requestResponse.text
             if self.requestResponse.status_code != 200:
@@ -77,9 +79,9 @@ class Crawler:
             json.dump(file, fileWriter, ensure_ascii=False)
 
 
-    def createDatabase(self, depth: int):
+    def createDatabase(self, depth: int, filename: str):
         urlsToVisit = self.getUrls()
-        database = Crawler.readFromJSON("sites.json")
+        database = Crawler.readFromJSON(filename)
         databaseURLS = [i["URL"] for i in database.values()]
         amountOfRecords = len(databaseURLS)
         domain = urlparse(self.initialURL).netloc
@@ -91,7 +93,7 @@ class Crawler:
             try:
                 localCrawl = Crawler(url)
 
-                if (len(urlsToVisit) < 2*depth): # dla pewności crawlingu utrzymujemy x2 wiecej url niz depth
+                if len(urlsToVisit) < 2*depth:  # dla pewności crawlingu utrzymujemy x2 wiecej url niz depth
                     urlsToVisit.extend(localCrawl.getUrls())
 
                 textToSave = localCrawl.removeTagsFromHtml()
@@ -108,7 +110,7 @@ class Crawler:
                 urlsToVisit.pop(0)
                 continue
 
-        Crawler.writeToJSON("sites.json", database)
+        Crawler.writeToJSON(filename, database)
         print("*** Added crawled sites to the database ***\n")
         return 0
 
@@ -116,7 +118,7 @@ class Crawler:
     def bagOfWords(filename) -> Counter:
         bag = {}
         database = Crawler.readFromJSON("sites.json")
-        for index in database:
+        for index in tqdm(database):
             text = database[index]["Content"]
             tokens = set(Crawler.tokenize(text))
             for word in tokens:
@@ -146,7 +148,7 @@ class Crawler:
     @staticmethod
     def extendDatabaseWithBows(filename):
         database = Crawler.readFromJSON(filename)
-        for i in database.keys():
+        for i in tqdm(database.keys()):
             bow = Crawler.getSingleBow(i)
             database[i]["bow"] = bow
         Crawler.writeToJSON(filename, database)
@@ -158,18 +160,21 @@ class Crawler:
         content = database[str(index)]["Content"]
         tokens = Crawler.tokenize(content)
 
-        #tf
+        counter = Counter(tokens)
+        words = list(counter.keys())
+
+        # tf
         counter = Counter(tokens)
         amountOfWords = sum(counter.values())
-        tf = {i:counter.get(i)/amountOfWords for i in counter.keys()}
+        tf = [counter.get(i)/amountOfWords for i in words]
 
-        #idf
+        # idf
         documentsAmount = len(database.values())
         bagOfWords = Crawler.readFromJSON("bow.json")
-        idf = {i:math.log10(documentsAmount/bagOfWords.get(i)) for i in counter.keys()}
+        idf = [math.log10(documentsAmount/bagOfWords.get(i)) for i in words]
 
-        #tf_idf
-        tf_idf = {i:round(tf.get(i)*idf.get(i), 7) for i in counter.keys()}
+        # tf_idf
+        tf_idf = {words[i] : np.round(tf[i]*idf[i], 7) for i in range(0, len(words))}
         emptyVector = [0] * len(bagOfWords)
         wordsInBag = list(bagOfWords.keys())
 
@@ -183,21 +188,30 @@ class Crawler:
     @staticmethod
     def extendDatabaseWithTF_IDF(filename):
         database = Crawler.readFromJSON(filename)
-        for i in database.keys():
+        for i in tqdm(database.keys()):
             tf_idf = Crawler.calculateTF_IDF(i)
             database[i]["TF_IDF"] = tf_idf
         Crawler.writeToJSON(filename, database)
         print("*** Database extended with tf-idf ***\n")
 
 
+    @staticmethod
+    def askForSimilarDocument(self, URL):
+        site = Crawler(URL)
+        tokens = site.tokenize(site.removeTagsFromHtml())
+
+
 if __name__ == "__main__":
 
-    baseSites = ["https://www.bbc.com/sport", "https://www.techradar.com/",
-                 "https://pinchofyum.com/", "https://www.britannica.com/"]
+    baseSites = ["https://www.theguardian.com/world", "https://www.techradar.com/",
+                 "https://www.pcworld.com/", "https://www.nytimes.com/international/section/sports",
+                 "https://www.pcgamer.com/news/"]
+
     for i in baseSites:
         print("*** Starting with site: *** " + i)
         crawler = Crawler(i)
-        crawler.createDatabase(100)
+        crawler.createDatabase(100, "sites.json")
+
     Crawler.bagOfWords("sites.json")
     Crawler.extendDatabaseWithBows("sites.json")
     Crawler.extendDatabaseWithTF_IDF("sites.json")

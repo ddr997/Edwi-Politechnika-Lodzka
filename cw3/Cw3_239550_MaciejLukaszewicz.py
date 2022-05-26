@@ -103,7 +103,8 @@ class Crawler:
         self.Ngrams = Builder
         return Builder
 
-    def writeToJSON(self, URL, content, Ngram):
+    @staticmethod
+    def writeToJSON(URL, content, Ngram):
         toSave = {"content": content, "Ngram": Ngram}
         if not os.path.isfile('sites.json'):
             with open('sites.json', "w") as begin:
@@ -117,6 +118,7 @@ class Crawler:
             json.dump(file, fileWriter, indent=2, ensure_ascii=False)
             print("Adding site to JSON database.")
 
+    @staticmethod
     def calculateJaccardIndex(set1: list, set2: list):
         if set1 and set2:
             commonElements = list(set(set1).intersection(set2))
@@ -125,18 +127,22 @@ class Crawler:
             return -1
         return np.round(output, 6)
 
+    @staticmethod
     def calculateCosineDistance(set1: list, set2: list):
         if set1 and set2:
             bagOfWords = list(set(
                 set1 + set2
             ))
+
+            c1 = Counter(set1)
+            c2 = Counter(set2)
             vec1 = np.asarray([0]*len(bagOfWords))
             vec2 = np.asarray([0]*len(bagOfWords))
             for i,v in enumerate(bagOfWords):
                 if v in set1:
-                    vec1[i] = 1
+                    vec1[i] = c1.get(v)
                 if v in set2:
-                    vec2[i] = 1
+                    vec2[i] = c2.get(v)
             numerator = np.einsum('i,i',vec1, vec2)
             # dist = np.linalg.norm(vec1) * np.linalg.norm(vec2)
             dist = np.sqrt(vec1.dot(vec1)) * np.sqrt(vec2.dot(vec2))
@@ -145,6 +151,7 @@ class Crawler:
         else:
             return -1
 
+    @staticmethod
     def createJaccardIndexRanking():
         with open("sites.json", 'r', encoding = "utf8") as file:
             database = json.load(file)
@@ -155,6 +162,7 @@ class Crawler:
                 jaccardMatrix[i, j] = Crawler.calculateJaccardIndex(database[A]["Ngram"], database[B]["Ngram"])
         return np.round(jaccardMatrix, 3)
 
+    @staticmethod
     def createCosineDistanceRanking():
         with open("sites.json", 'r', encoding = "utf8") as file:
             database = json.load(file)
@@ -165,6 +173,8 @@ class Crawler:
                 cosineMatrix[i, j] = Crawler.calculateCosineDistance(database[A]["Ngram"], database[B]["Ngram"])
         return np.round(cosineMatrix, 3)
 
+
+    @staticmethod
     def askForSimilarDocument(URL, n):
         site = Crawler(URL)
         tokens = site.tokenize(site.removeTagsFromHtml())
@@ -206,11 +216,11 @@ if __name__ == "__main__":
     URL = input("Enter the URL for generating database (press Enter for default): ") or \
           "https://en.wikipedia.org/wiki/Wykop.pl"
     crawler = Crawler(URL)
-    crawler.createNgrams(3)
+    crawler.createNgrams(2)
 
     URL = input("Enter the URL for similarity check (press Enter for default): ") or \
           'http://www.wykop.pl/ludzie/lechwalesa/'
-    Crawler.askForSimilarDocument(URL, 3)
+    Crawler.askForSimilarDocument(URL, 2)
 
     # print("Podobienstwo dokumentów Jaccarda:\n", Crawler.createJaccardIndexRanking())
     # print("Podobienstwo dokumentów cosinusowe:\n", Crawler.createCosineDistanceRanking())
