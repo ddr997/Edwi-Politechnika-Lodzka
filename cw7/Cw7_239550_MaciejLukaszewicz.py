@@ -1,5 +1,6 @@
 import requests, re, csv
-# Cw.1 EDWI (8.04.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
+import urllib.robotparser
+# Cw.7 EDWI (7.06.22) Maciej Lukaszewicz 239550, SRiPM Informatyka
 
 
 class Crawler():
@@ -10,12 +11,19 @@ class Crawler():
             self.requestResponse = requests.get(self.initialURL, timeout=3, headers=headers)
             self.requestResponse.encoding = 'utf-8'
             if self.requestResponse.status_code != 200:
-                print("Status code different than 200, skipping page!\n")
-                raise ValueError
+                raise ConnectionError("--Status code different than 200, skipping page.--")
+        except ConnectionError as ce:
+            raise ce
         except:
-            raise ValueError("Provided invalid URL address or cannot connect to the page (check internet).")
+            raise ValueError("--Provided invalid URL address or cannot connect to the page.--")
         self.textWithHtmlTags = self.requestResponse.text
         self.extensionsToIgnore = [".js", ".css", ".png", ".jpg", ".pdf", ".jpeg", ".ico"]
+
+        # cw7
+        self.rootDomain = self.initialURL.split("/")[2]
+        self.robotsTxtUrl = "http://" + self.rootDomain + "/robots.txt"
+        self.robotPolicy = urllib.robotparser.RobotFileParser(self.robotsTxtUrl)
+        self.robotPolicy.read()
 
     def removeTags(self):
         regex = r'<(script|style).*>(.|\n)*?</(script|style)>|<[^>]*>'
@@ -52,9 +60,17 @@ class Crawler():
 
         for url in urlsToVisit:
             print("\nEntering URL: ", url)
+            canCrawl = crawler.robotPolicy.can_fetch("*", url)
+            if not canCrawl:
+                print(f"<<< Cant parse {url} cuz of robots.txt policy >>>")
+                continue
             try:
                 localInstance = Crawler(url)
-            except:
+            except ConnectionError as ce:
+                print(str(ce))
+                continue
+            except ValueError as ve:
+                print(str(ve))
                 continue
             listOfText.append([url, localInstance.removeTags()])
             listOfEmails.append([url, localInstance.getEmails()])
@@ -66,6 +82,6 @@ class Crawler():
 
 
 if __name__ == "__main__":
-    URL = input("Enter the URL (press Enter for default): ") or "http://robotyka.p.lodz.pl/pl/pracownicy"
+    URL = input("Enter the URL (press Enter for default): ") or "https://pl.wikipedia.org/wiki/Wykop.pl"
     crawler = Crawler(URL)
     crawler.crawlAndSaveToFiles()

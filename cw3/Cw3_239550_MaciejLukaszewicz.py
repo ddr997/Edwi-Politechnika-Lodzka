@@ -29,7 +29,8 @@ class Crawler:
         regex = r'<(script|style).*>(.|\n)*?</(script|style)>|<[^>]*>'
         tagsRemoved = re.sub(regex, "", self.textWithHtmlTags)
         whitespacesRemoved = re.sub(r"\s{2,}", " ", tagsRemoved)
-        filteredText = whitespacesRemoved
+        newLinesRemoved = whitespacesRemoved.replace("\n", "")
+        filteredText = newLinesRemoved
         return filteredText
 
     def getUrls(self):
@@ -213,14 +214,14 @@ class Crawler:
 
 
 if __name__ == "__main__":
-    URL = input("Enter the URL for generating database (press Enter for default): ") or \
-          "https://en.wikipedia.org/wiki/Wykop.pl"
-    crawler = Crawler(URL)
-    crawler.createNgrams(2)
+    # URL = input("Enter the URL for generating database (press Enter for default): ") or \
+    #       "https://en.wikipedia.org/wiki/Wykop.pl"
+    # crawler = Crawler(URL)
+    # crawler.createNgrams(2)
+    #
+    # URL = input("Enter the URL for similarity check (press Enter for default): ") or \
+    #       'http://www.wykop.pl/ludzie/lechwalesa/'
+    # Crawler.askForSimilarDocument(URL, 2)
 
-    URL = input("Enter the URL for similarity check (press Enter for default): ") or \
-          'http://www.wykop.pl/ludzie/lechwalesa/'
-    Crawler.askForSimilarDocument(URL, 2)
-
-    # print("Podobienstwo dokumentów Jaccarda:\n", Crawler.createJaccardIndexRanking())
-    # print("Podobienstwo dokumentów cosinusowe:\n", Crawler.createCosineDistanceRanking())
+    print("Podobienstwo dokumentów Jaccarda:\n", Crawler.createJaccardIndexRanking())
+    print("Podobienstwo dokumentów cosinusowe:\n", Crawler.createCosineDistanceRanking())
